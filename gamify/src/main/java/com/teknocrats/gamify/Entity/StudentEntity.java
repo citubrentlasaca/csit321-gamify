@@ -3,7 +3,7 @@ package com.teknocrats.gamify.Entity;
 public class StudentEntity {
 	private int studentid;
 	private AccountEntity sccount;
-	private Name name;
+	private NameEntity name;
 	private String gender;
 	private String birthday;
 	private String program;
