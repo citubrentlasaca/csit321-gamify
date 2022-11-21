@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.spcahutay.sims.Entity.StudentEntity;
 import com.teknocrats.gamify.Entity.TeacherEntity;
 import com.teknocrats.gamify.Repository.TeacherRepository;
 
