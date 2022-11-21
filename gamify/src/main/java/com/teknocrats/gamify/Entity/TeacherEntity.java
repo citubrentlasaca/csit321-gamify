@@ -38,57 +38,97 @@ public class TeacherEntity {
 		this.isdeleted = isdeleted;
 	}
 
+
 	public int getTeacherid() {
 		return teacherid;
 	}
+
+
+	public void setTeacherid(int teacherid) {
+		this.teacherid = teacherid;
+	}
+
+
+	public AccountEntity getAccount() {
+		return account;
+	}
+
+
+	public void setAccount(AccountEntity account) {
+		this.account = account;
+	}
+
 
 	public String getFirstname() {
 		return firstname;
 	}
 
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+
 	public String getLastname() {
 		return lastname;
 	}
+
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
 
 	public String getGender() {
 		return gender;
 	}
 
+
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+
 
 	public String getBirthday() {
 		return birthday;
 	}
 
+
 	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
+
 
 	public String getSubjectnumber() {
 		return subjectnumber;
 	}
 
+
 	public void setSubjectnumber(String subjectnumber) {
 		this.subjectnumber = subjectnumber;
 	}
+
 
 	public String getDescriptivetitle() {
 		return descriptivetitle;
 	}
 
+
 	public void setDescriptivetitle(String descriptivetitle) {
 		this.descriptivetitle = descriptivetitle;
 	}
+
 
 	public String getIsdeleted() {
 		return isdeleted;
 	}
 
+
 	public void setIsdeleted(String isdeleted) {
 		this.isdeleted = isdeleted;
 	}
+
+	
 	
 	
 	
