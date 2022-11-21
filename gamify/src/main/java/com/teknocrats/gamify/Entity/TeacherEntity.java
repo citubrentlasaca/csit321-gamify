@@ -23,6 +23,7 @@ public class TeacherEntity {
 	private String descriptivetitle;
 	private String isdeleted;
 	
+	public TeacherEntity () {}
 
 	public TeacherEntity(int teacherid, AccountEntity account, String firstname, String lastname, String gender,
 			String birthday, String subjectnumber, String descriptivetitle, String isdeleted) {
