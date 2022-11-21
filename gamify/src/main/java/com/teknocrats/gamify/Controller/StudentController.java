@@ -1,5 +1,7 @@
 package com.teknocrats.gamify.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,5 +21,10 @@ public class StudentController {
 	@PostMapping("/postStudent")
 	public StudentEntity insertStudent(@RequestBody StudentEntity student) {
 		return studentService.insertStudent(student);
+	}
+	
+	@GetMapping("/getAllStudents")
+	public List<StudentEntity> getAllStudents(){
+		return studentService.getAllStudents();
 	}
 }
