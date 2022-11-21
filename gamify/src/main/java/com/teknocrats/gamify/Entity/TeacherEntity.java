@@ -23,10 +23,12 @@ public class TeacherEntity {
 	private String descriptivetitle;
 	private String isdeleted;
 	
-	public TeacherEntity(int teacherid, String firstname, String lastname, String gender, String birthday,
-			String subjectnumber, String descriptivetitle, String isdeleted) {
+
+	public TeacherEntity(int teacherid, AccountEntity account, String firstname, String lastname, String gender,
+			String birthday, String subjectnumber, String descriptivetitle, String isdeleted) {
 		super();
 		this.teacherid = teacherid;
+		this.account = account;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.gender = gender;
