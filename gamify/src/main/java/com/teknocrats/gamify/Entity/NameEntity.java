@@ -1,5 +1,8 @@
 package com.teknocrats.gamify.Entity;
 
+import javax.persistence.Entity;
+
+@Entity
 public class NameEntity {
 	
 	private String firstname;
