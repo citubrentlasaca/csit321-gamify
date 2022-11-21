@@ -12,4 +12,9 @@ public class TeacherService {
 	@Autowired
 	TeacherRepository trepo; 
 	
+	//C - Create or insert a record 
+	public TeacherEntity insertTeacher(TeacherEntity teacher) {
+		return trepo.save(teacher);
+	}
+		
 }
