@@ -21,4 +21,18 @@ public class StudentService {
 	public List<StudentEntity> getAllStudents(){
 		return studentRepository.findAll();
 	}
+	
+	public String deleteStudent(int id) {
+		String msg;
+		
+		if (studentRepository.findById(id) != null) {
+			studentRepository.deleteById(id);
+			
+			msg = "Student ID Number " + id + " is successfully deleted!";
+		}
+		else {
+			msg = "Student ID Number " + id + " is NOT found!";
+		}
+		return msg;
+	}
 }
