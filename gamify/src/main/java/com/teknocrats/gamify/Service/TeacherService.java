@@ -24,4 +24,19 @@ public class TeacherService {
 	public List<TeacherEntity> getAllTeachers(){
 		return trepo.findAll();
 	}		
+	
+	//D - Delete teacher record
+	public String deleteTeacher (int id) {
+		String msg;
+		
+		if (trepo.findById(id) != null) {
+			trepo.deleteById(id);
+				
+			msg = "Teacher ID Number " + id + " is successfully deleted!";
+		}
+		else
+			msg = "Teacher ID Number " + id + " is NOT found!";
+			
+				return msg;			
+	}
 }
