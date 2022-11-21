@@ -1,5 +1,11 @@
 package com.teknocrats.gamify.Repository;
 
-public class StudentRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
+import com.teknocrats.gamify.Entity.StudentEntity;
+
+@Repository
+public interface StudentRepository extends JpaRepository<StudentEntity, Integer>{
+	
 }
