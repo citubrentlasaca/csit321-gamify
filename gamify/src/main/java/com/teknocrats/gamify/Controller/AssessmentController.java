@@ -29,4 +29,10 @@ public class AssessmentController {
     public AssessmentEntity insertAssessment(@RequestBody AssessmentEntity assessment) {
     	return assessmentService.insertAssessment(assessment);
     }
+    
+    //Read all assessment records
+    @GetMapping("/getAllAssessments")
+    public List<AssessmentEntity> getAllAssessments(){
+        return assessmentService.getAllAssessments();
+    }
 }
