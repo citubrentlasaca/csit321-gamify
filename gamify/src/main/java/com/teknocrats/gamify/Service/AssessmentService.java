@@ -61,4 +61,19 @@ public class AssessmentService {
 						throw new Exception("ID number " + id + " does not exist.");
 					}
 		}
+		
+		//Delete an assessment record
+		public String deleteAssessment (int id) {
+			String msg;
+					
+				if(assessmentRepository.findById(id) != null) {
+					assessmentRepository.deleteById(id);
+						
+					msg = "Assessment with an ID Number " + id + " is successfully deleted!";
+				}
+				else {
+					msg = "Assessment with an ID Number " + id + " is NOT found!";
+				}
+					return msg;
+		}
 }
