@@ -48,7 +48,7 @@ public class ResultController {
 	}
 	
 	// Delete a record
-	@DeleteMapping("/deleteResult/{id}")
+	@DeleteMapping("/deleteResult/{resultid}")
 	public String deleteResult(@PathVariable int resultid) {
 		return resultserv.deleteResult(resultid);
 	}
