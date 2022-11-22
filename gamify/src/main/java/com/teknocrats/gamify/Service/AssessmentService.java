@@ -26,4 +26,9 @@ public class AssessmentService {
 		public AssessmentEntity insertAssessment(AssessmentEntity assessment) {
 			return assessmentRepository.save(assessment);
 		}
+		
+		//Read all assessment records from the table named tbl_assessment
+		public List<AssessmentEntity> getAllAssessments(){
+			return assessmentRepository.findAll();
+		}
 }
