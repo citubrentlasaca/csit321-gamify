@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tbl_item", schema ="db_teknocrats_gamify")
+@Table(name = "tbl_item")
 public class ItemEntity {
 	
 	@Id
@@ -32,6 +32,9 @@ public class ItemEntity {
 	
 	public int getItemid() {
 		return itemid;
+	}
+	public void setItemid(int itemid) {
+		this.itemid = itemid;
 	}
 	public String getQuestiontype() {
 		return questiontype;
