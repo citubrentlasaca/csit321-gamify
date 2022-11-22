@@ -41,15 +41,4 @@ public class AccountController {
 			return acctserv.findByUsername(username);
 	}
 	
-	//Update a record
-	@PutMapping("/putAccount")
-	public AccountEntity putAccount(@RequestParam int accountid, @RequestBody AccountEntity newAccountDetails) throws Exception {
-		return acctserv.putAccount(accountid, newAccountDetails);
-	}
-	
-	//Delete a record
-	@DeleteMapping("/deleteAccount/{accountid}")
-	public String deleteAccount (@PathVariable int accountid) {
-		return acctserv.deleteAccount(accountid);
-	}
 }
