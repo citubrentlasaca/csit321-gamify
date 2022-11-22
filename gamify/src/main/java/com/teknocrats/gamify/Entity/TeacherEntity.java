@@ -1,10 +1,16 @@
 package com.teknocrats.gamify.Entity;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "tbl_teacher")
@@ -18,7 +24,9 @@ public class TeacherEntity {
 	private String firstname;
 	private String lastname;
 	private String gender;
-	private String birthday;
+	@Temporal(TemporalType.DATE)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy")
+	private Date birthday;
 	private String subjectnumber;
 	private String descriptivetitle;
 	private String isdeleted;
