@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.teknocrats.gamify.Entity.AccountEntity;
+import com.teknocrats.gamify.Service.AccountService;
 
 @RestController
 @RequestMapping("/account")
@@ -37,7 +38,7 @@ public class AccountController {
 	//Read a record by Username
 	@GetMapping("getByUsername")
 		public AccountEntity findByUsername(@RequestParam String username) {
-			return acctserv.FindByUserName(username);
+			return acctserv.findByUsername(username);
 	}
 	
 	//Update a record
