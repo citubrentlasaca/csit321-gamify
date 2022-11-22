@@ -35,4 +35,10 @@ public class AssessmentController {
     public List<AssessmentEntity> getAllAssessments(){
         return assessmentService.getAllAssessments();
     }
+    
+    //Read an assessment by its corresponding Title
+    @GetMapping("/getByTitle")
+    public AssessmentEntity findByTitle(@RequestParam String title) throws Exception{
+    	return assessmentService.findByTitle(title);
+    }
 }
