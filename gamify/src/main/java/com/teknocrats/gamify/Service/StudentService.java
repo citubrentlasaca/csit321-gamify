@@ -30,6 +30,7 @@ public class StudentService {
 		try {
 			student = studentRepository.findById(studentid).get();
 			
+			student.setBirthday(newStudentDetails.getBirthday());
 			student.setProgram(newStudentDetails.getProgram());
 			student.setYearlevel(newStudentDetails.getYearlevel());
 			
