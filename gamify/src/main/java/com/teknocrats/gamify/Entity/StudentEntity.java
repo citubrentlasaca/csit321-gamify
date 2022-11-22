@@ -41,7 +41,8 @@ public class StudentEntity {
 	@JoinColumn(name = "accountid")
 	private AccountEntity account;
 
-
+	public StudentEntity() {}
+	
 	public StudentEntity(int studentid, String firstname, String lastname, String gender, Date birthday, String program,
 			int yearlevel, String isdeleted, AccountEntity account) {
 		super();
