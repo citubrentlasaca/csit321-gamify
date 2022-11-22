@@ -27,7 +27,7 @@ public class TeacherService {
 	}
 	
 	//U - Update a record
-	public TeacherEntity putStudent(int id, TeacherEntity newStudentDetails) throws Exception{
+	public TeacherEntity putTeacher(int id, TeacherEntity newStudentDetails) throws Exception{
 		TeacherEntity teacher = new TeacherEntity();
 		
 		try {
