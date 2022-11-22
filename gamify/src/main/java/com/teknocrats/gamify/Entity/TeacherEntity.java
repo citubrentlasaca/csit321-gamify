@@ -1,5 +1,5 @@
 package com.teknocrats.gamify.Entity;
-/*
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,10 +8,10 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tbl_teacher")
-*/
+
 public class TeacherEntity {
-	//@Id
-	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
 	private int teacherid;
 	private AccountEntity account;

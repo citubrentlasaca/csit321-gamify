@@ -2,10 +2,10 @@ package com.teknocrats.gamify.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
- 
-import com.teknocrats.gamify.Entity.TeacherEntity;
+
+import com.teknocrats.gamify.Entity.StudentEntity;
 
 @Repository
-public interface TeacherRepository extends JpaRepository<TeacherEntity, Integer>{
-
+public interface StudentRepository extends JpaRepository<StudentEntity, Integer>{
+	
 }
