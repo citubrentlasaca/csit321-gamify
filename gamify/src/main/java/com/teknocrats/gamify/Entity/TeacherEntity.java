@@ -22,8 +22,7 @@ public class TeacherEntity {
 	
 	private int teacherid;
 	
-	private String firstname;
-	private String lastname;
+	private NameEntity name;
 	private String gender;
 	
 	@Temporal(TemporalType.DATE)
