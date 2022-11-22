@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.teknocrats.gamify.Entity.AccountEntity;
+import com.teknocrats.gamify.Service.AccountService;
 
 @RestController
 @RequestMapping("/account")
