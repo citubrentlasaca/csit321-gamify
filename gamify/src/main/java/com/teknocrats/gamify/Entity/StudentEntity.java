@@ -1,18 +1,31 @@
 package com.teknocrats.gamify.Entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "tbl_student")
 public class StudentEntity {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int studentid;
-	private AccountEntity account;
+
 	private NameEntity name;
 	private String gender;
 	private String birthday;
 	private String program;
 	private int yearlevel;
 	private String isdeleted;
+	
+	@OneToOne
+	@JoinColumn(name = "accountid")
+	private AccountEntity account;
 	
 	public StudentEntity(int studentid, AccountEntity account, NameEntity name, String gender, String birthday,
 			String program, int yearlevel, String isdeleted) {
