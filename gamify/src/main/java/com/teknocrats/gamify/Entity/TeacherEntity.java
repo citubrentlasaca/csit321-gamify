@@ -21,12 +21,15 @@ public class TeacherEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
 	private int teacherid;
+	
 	private String firstname;
 	private String lastname;
 	private String gender;
+	
 	@Temporal(TemporalType.DATE)
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy")
 	private Date birthday;
+	
 	private String subjectnumber;
 	private String descriptivetitle;
 	private String isdeleted;
@@ -37,11 +40,10 @@ public class TeacherEntity {
 	
 	public TeacherEntity () {}
 
-	public TeacherEntity(int teacherid, AccountEntity account, String firstname, String lastname, String gender,
-			String birthday, String subjectnumber, String descriptivetitle, String isdeleted) {
+	public TeacherEntity(int teacherid, String firstname, String lastname, String gender, Date birthday,
+			String subjectnumber, String descriptivetitle, String isdeleted, AccountEntity account) {
 		super();
 		this.teacherid = teacherid;
-		this.account = account;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.gender = gender;
@@ -49,7 +51,10 @@ public class TeacherEntity {
 		this.subjectnumber = subjectnumber;
 		this.descriptivetitle = descriptivetitle;
 		this.isdeleted = isdeleted;
+		this.account = account;
 	}
+
+
 
 
 	public int getTeacherid() {
