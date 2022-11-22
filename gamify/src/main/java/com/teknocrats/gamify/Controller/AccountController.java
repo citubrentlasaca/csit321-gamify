@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.teknocrats.gamify.Entity.AccountEntity;
+import com.teknocrats.gamify.Service.AccountService;
 
 @RestController
 @RequestMapping("/account")
@@ -29,7 +30,7 @@ public class AccountController {
 	}
 	
 	//Read all records
-	@GetMapping("/getAllAccounts")
+	/*@GetMapping("/getAllAccounts")
 	public List<AccountEntity> getAllAccounts(){
 		return acctserv.getAllAccounts();
 	}
@@ -50,5 +51,5 @@ public class AccountController {
 	@DeleteMapping("/deleteAccount/{accountid}")
 	public String deleteAccount (@PathVariable int accountid) {
 		return acctserv.deleteAccount(accountid);
-	}
+	}*/
 }
