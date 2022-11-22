@@ -22,7 +22,8 @@ public class TeacherEntity {
 	
 	private int teacherid;
 	
-	private NameEntity name;
+	private String firstname;
+	private String lastname;
 	private String gender;
 	
 	@Temporal(TemporalType.DATE)
@@ -39,11 +40,12 @@ public class TeacherEntity {
 	
 	public TeacherEntity () {}
 
-	public TeacherEntity(int teacherid, NameEntity name, String gender, Date birthday, String subjectnumber,
-			String descriptivetitle, String isdeleted, AccountEntity account) {
+	public TeacherEntity(int teacherid, String firstname, String lastname, String gender, Date birthday,
+			String subjectnumber, String descriptivetitle, String isdeleted, AccountEntity account) {
 		super();
 		this.teacherid = teacherid;
-		this.name = name;
+		this.firstname = firstname;
+		this.lastname = lastname;
 		this.gender = gender;
 		this.birthday = birthday;
 		this.subjectnumber = subjectnumber;
@@ -51,6 +53,8 @@ public class TeacherEntity {
 		this.isdeleted = isdeleted;
 		this.account = account;
 	}
+
+
 
 	public int getTeacherid() {
 		return teacherid;
@@ -60,12 +64,23 @@ public class TeacherEntity {
 		this.teacherid = teacherid;
 	}
 
-	public NameEntity getName() {
-		return name;
+	public String getFirstname() {
+		return firstname;
 	}
 
-	public void setName(NameEntity name) {
-		this.name = name;
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+
+	public String getLastname() {
+		return lastname;
+	}
+
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 
 	public String getGender() {
