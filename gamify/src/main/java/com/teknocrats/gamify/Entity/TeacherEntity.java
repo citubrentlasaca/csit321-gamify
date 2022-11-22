@@ -55,8 +55,6 @@ public class TeacherEntity {
 		this.account = account;
 	}
 
-
-
 	public int getTeacherid() {
 		return teacherid;
 	}
@@ -69,16 +67,13 @@ public class TeacherEntity {
 		return firstname;
 	}
 
-
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
 
-
 	public String getLastname() {
 		return lastname;
 	}
-
 
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
@@ -131,5 +126,4 @@ public class TeacherEntity {
 	public void setAccount(AccountEntity account) {
 		this.account = account;
 	}
-	
 }
