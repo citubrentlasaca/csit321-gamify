@@ -29,4 +29,44 @@ public class AssessmentEntity {
 			this.description = description;
 			this.isdeleted = isdeleted;
 		}
+		
+		public int getAssessmentid() {
+			return assessmentid;
+		}
+
+		public void setAssessmentid(int assessmentid) {
+			this.assessmentid = assessmentid;
+		}
+
+		public String getTitle() {
+			return title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
+		public String getInstructions() {
+			return instructions;
+		}
+
+		public void setInstructions(String instructions) {
+			this.instructions = instructions;
+		}
+
+		public String getDescription() {
+			return description;
+		}
+
+		public void setDescription(String description) {
+			this.description = description;
+		}
+		
+		public String getIsdeleted() {
+			return isdeleted;
+		}
+
+		public void setIsdeleted(String isdeleted) {
+			this.isdeleted = isdeleted;
+		}
 }
