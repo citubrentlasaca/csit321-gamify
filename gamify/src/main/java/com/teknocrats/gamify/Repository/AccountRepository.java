@@ -7,5 +7,5 @@ import com.teknocrats.gamify.Entity.AccountEntity;
 
 @Repository
 public interface AccountRepository extends JpaRepository<AccountEntity, Integer>{
-
+	AccountEntity findByUsername(String username);
 }

@@ -30,7 +30,7 @@ public class AccountController {
 	}
 	
 	//Read all records
-	/*@GetMapping("/getAllAccounts")
+	@GetMapping("/getAllAccounts")
 	public List<AccountEntity> getAllAccounts(){
 		return acctserv.getAllAccounts();
 	}
@@ -38,7 +38,7 @@ public class AccountController {
 	//Read a record by Username
 	@GetMapping("getByUsername")
 		public AccountEntity findByUsername(@RequestParam String username) {
-			return acctserv.FindByUserName(username);
+			return acctserv.findByUsername(username);
 	}
 	
 	//Update a record
@@ -51,5 +51,5 @@ public class AccountController {
 	@DeleteMapping("/deleteAccount/{accountid}")
 	public String deleteAccount (@PathVariable int accountid) {
 		return acctserv.deleteAccount(accountid);
-	}*/
+	}
 }
