@@ -21,4 +21,11 @@ public class AccountService {
 	public List<AccountEntity> getAllAccounts(){
 		return accountRepository.findAll();
 	}
+	
+	public AccountEntity findByUsername(String username) {
+		if (accountRepository.findByUsername(username)!=null)
+			return accountRepository.findByUsername(username);
+		else
+			return null;
+	}
 }
