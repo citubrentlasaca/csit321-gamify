@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -22,7 +23,8 @@ public class TeacherEntity {
 	
 	private int teacherid;
 	
-	private NameEntity name;
+	private String firstname;
+	private String lastname;
 	private String gender;
 	
 	@Temporal(TemporalType.DATE)
@@ -33,17 +35,18 @@ public class TeacherEntity {
 	private String descriptivetitle;
 	private String isdeleted;
 	
-	
+	@OneToOne
 	@JoinColumn(name = "accountid")
 	private AccountEntity account;
 	
 	public TeacherEntity () {}
 
-	public TeacherEntity(int teacherid, NameEntity name, String gender, Date birthday, String subjectnumber,
-			String descriptivetitle, String isdeleted, AccountEntity account) {
+	public TeacherEntity(int teacherid, String firstname, String lastname, String gender, Date birthday,
+			String subjectnumber, String descriptivetitle, String isdeleted, AccountEntity account) {
 		super();
 		this.teacherid = teacherid;
-		this.name = name;
+		this.firstname = firstname;
+		this.lastname = lastname;
 		this.gender = gender;
 		this.birthday = birthday;
 		this.subjectnumber = subjectnumber;
@@ -60,12 +63,20 @@ public class TeacherEntity {
 		this.teacherid = teacherid;
 	}
 
-	public NameEntity getName() {
-		return name;
+	public String getFirstname() {
+		return firstname;
 	}
 
-	public void setName(NameEntity name) {
-		this.name = name;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 
 	public String getGender() {
@@ -115,5 +126,4 @@ public class TeacherEntity {
 	public void setAccount(AccountEntity account) {
 		this.account = account;
 	}
-	
 }
