@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -20,7 +21,6 @@ public class TeacherEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
 	private int teacherid;
-	private AccountEntity account;
 	private String firstname;
 	private String lastname;
 	private String gender;
@@ -30,6 +30,10 @@ public class TeacherEntity {
 	private String subjectnumber;
 	private String descriptivetitle;
 	private String isdeleted;
+	
+	
+	@JoinColumn(name = "accountid")
+	private AccountEntity account;
 	
 	public TeacherEntity () {}
 
