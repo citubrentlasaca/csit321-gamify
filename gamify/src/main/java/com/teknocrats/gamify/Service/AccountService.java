@@ -30,21 +30,34 @@ public class AccountService {
 			return null;
 	}
 	
-public AccountEntity putAccount(int accountid, AccountEntity newAccountDetails) throws Exception{
-		
-	AccountEntity account = new AccountEntity();
-		
+	public AccountEntity putAccount(int accountid, AccountEntity newAccountDetails) throws Exception{
+			
+		AccountEntity account = new AccountEntity();
+			
 		try {
 			account = accountRepository.findById(accountid).get();
-
+	
 			account.setUsername(newAccountDetails.getUsername());
 			account.setPassword(newAccountDetails.getPassword());
 			account.setEmail(newAccountDetails.getEmail());
-			
+				
 			return accountRepository.save(account);
-			
+				
 		}catch(NoSuchElementException nex) {
 			throw new Exception ("ID Number " + accountid + "does not exist!");
 		}
+	}
+	
+	public String deleteAccount(int accountid) {
+		String msg;
+		if (accountRepository.findById(accountid) != null) {
+			accountRepository.deleteById(accountid);
+			
+			msg = "Acount ID Number " + accountid + " is successfully deleted!";
+		}
+		else {
+			msg = "Account ID Number " + accountid + " is NOT found!";
+		}
+		return msg;
 	}
 }
