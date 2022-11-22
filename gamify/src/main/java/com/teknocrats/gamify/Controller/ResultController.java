@@ -23,11 +23,6 @@ public class ResultController {
 	@Autowired
 	ResultService resultserv;
 	
-	@GetMapping("/print")
-	public String printHelloStudent() {
-		return "Hello, Student!";
-	}
-	
 	// Create or insert a student result record
 	@PostMapping("/postResult")
 	public ResultEntity insertResult(@RequestBody ResultEntity result) {
@@ -41,9 +36,9 @@ public class ResultController {
 	}
 	
 	// Read a record by assessment name
-	@GetMapping("/getByAssessmentname")
-	public ResultEntity findByAssessmentname(@RequestParam String assessmentname) {
-		return resultserv.findByAssessmentname(assessmentname);
+	@GetMapping("/getByResultid")
+	public ResultEntity findByResultid(@RequestParam int resultid) {
+		return resultserv.findByResultid(resultid);
 	}
 	
 	// Update a record
@@ -53,7 +48,7 @@ public class ResultController {
 	}
 	
 	// Delete a record
-	@DeleteMapping("/deleteResult/{id}")
+	@DeleteMapping("/deleteResult/{resultid}")
 	public String deleteResult(@PathVariable int resultid) {
 		return resultserv.deleteResult(resultid);
 	}
