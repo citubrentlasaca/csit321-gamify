@@ -41,4 +41,11 @@ public class AssessmentController {
     public AssessmentEntity findByTitle(@RequestParam String title) throws Exception{
     	return assessmentService.findByTitle(title);
     }
+    
+    //Update an assessment record
+    @PutMapping("/putAssessment")
+    public AssessmentEntity putAssessment(@RequestParam int assessmentid, 
+    		@RequestBody AssessmentEntity newAssessmentDetails) throws Exception{
+    	return assessmentService.putAssessment(assessmentid, newAssessmentDetails);
+    }
 }
