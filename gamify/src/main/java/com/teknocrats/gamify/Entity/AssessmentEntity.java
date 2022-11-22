@@ -18,5 +18,15 @@ public class AssessmentEntity {
 		private String instructions;
 		private String description;
 		private String isdeleted;
-	
+		
+		public AssessmentEntity () {}
+
+		public AssessmentEntity(int assessmentid, String title, String instructions, String description, String isdeleted) {
+			super();
+			this.assessmentid = assessmentid;
+			this.title = title;
+			this.instructions = instructions;
+			this.description = description;
+			this.isdeleted = isdeleted;
+		}
 }
