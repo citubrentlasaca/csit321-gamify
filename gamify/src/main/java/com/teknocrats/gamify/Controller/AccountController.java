@@ -38,7 +38,7 @@ public class AccountController {
 	//Read a record by Username
 	@GetMapping("getByUsername")
 		public AccountEntity findByUsername(@RequestParam String username) {
-			return acctserv.FindByUserName(username);
+			return acctserv.findByUsername(username);
 	}
 	
 	//Update a record
