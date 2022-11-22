@@ -2,6 +2,7 @@ package com.teknocrats.gamify.Entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,6 +13,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
@@ -21,8 +24,9 @@ public class StudentEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int studentid;
-
-	private NameEntity name;
+	
+	private String firstname;
+	private String lastname;
 	private String gender;
 	
 	@Temporal(TemporalType.DATE)
@@ -37,11 +41,13 @@ public class StudentEntity {
 	@JoinColumn(name = "accountid")
 	private AccountEntity account;
 
-	public StudentEntity(int studentid, NameEntity name, String gender, Date birthday, String program, int yearlevel,
-			String isdeleted, AccountEntity account) {
+
+	public StudentEntity(int studentid, String firstname, String lastname, String gender, Date birthday, String program,
+			int yearlevel, String isdeleted, AccountEntity account) {
 		super();
 		this.studentid = studentid;
-		this.name = name;
+		this.firstname = firstname;
+		this.lastname = lastname;
 		this.gender = gender;
 		this.birthday = birthday;
 		this.program = program;
@@ -50,65 +56,91 @@ public class StudentEntity {
 		this.account = account;
 	}
 
+
 	public int getStudentid() {
 		return studentid;
 	}
+
 
 	public void setStudentid(int studentid) {
 		this.studentid = studentid;
 	}
 
-	public NameEntity getName() {
-		return name;
+
+	public String getFirstname() {
+		return firstname;
 	}
 
-	public void setName(NameEntity name) {
-		this.name = name;
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
+
+
+	public String getLastname() {
+		return lastname;
+	}
+
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
 
 	public String getGender() {
 		return gender;
 	}
 
+
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+
 
 	public Date getBirthday() {
 		return birthday;
 	}
 
+
 	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}
+
 
 	public String getProgram() {
 		return program;
 	}
 
+
 	public void setProgram(String program) {
 		this.program = program;
 	}
+
 
 	public int getYearlevel() {
 		return yearlevel;
 	}
 
+
 	public void setYearlevel(int yearlevel) {
 		this.yearlevel = yearlevel;
 	}
+
 
 	public String getIsdeleted() {
 		return isdeleted;
 	}
 
+
 	public void setIsdeleted(String isdeleted) {
 		this.isdeleted = isdeleted;
 	}
 
+
 	public AccountEntity getAccount() {
 		return account;
 	}
+
 
 	public void setAccount(AccountEntity account) {
 		this.account = account;
