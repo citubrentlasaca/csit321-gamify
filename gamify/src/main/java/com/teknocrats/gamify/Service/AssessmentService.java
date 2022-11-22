@@ -31,4 +31,12 @@ public class AssessmentService {
 		public List<AssessmentEntity> getAllAssessments(){
 			return assessmentRepository.findAll();
 		}
+		
+		//Read or search an assessment record by title
+		public AssessmentEntity findByTitle(String title) {
+			if(assessmentRepository.findByTitle(title) != null)
+				return assessmentRepository.findByTitle(title);
+			else 
+				return null;
+		}
 }
