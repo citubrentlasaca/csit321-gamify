@@ -41,9 +41,9 @@ public class ResultController {
 	}
 	
 	// Read a record by assessment name
-	@GetMapping("/getByAssessmentname")
-	public ResultEntity findByAssessmentname(@RequestParam String assessmentname) {
-		return resultserv.findByAssessmentname(assessmentname);
+	@GetMapping("/getByResultid")
+	public ResultEntity findByResultid(@RequestParam int resultid) {
+		return resultserv.findByResultid(resultid);
 	}
 	
 	// Update a record

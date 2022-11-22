@@ -24,10 +24,10 @@ public class ResultService {
 		return resultrepo.findAll();
 	}
 
-	// R - Read or search result record by assessmentname
-	public ResultEntity findByAssessmentname(String assessmentname) {
-		if (resultrepo.findByAssessmentname(assessmentname) != null)
-			return resultrepo.findByAssessmentname(assessmentname);
+	// R - Read or search result record by id
+	public ResultEntity findByResultid(int resultid) {
+		if (resultrepo.findByResultid(resultid) != null)
+			return resultrepo.findByResultid(resultid);
 		else
 			return null;
 	}
