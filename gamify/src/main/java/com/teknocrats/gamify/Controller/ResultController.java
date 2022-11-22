@@ -23,11 +23,6 @@ public class ResultController {
 	@Autowired
 	ResultService resultserv;
 	
-	@GetMapping("/print")
-	public String printHelloStudent() {
-		return "Hello, Student!";
-	}
-	
 	// Create or insert a student result record
 	@PostMapping("/postResult")
 	public ResultEntity insertResult(@RequestBody ResultEntity result) {
