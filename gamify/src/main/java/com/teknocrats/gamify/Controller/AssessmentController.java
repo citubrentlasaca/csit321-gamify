@@ -48,4 +48,10 @@ public class AssessmentController {
     		@RequestBody AssessmentEntity newAssessmentDetails) throws Exception{
     	return assessmentService.putAssessment(assessmentid, newAssessmentDetails);
     }
+    
+    //Delete an assessment record
+    @DeleteMapping("/deleteAssessment/{assessmentid}")
+    public String deleteAssessment(@PathVariable int assessmentid) {
+    	return assessmentService.deleteAssessment(assessmentid);
+    }
 }
