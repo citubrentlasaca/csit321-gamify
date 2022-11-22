@@ -1,6 +1,7 @@
 package com.teknocrats.gamify.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,5 +28,23 @@ public class AccountService {
 			return accountRepository.findByUsername(username);
 		else
 			return null;
+	}
+	
+public AccountEntity putAccount(int accountid, AccountEntity newAccountDetails) throws Exception{
+		
+	AccountEntity account = new AccountEntity();
+		
+		try {
+			account = accountRepository.findById(accountid).get();
+
+			account.setUsername(newAccountDetails.getUsername());
+			account.setPassword(newAccountDetails.getPassword());
+			account.setEmail(newAccountDetails.getEmail());
+			
+			return accountRepository.save(account);
+			
+		}catch(NoSuchElementException nex) {
+			throw new Exception ("ID Number " + accountid + "does not exist!");
+		}
 	}
 }
