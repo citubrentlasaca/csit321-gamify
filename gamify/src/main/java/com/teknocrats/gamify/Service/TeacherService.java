@@ -12,24 +12,24 @@ import com.teknocrats.gamify.Repository.TeacherRepository;
 @Service 
 public class TeacherService {
 	@Autowired
-	TeacherRepository trepo; 
+	TeacherRepository teacherRepository; 
 	
 	//C - Create or insert a record 
 	public TeacherEntity insertTeacher(TeacherEntity teacher) {
-		return trepo.save(teacher);
+		return teacherRepository.save(teacher);
 	}
 	
 	//R - Read all records from tbl_teacher
 	public List<TeacherEntity> getAllTeachers(){
-		return trepo.findAll();
+		return teacherRepository.findAll();
 	}		
 	
 	//D - Delete teacher record
 	public String deleteTeacher (int id) {
 		String msg;
 		
-		if (trepo.findById(id) != null) {
-			trepo.deleteById(id);
+		if (teacherRepository.findById(id) != null) {
+			teacherRepository.deleteById(id);
 				
 			msg = "Teacher ID Number " + id + " is successfully deleted!";
 		}
