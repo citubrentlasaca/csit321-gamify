@@ -24,8 +24,8 @@ public class ItemService {
 	}
 	
 	public ItemEntity findByItemId(int itemid) {
-		if(itemRepository.findByItemId(itemid) != null) {
-			return itemRepository.findByItemId(itemid);
+		if(itemRepository.findByItemid(itemid) != null) {
+			return itemRepository.findByItemid(itemid);
 		}
 		else {
 			return null;

@@ -7,5 +7,5 @@ import com.teknocrats.gamify.Entity.ItemEntity;
 
 @Repository
 public interface ItemRepository extends JpaRepository<ItemEntity, Integer>{
-	ItemEntity findByItemId(int itemid);
+	ItemEntity findByItemid(int itemid);
 }
