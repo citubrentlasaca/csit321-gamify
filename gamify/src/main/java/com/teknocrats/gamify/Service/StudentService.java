@@ -1,6 +1,7 @@
 package com.teknocrats.gamify.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,24 @@ public class StudentService {
 		return studentRepository.findAll();
 	}
 	
+	public StudentEntity putStudent(int studentid, StudentEntity newStudentDetails) throws Exception{
+		
+		StudentEntity student = new StudentEntity();
+		
+		try {
+			student = studentRepository.findById(studentid).get();
+			
+			student.setBirthday(newStudentDetails.getBirthday());
+			student.setProgram(newStudentDetails.getProgram());
+			student.setYearlevel(newStudentDetails.getYearlevel());
+			
+			return studentRepository.save(student);
+			
+		}catch(NoSuchElementException nex) {
+			throw new Exception ("Student ID Number " + studentid + "does not exist!");
+		}
+	}
+
 	public String deleteStudent(int id) {
 		String msg;
 		
