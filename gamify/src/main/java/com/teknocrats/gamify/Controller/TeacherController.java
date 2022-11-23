@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.spcahutay.sims.Entity.StudentEntity;
 import com.teknocrats.gamify.Entity.TeacherEntity;
 import com.teknocrats.gamify.Service.TeacherService;
 
@@ -38,12 +37,12 @@ public class TeacherController {
 	
 	
 	@PutMapping("/putTeacher")
-	public TeacherEntity putTeacher(@RequestParam int id, @RequestBody TeacherEntity newTeacherDetails) throws Exception {
-		return tserv.putTeacher(id, newTeacherDetails);
+	public TeacherEntity putTeacher(@RequestParam int teacherid, @RequestBody TeacherEntity newTeacherDetails) throws Exception {
+		return tserv.putTeacher(teacherid, newTeacherDetails);
 		}
 	
-	@DeleteMapping("/deleteTeacher/{id}")
-	public String deleteTeacher (@PathVariable int id) {
-		return tserv.deleteTeacher(id);
+	@DeleteMapping("/deleteTeacher/{teacherid}")
+	public String deleteTeacher (@PathVariable int teacherid) {
+		return tserv.deleteTeacher(teacherid);
 	}
 }
