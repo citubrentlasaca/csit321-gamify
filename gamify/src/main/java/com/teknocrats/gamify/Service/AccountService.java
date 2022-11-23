@@ -53,7 +53,7 @@ public class AccountService {
 		if (accountRepository.findById(accountid) != null) {
 			accountRepository.deleteById(accountid);
 			
-			msg = "Acount ID Number " + accountid + " is successfully deleted!";
+			msg = "Account ID Number " + accountid + " is successfully deleted!";
 		}
 		else {
 			msg = "Account ID Number " + accountid + " is NOT found!";
