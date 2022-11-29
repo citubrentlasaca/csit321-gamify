@@ -1,6 +1,6 @@
 package com.teknocrats.gamify.Entity;
 
-import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -8,10 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
@@ -37,11 +36,14 @@ public class StudentEntity {
 	@OneToOne(cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "accountid")
 	private AccountEntity account;
-
-	public StudentEntity() {}
 	
-	public StudentEntity(int studentid, String firstname, String lastname, String gender, String birthday, String program,
-			int yearlevel, boolean isdeleted, AccountEntity account) {
+	@OneToMany(cascade = CascadeType.MERGE)
+    private Set<ResultEntity> result;
+	
+	public StudentEntity() {}
+
+	public StudentEntity(int studentid, String firstname, String lastname, String gender, String birthday,
+			String program, int yearlevel, boolean isdeleted, AccountEntity account, Set<ResultEntity> result) {
 		super();
 		this.studentid = studentid;
 		this.firstname = firstname;
@@ -52,95 +54,86 @@ public class StudentEntity {
 		this.yearlevel = yearlevel;
 		this.isdeleted = isdeleted;
 		this.account = account;
+		this.result = result;
 	}
-
 
 	public int getStudentid() {
 		return studentid;
 	}
 
-
 	public void setStudentid(int studentid) {
 		this.studentid = studentid;
 	}
-
 
 	public String getFirstname() {
 		return firstname;
 	}
 
-
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
-
 
 	public String getLastname() {
 		return lastname;
 	}
 
-
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
-
 
 	public String getGender() {
 		return gender;
 	}
 
-
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-
 
 	public String getBirthday() {
 		return birthday;
 	}
 
-
 	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
-
 
 	public String getProgram() {
 		return program;
 	}
 
-
 	public void setProgram(String program) {
 		this.program = program;
 	}
-
 
 	public int getYearlevel() {
 		return yearlevel;
 	}
 
-
 	public void setYearlevel(int yearlevel) {
 		this.yearlevel = yearlevel;
 	}
 
-
-	public boolean getIsdeleted() {
+	public boolean isIsdeleted() {
 		return isdeleted;
 	}
-
 
 	public void setIsdeleted(boolean isdeleted) {
 		this.isdeleted = isdeleted;
 	}
 
-
 	public AccountEntity getAccount() {
 		return account;
 	}
 
-
 	public void setAccount(AccountEntity account) {
 		this.account = account;
+	}
+
+	public Set<ResultEntity> getResult() {
+		return result;
+	}
+
+	public void setResult(Set<ResultEntity> result) {
+		this.result = result;
 	}
 }
