@@ -17,7 +17,7 @@ public class AccountEntity {
 	private String username;
 	private String email;
 	private String password;
-	private String isdeactivated = "Active";
+	private String isdeactivated = "No";
 	
 	public AccountEntity() {}
 	public AccountEntity(int accountid, String username, String email, String password, String isdeactivated) {
