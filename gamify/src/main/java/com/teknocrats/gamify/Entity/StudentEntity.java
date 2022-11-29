@@ -13,10 +13,13 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 @Entity
 @Table(name = "tbl_student")
+@SQLDelete(sql = "UPDATE tbl_student SET isdeleted = true WHERE studentid=?")
+@Where(clause = "isdeleted = false")
 public class StudentEntity {
 	
 	@Id
@@ -26,23 +29,19 @@ public class StudentEntity {
 	private String firstname;
 	private String lastname;
 	private String gender;
-	
-	@Temporal(TemporalType.DATE)
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy")
-	private Date birthday;
-	
+	private String birthday;
 	private String program;
 	private int yearlevel;
-	private String isdeleted = "No";
+	private boolean isdeleted = Boolean.FALSE;
 	
-	@OneToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+	@OneToOne(cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "accountid")
 	private AccountEntity account;
 
 	public StudentEntity() {}
 	
-	public StudentEntity(int studentid, String firstname, String lastname, String gender, Date birthday, String program,
-			int yearlevel, String isdeleted, AccountEntity account) {
+	public StudentEntity(int studentid, String firstname, String lastname, String gender, String birthday, String program,
+			int yearlevel, boolean isdeleted, AccountEntity account) {
 		super();
 		this.studentid = studentid;
 		this.firstname = firstname;
@@ -96,12 +95,12 @@ public class StudentEntity {
 	}
 
 
-	public Date getBirthday() {
+	public String getBirthday() {
 		return birthday;
 	}
 
 
-	public void setBirthday(Date birthday) {
+	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
 
@@ -126,12 +125,12 @@ public class StudentEntity {
 	}
 
 
-	public String getIsdeleted() {
+	public boolean getIsdeleted() {
 		return isdeleted;
 	}
 
 
-	public void setIsdeleted(String isdeleted) {
+	public void setIsdeleted(boolean isdeleted) {
 		this.isdeleted = isdeleted;
 	}
 
