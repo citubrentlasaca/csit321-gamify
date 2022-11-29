@@ -40,7 +40,6 @@ public class ItemService {
 			item.setTimer(newItemDetails.getTimer());
 			item.setQuestion(newItemDetails.getQuestion());
 			item.setAnswer(newItemDetails.getAnswer());
-			item.setIsdeleted(newItemDetails.getIsdeleted());
 			
 			return itemRepository.save(item);
 		}
