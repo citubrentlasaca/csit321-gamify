@@ -1,6 +1,5 @@
 package com.teknocrats.gamify.Entity;
 
-import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -29,11 +28,7 @@ public class TeacherEntity {
 	private String firstname;
 	private String lastname;
 	private String gender;
-	
-	@Temporal(TemporalType.DATE)
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy")
-	private Date birthday;
-	
+	private String birthday;
 	private String subjectnumber;
 	private String descriptivetitle;
 	private String isdeleted = "No";
@@ -49,7 +44,7 @@ public class TeacherEntity {
 	
 	public TeacherEntity () {}
 
-	public TeacherEntity(int teacherid, String firstname, String lastname, String gender, Date birthday,
+	public TeacherEntity(int teacherid, String firstname, String lastname, String gender, String birthday,
 			String subjectnumber, String descriptivetitle, String isdeleted, AccountEntity account,
 			Set<AssessmentEntity> assessment) {
 		super();
@@ -64,6 +59,8 @@ public class TeacherEntity {
 		this.account = account;
 		this.assessment = assessment;
 	}
+
+
 
 	public int getTeacherid() {
 		return teacherid;
@@ -97,11 +94,11 @@ public class TeacherEntity {
 		this.gender = gender;
 	}
 
-	public Date getBirthday() {
+	public String getBirthday() {
 		return birthday;
 	}
 
-	public void setBirthday(Date birthday) {
+	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
 
