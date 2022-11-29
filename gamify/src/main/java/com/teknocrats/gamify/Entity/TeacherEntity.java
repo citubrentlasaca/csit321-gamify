@@ -11,11 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "tbl_teacher")
@@ -41,7 +36,6 @@ public class TeacherEntity {
     private Set<AssessmentEntity> assessment;
 	
 	
-	
 	public TeacherEntity () {}
 
 	public TeacherEntity(int teacherid, String firstname, String lastname, String gender, String birthday,
@@ -59,7 +53,6 @@ public class TeacherEntity {
 		this.account = account;
 		this.assessment = assessment;
 	}
-
 
 
 	public int getTeacherid() {
@@ -141,6 +134,5 @@ public class TeacherEntity {
 	public void setAssessment(Set<AssessmentEntity> assessment) {
 		this.assessment = assessment;
 	}
-
 
 }
