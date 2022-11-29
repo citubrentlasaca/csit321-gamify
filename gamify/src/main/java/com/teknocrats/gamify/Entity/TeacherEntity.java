@@ -1,6 +1,7 @@
 package com.teknocrats.gamify.Entity;
 
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -8,10 +9,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -39,10 +42,16 @@ public class TeacherEntity {
 	@JoinColumn(name = "accountid")
 	private AccountEntity account;
 	
+	@OneToMany(cascade = CascadeType.MERGE)
+    private Set<AssessmentEntity> assessment;
+	
+	
+	
 	public TeacherEntity () {}
 
 	public TeacherEntity(int teacherid, String firstname, String lastname, String gender, Date birthday,
-			String subjectnumber, String descriptivetitle, String isdeleted, AccountEntity account) {
+			String subjectnumber, String descriptivetitle, String isdeleted, AccountEntity account,
+			Set<AssessmentEntity> assessment) {
 		super();
 		this.teacherid = teacherid;
 		this.firstname = firstname;
@@ -53,6 +62,7 @@ public class TeacherEntity {
 		this.descriptivetitle = descriptivetitle;
 		this.isdeleted = isdeleted;
 		this.account = account;
+		this.assessment = assessment;
 	}
 
 	public int getTeacherid() {
@@ -126,4 +136,14 @@ public class TeacherEntity {
 	public void setAccount(AccountEntity account) {
 		this.account = account;
 	}
+
+	public Set<AssessmentEntity> getAssessment() {
+		return assessment;
+	}
+
+	public void setAssessment(Set<AssessmentEntity> assessment) {
+		this.assessment = assessment;
+	}
+
+
 }
