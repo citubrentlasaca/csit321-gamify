@@ -17,10 +17,10 @@ public class AccountEntity {
 	private String username;
 	private String email;
 	private String password;
-	private String isdeactivated = "No";
+	private boolean isdeactivated = Boolean.FALSE;
 	
 	public AccountEntity() {}
-	public AccountEntity(int accountid, String username, String email, String password, String isdeactivated) {
+	public AccountEntity(int accountid, String username, String email, String password, boolean isdeactivated) {
 		super();
 		this.accountid = accountid;
 		this.username = username;
@@ -56,11 +56,11 @@ public class AccountEntity {
 		this.password = password;
 	}
 	
-	public String getIsdeactivated() {
+	public boolean getIsdeactivated() {
 		return isdeactivated;
 	}
 	
-	public void setIsdeactivated(String isdeactivated) {
+	public void setIsdeactivated(boolean isdeactivated) {
 		this.isdeactivated = isdeactivated;
 	}
 	

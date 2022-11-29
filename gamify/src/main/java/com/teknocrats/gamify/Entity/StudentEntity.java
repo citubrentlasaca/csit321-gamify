@@ -36,7 +36,7 @@ public class StudentEntity {
 	private String birthday;
 	private String program;
 	private int yearlevel;
-	private String isdeleted = "No";
+	private boolean isdeleted = Boolean.FALSE;
 	
 	@OneToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
 	@JoinColumn(name = "accountid")
@@ -45,7 +45,7 @@ public class StudentEntity {
 	public StudentEntity() {}
 	
 	public StudentEntity(int studentid, String firstname, String lastname, String gender, String birthday, String program,
-			int yearlevel, String isdeleted, AccountEntity account) {
+			int yearlevel, boolean isdeleted, AccountEntity account) {
 		super();
 		this.studentid = studentid;
 		this.firstname = firstname;
@@ -129,12 +129,12 @@ public class StudentEntity {
 	}
 
 
-	public String getIsdeleted() {
+	public boolean getIsdeleted() {
 		return isdeleted;
 	}
 
 
-	public void setIsdeleted(String isdeleted) {
+	public void setIsdeleted(boolean isdeleted) {
 		this.isdeleted = isdeleted;
 	}
 
