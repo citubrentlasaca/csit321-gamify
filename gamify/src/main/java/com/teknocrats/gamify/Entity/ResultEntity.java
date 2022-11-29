@@ -16,7 +16,6 @@ public class ResultEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int resultid;
-	private String assessmentname;
 	private int studentscore;
 	private int perfectscore;
 	private int attempt;
@@ -27,10 +26,9 @@ public class ResultEntity {
 	
 	public ResultEntity() {}
 
-	public ResultEntity(int resultid, String assessmentname, int studentscore, int perfectscore, int attempt, AssessmentEntity assessment) {
+	public ResultEntity(int resultid, int studentscore, int perfectscore, int attempt, AssessmentEntity assessment) {
 		super();
 		this.resultid = resultid;
-		this.assessmentname = assessmentname;
 		this.studentscore = studentscore;
 		this.perfectscore = perfectscore;
 		this.attempt = attempt;
@@ -43,14 +41,6 @@ public class ResultEntity {
 
 	public void setResultid(int resultid) {
 		this.resultid = resultid;
-	}
-
-	public String getAssessmentname() {
-		return assessmentname;
-	}
-
-	public void setAssessmentname(String assessmentname) {
-		this.assessmentname = assessmentname;
 	}
 
 	public int getStudentscore() {
