@@ -52,7 +52,6 @@ public class AssessmentService {
 				assessment.setTitle(newAssessmentDetails.getTitle());
 				assessment.setInstructions(newAssessmentDetails.getInstructions());
 				assessment.setDescription(newAssessmentDetails.getDescription());
-				assessment.setIsdeleted(newAssessmentDetails.getIsdeleted());
 						
 				//Step 3 - save the info and return its corresponding value 
 				return assessmentRepository.save(assessment);
