@@ -16,14 +16,10 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 @Entity
 @Table(name = "tbl_student")
-@SQLDelete(sql = "UPDATE tbl_student SET isdeleted = 'Yes' WHERE studentid=?"
-				+ "UPDATE db_teknocrats_gamify.tbl_account SET isdeactivated = 'Yes'"
-				+ "WHERE accountid = (SELECT accountid FROM tbl_student WHERE studentid = ?)")
-@Where(clause = "isdeleted='No'")
+@SQLDelete(sql = "UPDATE tbl_student SET isdeleted = true WHERE studentid=?")
+@Where(clause = "isdeleted = false")
 public class StudentEntity {
 	
 	@Id
@@ -38,7 +34,7 @@ public class StudentEntity {
 	private int yearlevel;
 	private boolean isdeleted = Boolean.FALSE;
 	
-	@OneToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+	@OneToOne(cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "accountid")
 	private AccountEntity account;
 
