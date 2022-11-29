@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+import com.teknocrats.gamify.Entity.ItemEntity;
 import com.teknocrats.gamify.Entity.TeacherEntity;
 import com.teknocrats.gamify.Repository.TeacherRepository;
 
@@ -24,6 +24,15 @@ public class TeacherService {
 	//R - Read all records from tbl_teacher
 	public List<TeacherEntity> getAllTeachers(){
 		return teacherRepository.findAll();
+	}
+	
+	public TeacherEntity findByTeacherid(int teacherid) {
+		if(teacherRepository.findByTeacherid(teacherid) != null) {
+			return teacherRepository.findByTeacherid(teacherid);
+		}
+		else {
+			return null;
+		}
 	}
 	
 	//U - Update a record

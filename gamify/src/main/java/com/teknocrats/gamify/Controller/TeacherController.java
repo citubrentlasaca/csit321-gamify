@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.teknocrats.gamify.Entity.ItemEntity;
+import com.teknocrats.gamify.Entity.ResultEntity;
 import com.teknocrats.gamify.Entity.TeacherEntity;
 import com.teknocrats.gamify.Service.TeacherService;
 
@@ -33,6 +35,12 @@ public class TeacherController {
 	@GetMapping("/getAllTeachers")
 	public List<TeacherEntity> getAllTeachers(){
 		return tserv.getAllTeachers();
+	}
+	
+	
+	@GetMapping("/getByTeacherid")
+	public TeacherEntity findByTeacherid(@RequestParam int teacherid) {
+		return tserv.findByTeacherid(teacherid);
 	}
 	
 	
