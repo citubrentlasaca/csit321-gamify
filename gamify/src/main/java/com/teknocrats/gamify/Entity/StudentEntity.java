@@ -13,10 +13,17 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "tbl_student")
+@SQLDelete(sql = "UPDATE tbl_student SET isdeleted = 'Yes' WHERE studentid=?"
+				+ "UPDATE db_teknocrats_gamify.tbl_account SET isdeactivated = 'Yes'"
+				+ "WHERE accountid = (SELECT accountid FROM tbl_student WHERE studentid = ?)")
+@Where(clause = "isdeleted='No'")
 public class StudentEntity {
 	
 	@Id
@@ -26,11 +33,7 @@ public class StudentEntity {
 	private String firstname;
 	private String lastname;
 	private String gender;
-	
-	@Temporal(TemporalType.DATE)
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy")
-	private Date birthday;
-	
+	private String birthday;
 	private String program;
 	private int yearlevel;
 	private String isdeleted = "No";
@@ -41,7 +44,7 @@ public class StudentEntity {
 
 	public StudentEntity() {}
 	
-	public StudentEntity(int studentid, String firstname, String lastname, String gender, Date birthday, String program,
+	public StudentEntity(int studentid, String firstname, String lastname, String gender, String birthday, String program,
 			int yearlevel, String isdeleted, AccountEntity account) {
 		super();
 		this.studentid = studentid;
@@ -96,12 +99,12 @@ public class StudentEntity {
 	}
 
 
-	public Date getBirthday() {
+	public String getBirthday() {
 		return birthday;
 	}
 
 
-	public void setBirthday(Date birthday) {
+	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
 
