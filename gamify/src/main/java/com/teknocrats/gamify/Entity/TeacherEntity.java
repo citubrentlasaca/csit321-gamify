@@ -12,9 +12,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+
 @Entity
 @Table(name = "tbl_teacher")
-
+@SQLDelete(sql = "UPDATE tbl_teacher SET isdeleted = true WHERE teacherid=?")
+@Where(clause = "isdeleted = false")
 public class TeacherEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
