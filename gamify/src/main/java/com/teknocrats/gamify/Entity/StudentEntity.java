@@ -2,7 +2,7 @@ package com.teknocrats.gamify.Entity;
 
 import java.util.Date;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -37,7 +37,7 @@ public class StudentEntity {
 	private int yearlevel;
 	private String isdeleted = "No";
 	
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
 	@JoinColumn(name = "accountid")
 	private AccountEntity account;
 
