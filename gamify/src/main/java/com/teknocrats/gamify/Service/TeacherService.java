@@ -27,13 +27,13 @@ public class TeacherService {
 	}
 	
 	//U - Update a record
-	public TeacherEntity putTeacher(int id, TeacherEntity newStudentDetails) throws Exception{
+	public TeacherEntity putTeacher(int teacherid, TeacherEntity newStudentDetails) throws Exception{
 		TeacherEntity teacher = new TeacherEntity();
 		
 		try {
 			//steps in updating
 			//Step 1 - search the id number of the Teacher
-			teacher = teacherRepository.findById(id).get();
+			teacher = teacherRepository.findById(teacherid).get();
 			
 			//Step 2 - update the record
 			teacher.setSubjectnumber(newStudentDetails.getSubjectnumber());
@@ -42,7 +42,7 @@ public class TeacherService {
 			//Step 3 - save the information and return the value
 			return teacherRepository.save(teacher);
 		}catch(NoSuchElementException ex) {
-			throw new Exception("ID Number " + id + " does not exist!");
+			throw new Exception("ID Number " + teacherid + " does not exist!");
 		}
 	}
 	
