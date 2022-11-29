@@ -19,6 +19,7 @@ public class ResultEntity {
 	private int studentscore;
 	private int perfectscore;
 	private int attempt;
+	private boolean isdeleted = Boolean.FALSE;
 	
 	@OneToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
 	@JoinColumn(name = "studentid")
@@ -30,12 +31,13 @@ public class ResultEntity {
 	
 	public ResultEntity() {}
 
-	public ResultEntity(int resultid, int studentscore, int perfectscore, int attempt, StudentEntity student, AssessmentEntity assessment) {
+	public ResultEntity(int resultid, int studentscore, int perfectscore, int attempt, boolean isdeleted, StudentEntity student, AssessmentEntity assessment) {
 		super();
 		this.resultid = resultid;
 		this.studentscore = studentscore;
 		this.perfectscore = perfectscore;
 		this.attempt = attempt;
+		this.isdeleted = isdeleted;
 		this.student = student;
 		this.assessment = assessment;
 	}
@@ -70,6 +72,14 @@ public class ResultEntity {
 
 	public void setAttempt(int attempt) {
 		this.attempt = attempt;
+	}
+	
+	public boolean getIsDeleted() {
+		return isdeleted;
+	}
+
+	public void setIsDeleted(boolean isdeleted) {
+		this.isdeleted = isdeleted;
 	}
 	
 	public StudentEntity getStudent() {
