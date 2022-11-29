@@ -4,10 +4,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 @Entity
 @Table(name = "tbl_item")
+@SQLDelete(sql = "UPDATE tbl_item SET isdeleted = true WHERE itemid=?")
+@Where(clause = "isdeleted = false")
 public class ItemEntity {
 	
 	@Id
@@ -17,10 +24,15 @@ public class ItemEntity {
 	private int timer;
 	private String question;
 	private String answer;
-	private String isdeleted;
+	private Boolean isdeleted = Boolean.FALSE;
+	
+	@ManyToOne
+	@JoinColumn(name = "assessmentid")
+	AssessmentEntity assessment;
 	
 	public ItemEntity() {}
-	public ItemEntity(int itemid, String questiontype, int timer, String question, String answer, String isdeleted) {
+	public ItemEntity(int itemid, String questiontype, int timer, String question, String answer, boolean isdeleted,
+			AssessmentEntity assessment) {
 		super();
 		this.itemid = itemid;
 		this.questiontype = questiontype;
@@ -28,6 +40,7 @@ public class ItemEntity {
 		this.question = question;
 		this.answer = answer;
 		this.isdeleted = isdeleted;
+		this.assessment = assessment;
 	}
 	
 	public int getItemid() {
@@ -60,10 +73,16 @@ public class ItemEntity {
 	public void setAnswer(String answer) {
 		this.answer = answer;
 	}
-	public String getIsdeleted() {
+	public boolean getIsdeleted() {
 		return isdeleted;
 	}
-	public void setIsdeleted(String isdeleted) {
+	public void setIsdeleted(boolean isdeleted) {
 		this.isdeleted = isdeleted;
+	}
+	public AssessmentEntity getAssessment() {
+		return assessment;
+	}
+	public void setAssessment(AssessmentEntity assessment) {
+		this.assessment = assessment;
 	}
 }
