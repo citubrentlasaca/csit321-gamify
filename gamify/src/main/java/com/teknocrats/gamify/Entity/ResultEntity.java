@@ -9,9 +9,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+
 
 @Entity 
 @Table(name = "tbl_result")
+@SQLDelete(sql = "UPDATE tbl_result SET isdeleted = true WHERE resultid=?")
+@Where(clause = "isdeleted = false")
 public class ResultEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,11 +26,11 @@ public class ResultEntity {
 	private int attempt;
 	private boolean isdeleted = Boolean.FALSE;
 	
-	@OneToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+	@OneToOne(cascade = {CascadeType.MERGE})
 	@JoinColumn(name = "studentid")
 	private StudentEntity student;
 	
-	@OneToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+	@OneToOne(cascade = {CascadeType.MERGE})
 	@JoinColumn(name = "assessmentid")
 	private AssessmentEntity assessment;
 	
