@@ -21,17 +21,22 @@ public class ResultEntity {
 	private int attempt;
 	
 	@OneToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+	@JoinColumn(name = "studentid")
+	private StudentEntity student;
+	
+	@OneToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
 	@JoinColumn(name = "assessmentid")
 	private AssessmentEntity assessment;
 	
 	public ResultEntity() {}
 
-	public ResultEntity(int resultid, int studentscore, int perfectscore, int attempt, AssessmentEntity assessment) {
+	public ResultEntity(int resultid, int studentscore, int perfectscore, int attempt, StudentEntity student, AssessmentEntity assessment) {
 		super();
 		this.resultid = resultid;
 		this.studentscore = studentscore;
 		this.perfectscore = perfectscore;
 		this.attempt = attempt;
+		this.student = student;
 		this.assessment = assessment;
 	}
 
@@ -65,6 +70,14 @@ public class ResultEntity {
 
 	public void setAttempt(int attempt) {
 		this.attempt = attempt;
+	}
+	
+	public StudentEntity getStudent() {
+		return student;
+	}
+
+	public void setStudent(StudentEntity student) {
+		this.student = student;
 	}
 	
 	public AssessmentEntity getAssessment() {
