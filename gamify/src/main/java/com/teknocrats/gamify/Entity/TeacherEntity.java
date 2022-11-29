@@ -2,6 +2,7 @@ package com.teknocrats.gamify.Entity;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,7 +21,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 public class TeacherEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
 	private int teacherid;
 	
 	private String firstname;
@@ -33,9 +33,9 @@ public class TeacherEntity {
 	
 	private String subjectnumber;
 	private String descriptivetitle;
-	private String isdeleted;
+	private String isdeleted = "No";
 	
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
 	@JoinColumn(name = "accountid")
 	private AccountEntity account;
 	
