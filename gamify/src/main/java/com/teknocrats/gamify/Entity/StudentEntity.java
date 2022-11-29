@@ -2,7 +2,7 @@ package com.teknocrats.gamify.Entity;
 
 import java.util.Date;
 
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,8 +12,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -35,9 +33,9 @@ public class StudentEntity {
 	
 	private String program;
 	private int yearlevel;
-	private String isdeleted;
+	private String isdeleted = "No";
 	
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
 	@JoinColumn(name = "accountid")
 	private AccountEntity account;
 
