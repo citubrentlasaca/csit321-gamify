@@ -35,7 +35,7 @@ public class StudentEntity {
 	
 	private String program;
 	private int yearlevel;
-	private String isdeleted;
+	private String isdeleted = "No";
 	
 	@OneToOne
 	@JoinColumn(name = "accountid")
