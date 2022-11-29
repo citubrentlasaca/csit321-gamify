@@ -26,9 +26,9 @@ public class TeacherEntity {
 	private String birthday;
 	private String subjectnumber;
 	private String descriptivetitle;
-	private String isdeleted = "No";
+	private boolean isdeleted = Boolean.FALSE;
 	
-	@OneToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+	@OneToOne(cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "accountid")
 	private AccountEntity account;
 	
@@ -38,8 +38,9 @@ public class TeacherEntity {
 	
 	public TeacherEntity () {}
 
+
 	public TeacherEntity(int teacherid, String firstname, String lastname, String gender, String birthday,
-			String subjectnumber, String descriptivetitle, String isdeleted, AccountEntity account,
+			String subjectnumber, String descriptivetitle, boolean isdeleted, AccountEntity account,
 			Set<AssessmentEntity> assessment) {
 		super();
 		this.teacherid = teacherid;
@@ -59,80 +60,100 @@ public class TeacherEntity {
 		return teacherid;
 	}
 
+
 	public void setTeacherid(int teacherid) {
 		this.teacherid = teacherid;
 	}
+
 
 	public String getFirstname() {
 		return firstname;
 	}
 
+
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
+
 
 	public String getLastname() {
 		return lastname;
 	}
 
+
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
+
 
 	public String getGender() {
 		return gender;
 	}
 
+
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+
 
 	public String getBirthday() {
 		return birthday;
 	}
 
+
 	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
+
 
 	public String getSubjectnumber() {
 		return subjectnumber;
 	}
 
+
 	public void setSubjectnumber(String subjectnumber) {
 		this.subjectnumber = subjectnumber;
 	}
+
 
 	public String getDescriptivetitle() {
 		return descriptivetitle;
 	}
 
+
 	public void setDescriptivetitle(String descriptivetitle) {
 		this.descriptivetitle = descriptivetitle;
 	}
 
-	public String getIsdeleted() {
+
+	public boolean isIsdeleted() {
 		return isdeleted;
 	}
 
-	public void setIsdeleted(String isdeleted) {
+
+	public void setIsdeleted(boolean isdeleted) {
 		this.isdeleted = isdeleted;
 	}
+
 
 	public AccountEntity getAccount() {
 		return account;
 	}
 
+
 	public void setAccount(AccountEntity account) {
 		this.account = account;
 	}
+
 
 	public Set<AssessmentEntity> getAssessment() {
 		return assessment;
 	}
 
+
 	public void setAssessment(Set<AssessmentEntity> assessment) {
 		this.assessment = assessment;
 	}
+
 
 }
