@@ -1,9 +1,12 @@
 package com.teknocrats.gamify.Entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -18,15 +21,20 @@ public class ResultEntity {
 	private int perfectscore;
 	private int attempt;
 	
+	@OneToOne(cascade = {CascadeType.MERGE, CascadeType.REMOVE})
+	@JoinColumn(name = "assessmentid")
+	private AssessmentEntity assessment;
+	
 	public ResultEntity() {}
 
-	public ResultEntity(int resultid, String assessmentname, int studentscore, int perfectscore, int attempt) {
+	public ResultEntity(int resultid, String assessmentname, int studentscore, int perfectscore, int attempt, AssessmentEntity assessment) {
 		super();
 		this.resultid = resultid;
 		this.assessmentname = assessmentname;
 		this.studentscore = studentscore;
 		this.perfectscore = perfectscore;
 		this.attempt = attempt;
+		this.assessment = assessment;
 	}
 
 	public int getResultid() {
@@ -67,6 +75,14 @@ public class ResultEntity {
 
 	public void setAttempt(int attempt) {
 		this.attempt = attempt;
+	}
+	
+	public AssessmentEntity getAssessment() {
+		return assessment;
+	}
+
+	public void setAssessment(AssessmentEntity assessment) {
+		this.assessment = assessment;
 	}
 	
 }
