@@ -7,5 +7,5 @@ import com.teknocrats.gamify.Entity.StudentEntity;
 
 @Repository
 public interface StudentRepository extends JpaRepository<StudentEntity, Integer>{
-	StudentEntity findByStudentId(int studentid);
+	StudentEntity findByStudentid(int studentid);
 }

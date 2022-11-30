@@ -23,9 +23,9 @@ public class StudentService {
 		return studentRepository.findAll();
 	}
 	
-	public StudentEntity findByStudentId(int studentid) {
-		if (studentRepository.findByStudentId(studentid)!=null)
-			return studentRepository.findByStudentId(studentid);
+	public StudentEntity findByStudentid(int studentid) {
+		if (studentRepository.findByStudentid(studentid)!=null)
+			return studentRepository.findByStudentid(studentid);
 		else
 			return null;
 	}

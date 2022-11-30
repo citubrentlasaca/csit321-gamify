@@ -34,8 +34,8 @@ public class StudentController {
 	}
 	
 	@GetMapping("/getByStudentId")
-	public StudentEntity findByStudentId(@RequestParam int studentid) {
-		return studentService.findByStudentId(studentid);
+	public StudentEntity findByStudentid(@RequestParam int studentid){
+		return studentService.findByStudentid(studentid);
 	}
 	
 	@PutMapping("/putStudent")
