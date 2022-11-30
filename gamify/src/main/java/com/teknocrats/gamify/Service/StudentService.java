@@ -23,6 +23,14 @@ public class StudentService {
 		return studentRepository.findAll();
 	}
 	
+	public StudentEntity findByStudentId(int studentid) {
+		if (studentRepository.findByStudentId(studentid)!=null)
+			return studentRepository.findByStudentId(studentid);
+		else
+			return null;
+	}
+	
+	
 	public StudentEntity putStudent(int studentid, StudentEntity newStudentDetails) throws Exception{
 		
 		StudentEntity student = new StudentEntity();

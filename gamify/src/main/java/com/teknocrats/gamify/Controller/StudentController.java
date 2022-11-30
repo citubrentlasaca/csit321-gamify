@@ -33,6 +33,11 @@ public class StudentController {
 		return studentService.getAllStudents();
 	}
 	
+	@GetMapping("/getByStudentId")
+	public StudentEntity findByStudentId(@RequestParam int studentid) {
+		return studentService.findByStudentId(studentid);
+	}
+	
 	@PutMapping("/putStudent")
 	public StudentEntity putStudent(@RequestParam int studentid, @RequestBody StudentEntity newStudentDetails) throws Exception{
 		return studentService.putStudent(studentid, newStudentDetails);
