@@ -4,6 +4,7 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -37,7 +38,7 @@ public class StudentEntity {
 	@JoinColumn(name = "accountid")
 	private AccountEntity account;
 	
-	@OneToMany(cascade = CascadeType.MERGE)
+	@OneToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     private Set<ResultEntity> result;
 	
 	public StudentEntity() {}
