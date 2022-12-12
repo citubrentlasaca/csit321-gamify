@@ -1,4 +1,4 @@
-import '../App.css';
+import '../../App.css';
 import {Stack, Button} from "@mui/material";
 import * as React from 'react';
 import Timer from './Timer.js';
