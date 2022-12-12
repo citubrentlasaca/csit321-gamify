@@ -2,7 +2,10 @@ package com.teknocrats.gamify.Controller;
 
 import java.util.List;
 
+import javax.persistence.TypedQuery;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +20,7 @@ import com.teknocrats.gamify.Entity.ItemEntity;
 import com.teknocrats.gamify.Service.ItemService;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/item")
 public class ItemController {
 	@Autowired
@@ -36,6 +40,10 @@ public class ItemController {
     public ItemEntity findByItemId(@RequestParam int itemid) throws Exception{
     	return itemService.findByItemId(itemid);
     }
+	@GetMapping("/getItemId")
+	public int getItemId(@RequestParam String question) {
+	  return itemService.getItemId(question);
+	}
 	
 	@PutMapping("/putItem")
     public ItemEntity putItem(@RequestParam int itemid, @RequestBody ItemEntity newItemDetails) throws Exception{

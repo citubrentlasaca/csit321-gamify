@@ -3,6 +3,9 @@ package com.teknocrats.gamify.Service;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +25,10 @@ public class ItemService {
 	public List<ItemEntity> getAllItems(){
 		return itemRepository.findAll();
 	}
+
+	public int getItemId(String question) {
+		return itemRepository.findItemIdByQuestion(question);
+	}
 	
 	public ItemEntity findByItemId(int itemid) {
 		if(itemRepository.findByItemid(itemid) != null) {
@@ -40,6 +47,9 @@ public class ItemService {
 			item.setTimer(newItemDetails.getTimer());
 			item.setQuestion(newItemDetails.getQuestion());
 			item.setAnswer(newItemDetails.getAnswer());
+			item.setChoiceone(newItemDetails.getChoiceone());
+			item.setChoicetwo(newItemDetails.getChoicetwo());
+			item.setChoicethree(newItemDetails.getChoicethree());
 			
 			return itemRepository.save(item);
 		}
