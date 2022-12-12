@@ -40,9 +40,40 @@ public class ItemController {
     public ItemEntity findByItemId(@RequestParam int itemid) throws Exception{
     	return itemService.findByItemId(itemid);
     }
+	
 	@GetMapping("/getItemId")
 	public int getItemId(@RequestParam String question) {
 	  return itemService.getItemId(question);
+	}
+	
+	@GetMapping("/getTimerByItemid")
+	public int getTimerByItemid(@RequestParam int itemid) {
+	  return itemService.getTimerByItemid(itemid);
+	}
+	
+	@GetMapping("/getQuestionByItemid")
+	public String getQuestionByItemid(@RequestParam int itemid) {
+	  return itemService.getQuestionByItemid(itemid);
+	}
+	
+	@GetMapping("/getAnswerByItemid")
+	public String getAnswerByItemid(@RequestParam int itemid) {
+	  return itemService.getAnswerByItemid(itemid);
+	}
+	
+	@GetMapping("/getChoiceoneByItemid")
+	public String getChoiceoneByItemid(@RequestParam int itemid) {
+	  return itemService.getChoiceoneByItemid(itemid);
+	}
+	
+	@GetMapping("/getChoicetwoByItemid")
+	public String getChoicetwoByItemid(@RequestParam int itemid) {
+	  return itemService.getChoicetwoByItemid(itemid);
+	}
+	
+	@GetMapping("/getChoicethreeByItemid")
+	public String getChoicethreeByItemid(@RequestParam int itemid) {
+	  return itemService.getChoicethreeByItemid(itemid);
 	}
 	
 	@PutMapping("/putItem")

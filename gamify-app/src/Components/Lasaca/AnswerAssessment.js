@@ -13,6 +13,9 @@ const theme = createTheme({
 });
 
 function AnswerAssessment(){
+
+  
+  
   return (
     <Stack direction="column">
         <br/><br/>
@@ -20,7 +23,7 @@ function AnswerAssessment(){
         <Stack alignItems="center" color="white">
             <h1>What is my name?</h1>
         </Stack>
-        <br/><br/><br/><br/><br/>
+        <br/><br/>
         <Stack direction="row" justifyContent="space-evenly">
             <ThemeProvider theme={theme}>
                 <Button variant="contained" size="large" color="primary" 

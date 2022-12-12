@@ -14,4 +14,22 @@ public interface ItemRepository extends JpaRepository<ItemEntity, Integer>{
 	@Query(value = "SELECT itemid FROM tbl_item WHERE question = ?1", nativeQuery = true)
 	int findItemIdByQuestion(String question);
 	
+	@Query(value = "SELECT timer FROM tbl_item WHERE itemid = ?1", nativeQuery = true)
+	int findTimerByItemid(int itemid);
+	
+	@Query(value = "SELECT question FROM tbl_item WHERE itemid = ?1", nativeQuery = true)
+	String findQuestionByItemid(int itemid);
+	
+	@Query(value = "SELECT answer FROM tbl_item WHERE itemid = ?1", nativeQuery = true)
+	String findAnswerByItemid(int itemid);
+	
+	@Query(value = "SELECT choiceone FROM tbl_item WHERE itemid = ?1", nativeQuery = true)
+	String findChoiceoneByItemid(int itemid);
+	
+	@Query(value = "SELECT choicetwo FROM tbl_item WHERE itemid = ?1", nativeQuery = true)
+	String findChoicetwoByItemid(int itemid);
+	
+	@Query(value = "SELECT choicethree FROM tbl_item WHERE itemid = ?1", nativeQuery = true)
+	String findChoicethreeByItemid(int itemid);
+	
 }
