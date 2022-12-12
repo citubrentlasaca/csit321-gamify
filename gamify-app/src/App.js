@@ -7,8 +7,8 @@ import {Stack} from "@mui/material";
 function App() {
   return(
     <Stack>
-        <AddItems/>
-        {/* <AnswerAssessment/> */}
+        {/* <AddItems/> */}
+        <AnswerAssessment/>
     </Stack>
   )
 }

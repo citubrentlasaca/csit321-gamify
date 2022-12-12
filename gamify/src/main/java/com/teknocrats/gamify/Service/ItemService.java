@@ -30,6 +30,30 @@ public class ItemService {
 		return itemRepository.findItemIdByQuestion(question);
 	}
 	
+	public int getTimerByItemid(int itemid) {
+		return itemRepository.findTimerByItemid(itemid);
+	}
+	
+	public String getQuestionByItemid(int itemid) {
+		return itemRepository.findQuestionByItemid(itemid);
+	}
+	
+	public String getAnswerByItemid(int itemid) {
+		return itemRepository.findAnswerByItemid(itemid);
+	}
+	
+	public String getChoiceoneByItemid(int itemid) {
+		return itemRepository.findChoiceoneByItemid(itemid);
+	}
+	
+	public String getChoicetwoByItemid(int itemid) {
+		return itemRepository.findChoicetwoByItemid(itemid);
+	}
+	
+	public String getChoicethreeByItemid(int itemid) {
+		return itemRepository.findChoicethreeByItemid(itemid);
+	}
+	
 	public ItemEntity findByItemId(int itemid) {
 		if(itemRepository.findByItemid(itemid) != null) {
 			return itemRepository.findByItemid(itemid);
