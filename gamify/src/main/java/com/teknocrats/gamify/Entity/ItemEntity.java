@@ -1,5 +1,6 @@
 package com.teknocrats.gamify.Entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,11 +20,16 @@ public class ItemEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "itemid")
 	private int itemid;
 	private String questiontype;
 	private int timer;
+	@Column(name = "question")
 	private String question;
 	private String answer;
+	private String choiceone;
+	private String choicetwo;
+	private String choicethree;
 	private Boolean isdeleted = Boolean.FALSE;
 	
 	@ManyToOne
@@ -31,14 +37,17 @@ public class ItemEntity {
 	AssessmentEntity assessment;
 	
 	public ItemEntity() {}
-	public ItemEntity(int itemid, String questiontype, int timer, String question, String answer, boolean isdeleted,
-			AssessmentEntity assessment) {
+	public ItemEntity(int itemid, String questiontype, int timer, String question, String answer, String choiceone,
+			String choicetwo, String choicethree, Boolean isdeleted, AssessmentEntity assessment) {
 		super();
 		this.itemid = itemid;
 		this.questiontype = questiontype;
 		this.timer = timer;
 		this.question = question;
 		this.answer = answer;
+		this.choiceone = choiceone;
+		this.choicetwo = choicetwo;
+		this.choicethree = choicethree;
 		this.isdeleted = isdeleted;
 		this.assessment = assessment;
 	}
@@ -72,6 +81,24 @@ public class ItemEntity {
 	}
 	public void setAnswer(String answer) {
 		this.answer = answer;
+	}
+	public String getChoiceone() {
+		return choiceone;
+	}
+	public void setChoiceone(String choiceone) {
+		this.choiceone = choiceone;
+	}
+	public String getChoicetwo() {
+		return choicetwo;
+	}
+	public void setChoicetwo(String choicetwo) {
+		this.choicetwo = choicetwo;
+	}
+	public String getChoicethree() {
+		return choicethree;
+	}
+	public void setChoicethree(String choicethree) {
+		this.choicethree = choicethree;
 	}
 	public boolean getIsdeleted() {
 		return isdeleted;
