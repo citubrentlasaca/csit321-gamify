@@ -2,16 +2,26 @@ import '../../App.css';
 import {Stack, Button} from "@mui/material";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Timer from './Timer.js';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
-    primary: {
-      main: "#ffffff"
-    }
+    white: {
+      main: "#FFFFFF"
+    },
+    green: {
+      main: "#00FF00"
+    },
+    red: {
+      main: "#FF0000"
+    },
   },
 });
+const useColor = (initialColor) => {
+  const [color, setColor] = React.useState(initialColor);
+
+  return [color, setColor];
+}
 
 function AnswerAssessment(){
   const [timer, setTimer] = useState();
@@ -20,6 +30,10 @@ function AnswerAssessment(){
   const [choiceOne, setchoiceOne] = useState("");
   const [choiceTwo, setchoiceTwo] = useState("");
   const [choiceThree, setchoiceThree] = useState("");
+  const [correctColor, setCorrectColor] = useColor('white');
+  const [choiceOneColor, setChoiceOneColor] = useColor('white');
+  const [choiceTwoColor, setChoiceTwoColor] = useColor('white');
+  const [choiceThreeColor, setChoiceThreeColor] = useColor('white');
 
   useEffect(() => {
     async function fetchData() {
@@ -83,17 +97,17 @@ function AnswerAssessment(){
         <Stack alignItems="center" color="white">
             <h1>{question}</h1>
         </Stack>
-        <br/><br/>
+        <br/><br/><br/><br/><br/>
         <Stack direction="row" justifyContent="space-evenly">
             <ThemeProvider theme={theme}>
-                <Button variant="contained" size="large" color="primary" 
-                sx={{maxWidth: '300px', maxHeight: '200px', minWidth: '300px', minHeight: '200px'}}>{correctAnswer}</Button>
-                <Button variant="contained" size="large" color="primary" 
-                sx={{maxWidth: '300px', maxHeight: '200px', minWidth: '300px', minHeight: '200px'}}>{choiceOne}</Button>
-                <Button variant="contained" size="large" color="primary" 
-                sx={{maxWidth: '300px', maxHeight: '200px', minWidth: '300px', minHeight: '200px'}}>{choiceTwo}</Button>
-                <Button variant="contained" size="large" color="primary" 
-                sx={{maxWidth: '300px', maxHeight: '200px', minWidth: '300px', minHeight: '200px'}}>{choiceThree}</Button>
+            <Button variant="contained" size="large" color={correctColor} onClick={() => setCorrectColor('green')} 
+              sx={{maxWidth: '300px', maxHeight: '200px', minWidth: '300px', minHeight: '200px'}}>{correctAnswer}</Button>
+            <Button variant="contained" size="large" color={choiceOneColor} onClick={() => setChoiceOneColor('red')}  
+              sx={{maxWidth: '300px', maxHeight: '200px', minWidth: '300px', minHeight: '200px'}}>{choiceOne}</Button>
+            <Button variant="contained" size="large" color={choiceTwoColor} onClick={() => setChoiceTwoColor('red')}  
+              sx={{maxWidth: '300px', maxHeight: '200px', minWidth: '300px', minHeight: '200px'}}>{choiceTwo}</Button>
+            <Button variant="contained" size="large" color={choiceThreeColor} onClick={() => setChoiceThreeColor('red')}  
+              sx={{maxWidth: '300px', maxHeight: '200px', minWidth: '300px', minHeight: '200px'}}>{choiceThree}</Button>
             </ThemeProvider>
         </Stack>
     </Stack>
