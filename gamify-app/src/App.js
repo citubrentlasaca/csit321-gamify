@@ -13,7 +13,7 @@ import {Stack} from "@mui/material";
 function App() {
   return(
     <div classname="App">
-        <header className="App-header2">
+        <header className="App-header2-gc">
           <Landing></Landing>
           <SetUpAccount></SetUpAccount>
           <RegistrationFormStudent></RegistrationFormStudent>

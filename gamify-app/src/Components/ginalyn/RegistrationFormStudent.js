@@ -68,7 +68,7 @@ function RegistrationFormStudent() {
                             <TextField
                                 id="outlined-birthday"
                                 label="mm/dd/yyyy"
-                                sx={{backgroundColor: "white", borderRadius: 3, width: 195}}
+                                sx={{backgroundColor: "white", borderRadius: 3, width: 215}}
                                 //onChange={handleBirthdayChange}
                             />
                         </div>
