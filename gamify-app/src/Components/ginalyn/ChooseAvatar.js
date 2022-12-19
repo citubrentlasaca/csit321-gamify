@@ -4,10 +4,10 @@ import logo from '../../Images/applogo.png';
 
 function ChooseAvatar() {
     return (
-        <div className="bg-registration">
-            <hr className="line-mid"></hr>
+        <div className="bg-registration-gc">
+            <hr className="line-mid-gc"></hr>
             <Stack direction="row">
-                <div className="welcome">
+                <div className="welcome-gc">
                     <Stack>
                         <h1 style={{textAlign: "center", color: "black", fontSize: 30, marginBottom: 5}}>Welcome to Gamify!</h1>
                         <p style={{textAlign: "center", color: "black", fontSize: 22, marginBottom: 40}}>
@@ -18,9 +18,9 @@ function ChooseAvatar() {
                         <img src={logo} alt="gamify logo" style={{width: 300, height: 200, paddingLeft: 50}}/>
                     </Stack>
                 </div>
-                <div className="Registration-container">
+                <div className="Registration-container-gc">
                     <h1 style={{textAlign: "left", color: "#7A8889", fontSize: 24}}>Student Account Information</h1>
-                    <hr className="line"></hr>
+                    <hr className="line-gc"></hr>
                     <Stack spacing={4}>
                         <h1 style={{textAlign: "left", color: "black", fontSize: 24, marginBottom: 5, marginTop: 6}}>Choose your avatar</h1>
                         <Stack direction="row" justifyContent="space-evenly">

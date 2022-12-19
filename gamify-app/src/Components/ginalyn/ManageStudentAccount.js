@@ -11,13 +11,13 @@ import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 import brand from '../../Images/brand.png';
 import appicon from '../../Images/appicon.png';
 
-function ManageTeacherAccount() {
+function ManageStudentAccount() {
     const [value, setValue] = React.useState(3);  
     const handleChange = (event,newValue) => {
         setValue(newValue);
     }
     return (
-        <div className="landing">
+        <div className="landing-gc">
             <Stack direction="row">
                 <div>
                     <img src={appicon} alt="app icon" style={{width: 120, height: 80, paddingLeft: 10}}/>
@@ -56,4 +56,4 @@ function ManageTeacherAccount() {
     );
   }
   
-  export default ManageTeacherAccount;
+  export default ManageStudentAccount;

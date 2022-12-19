@@ -17,7 +17,7 @@ function Homepage() {
         setValue(newValue);
     }
     return (
-        <div className="landing">
+        <div className="landing-gc">
             <Stack direction="row">
                 <div>
                     <img src={appicon} alt="app icon" style={{width: 100, height: 70, paddingLeft: 30, paddingTop: 8}}/>

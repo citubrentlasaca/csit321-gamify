@@ -19,7 +19,7 @@ function ActivityStudent() {
     }
     
     return (
-        <div className="landing">
+        <div className="landing-gc">
             <Stack>
                 <Stack direction="row">
                     <div>

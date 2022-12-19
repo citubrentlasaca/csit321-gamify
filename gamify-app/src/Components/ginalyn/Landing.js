@@ -6,7 +6,7 @@ import appicon from '../../Images/appicon.png';
 
 function Landing() {
     return (
-        <div className="landing">
+        <div className="landing-gc">
             <Stack direction="row">
                 <div>
                     <img src={appicon} alt="app icon" style={{width: 120, height: 80, paddingLeft: 30}}/>
@@ -20,7 +20,7 @@ function Landing() {
                 <Link href="#" color="inherit" underline="none" style={{fontSize: 32, fontWeight: "bold", paddingTop: 25, paddingLeft: 60}}>
                     {'Contact'}
                 </Link>
-                <div className="landing-bg">
+                <div className="landing-bg-gc">
                     <Button variant="contained" style={{backgroundColor: "#00E4F9", borderRadius: 10, fontWeight: "bold", color: "black", fontSize: 28, height: 52, marginTop: 25, marginLeft: 460}}>
                         Sign up
                     </Button>
