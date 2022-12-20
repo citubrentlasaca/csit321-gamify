@@ -62,83 +62,87 @@ function Homepage() {
         setValue(newValue);
     }
     return (
-        <div className="landing-gc">
-            <Stack direction="row">
-                <div>
-                    <img src={appicon} alt="app icon" style={{width: 100, height: 70, paddingLeft: 30, paddingTop: 8}}/>
-                </div>
-                <div>
-                    <img src={brand} alt="brand name" style={{width: 180, height: 50, paddingTop: 25}}/>
-                </div>
-                <Tabs value={value} onChange={handleChange} style={{marginTop: 15, marginLeft: 40}}>
-                    <Tab label="Home" href="/home" icon={<HomeIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
-                    <Tab label="Activity" href="/actvity" icon={<HistoryIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
-                    <Tab label="Assessments" href="/assessments" icon={<ViewListIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
-                    <Tab label="Profile" href="/profile" icon={<PersonIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
-                </Tabs>
-                <PopupState variant="popover" popupId="demo-popup-menu">
-                    {(popupState) => (
-                        <React.Fragment>
-                        <IconButton aria-label="menu" variant="contained" {...bindTrigger(popupState)} style={{backgroundColor: "white", height: 50, width: 50, marginTop: 25, marginLeft: 130}}>
-                            <MenuIcon style={{fontSize: 40, fontWeight: "bold", color: "black"}} />
-                        </IconButton>
-                        <Menu {...bindMenu(popupState)}>
-                            <MenuItem disabled style={{fontWeight: "bold", color: "black"}}>@brent</MenuItem>
-                            <Divider />
-                            <MenuItem onClick={popupState.close}>
-                                <ListItemIcon>
-                                    <LogoutIcon style={{fontSize: 30}} />
-                                </ListItemIcon>
-                                <ListItemText style={{fontWeight: "bold", color: "black"}}>Logout</ListItemText>
-                            </MenuItem>
-                        </Menu>
-                        </React.Fragment>
-                    )}
-                </PopupState>
-            </Stack>
-            <Divider sx={{ borderBottomWidth: 7, borderColor: "#609292" }}/>
-            <Stack direction="row" style={{marginTop: 20}}>
-                <Box style={{width: 720, backgroundColor: "white", height: 170, borderRadius: 20, marginRight: 30, marginLeft: 40}}>
-                    <h3 style={{paddingLeft: 30, marginBottom: 15, marginTop: 15, fontSize: 24}}>Welcome Brent!</h3>
+        <div classname="App">
+            <header className="App-header2-gc">
+                <div className="landing-gc">
                     <Stack direction="row">
-                        <Search>
-                            <SearchIconWrapper>
-                                <SearchIcon style={{fontSize: 30, color: "#707070"}}/>
-                            </SearchIconWrapper>
-                            <StyledInputBase
-                                placeholder="Search an assessment"
-                                inputProps={{ 'aria-label': 'search' }}
-                            />
-                        </Search>
-                        <Button size="large" variant="contained" style={{borderRadius: 30, fontSize: 24, color: "black", width: "fit-content", marginRight: 30}}>
-                                Search
-                        </Button>
+                        <div>
+                            <img src={appicon} alt="app icon" style={{width: 100, height: 70, paddingLeft: 30, paddingTop: 8}}/>
+                        </div>
+                        <div>
+                            <img src={brand} alt="brand name" style={{width: 180, height: 50, paddingTop: 25}}/>
+                        </div>
+                        <Tabs value={value} onChange={handleChange} style={{marginTop: 15, marginLeft: 40}}>
+                            <Tab label="Home" href="/home" icon={<HomeIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
+                            <Tab label="Activity" href="/actvity" icon={<HistoryIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
+                            <Tab label="Assessments" href="/assessments" icon={<ViewListIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
+                            <Tab label="Profile" href="/profile" icon={<PersonIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
+                        </Tabs>
+                        <PopupState variant="popover" popupId="demo-popup-menu">
+                            {(popupState) => (
+                                <React.Fragment>
+                                <IconButton aria-label="menu" variant="contained" {...bindTrigger(popupState)} style={{backgroundColor: "white", height: 50, width: 50, marginTop: 25, marginLeft: 130}}>
+                                    <MenuIcon style={{fontSize: 40, fontWeight: "bold", color: "black"}} />
+                                </IconButton>
+                                <Menu {...bindMenu(popupState)}>
+                                    <MenuItem disabled style={{fontWeight: "bold", color: "black"}}>@brent</MenuItem>
+                                    <Divider />
+                                    <MenuItem onClick={popupState.close}>
+                                        <ListItemIcon>
+                                            <LogoutIcon style={{fontSize: 30}} />
+                                        </ListItemIcon>
+                                        <ListItemText style={{fontWeight: "bold", color: "black"}}>Logout</ListItemText>
+                                    </MenuItem>
+                                </Menu>
+                                </React.Fragment>
+                            )}
+                        </PopupState>
                     </Stack>
-                </Box>
-                <Box style={{width: 560, backgroundColor: "white", height: 170, borderRadius: 20}}>
-                    <Box style={{width: 520, backgroundColor: "#D9D9D9", height: 100, borderRadius: 30, marginLeft: 20, marginTop: 35, borderStyle: "solid", borderColor: "#707070"}}>
-                        <Stack direction="row">
-                            <Box style={{width: 360, backgroundColor: "white", height: 80, borderRadius: 30, marginLeft: 10, marginTop: 10}}>
-                                <StyledInputBase
-                                    placeholder="Enter the code"
-                                    inputProps={{ 'aria-label': 'code' }}
-                                />
+                    <Divider sx={{ borderBottomWidth: 7, borderColor: "#609292" }}/>
+                    <Stack direction="row" style={{marginTop: 20}}>
+                        <Box style={{width: 720, backgroundColor: "white", height: 170, borderRadius: 20, marginRight: 30, marginLeft: 40}}>
+                            <h3 style={{paddingLeft: 30, marginBottom: 15, marginTop: 15, fontSize: 24}}>Welcome Brent!</h3>
+                            <Stack direction="row">
+                                <Search>
+                                    <SearchIconWrapper>
+                                        <SearchIcon style={{fontSize: 30, color: "#707070"}}/>
+                                    </SearchIconWrapper>
+                                    <StyledInputBase
+                                        placeholder="Search an assessment"
+                                        inputProps={{ 'aria-label': 'search' }}
+                                    />
+                                </Search>
+                                <Button size="large" variant="contained" style={{borderRadius: 30, fontSize: 24, color: "black", width: "fit-content", marginRight: 30}}>
+                                        Search
+                                </Button>
+                            </Stack>
+                        </Box>
+                        <Box style={{width: 560, backgroundColor: "white", height: 170, borderRadius: 20}}>
+                            <Box style={{width: 520, backgroundColor: "#D9D9D9", height: 100, borderRadius: 30, marginLeft: 20, marginTop: 35, borderStyle: "solid", borderColor: "#707070"}}>
+                                <Stack direction="row">
+                                    <Box style={{width: 360, backgroundColor: "white", height: 80, borderRadius: 30, marginLeft: 10, marginTop: 10}}>
+                                        <StyledInputBase
+                                            placeholder="Enter the code"
+                                            inputProps={{ 'aria-label': 'code' }}
+                                        />
+                                    </Box>
+                                    <Button size="large" variant="contained" style={{borderRadius: 30, fontSize: 24, color: "black", width: 130, marginLeft: 8, height: 80, marginTop: 10}}>
+                                            Join
+                                    </Button>
+                                </Stack>
                             </Box>
-                            <Button size="large" variant="contained" style={{borderRadius: 30, fontSize: 24, color: "black", width: 130, marginLeft: 8, height: 80, marginTop: 10}}>
-                                    Join
-                            </Button>
-                        </Stack>
-                    </Box>
-                </Box>
-            </Stack>
-            <Stack direction="row">
-                <div style={{marginLeft: 40}}>
-                    <img src={db1} alt="dashboard 1" style={{width: 640, height: 370, marginRight: 30, marginTop: 20}}/>
+                        </Box>
+                    </Stack>
+                    <Stack direction="row">
+                        <div style={{marginLeft: 40}}>
+                            <img src={db1} alt="dashboard 1" style={{width: 640, height: 370, marginRight: 30, marginTop: 20}}/>
+                        </div>
+                        <div>
+                            <img src={db2} alt="dashboard 2" style={{width: 640, height: 370, marginTop: 20}}/>
+                        </div>
+                    </Stack>
                 </div>
-                <div>
-                    <img src={db2} alt="dashboard 2" style={{width: 640, height: 370, marginTop: 20}}/>
-                </div>
-            </Stack>
+            </header>
         </div>
     );
   }

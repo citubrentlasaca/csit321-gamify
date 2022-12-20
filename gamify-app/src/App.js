@@ -9,21 +9,27 @@ import ChooseAvatar from './Components/ginalyn/ChooseAvatar.js';
 import Homepage from './Components/ginalyn/Homepage.js';
 import ActivityStudent from './Components/ginalyn/ActivityStudent.js';
 import {Stack} from "@mui/material";
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return(
-    <div classname="App">
-        <header className="App-header2-gc">
-          <Landing></Landing>
-          <SetUpAccount></SetUpAccount>
-          <RegistrationFormStudent></RegistrationFormStudent>
-          <ChooseAvatar></ChooseAvatar>
-          <Homepage></Homepage>
-          <ActivityStudent></ActivityStudent>
-          {/*<ReadStudents></ReadStudents>*/}
-        </header>
+    <div>
+      <Landing></Landing>
+      <SetUpAccount></SetUpAccount>
+      <RegistrationFormStudent></RegistrationFormStudent>
     </div>
-    /*<Stack>
+    /*<div classname="App">
+      <header className="App-header2-gc">
+        <Landing></Landing>
+        {/*<SetUpAccount></SetUpAccount>
+        <RegistrationFormStudent></RegistrationFormStudent>
+        <ChooseAvatar></ChooseAvatar>
+        <Homepage></Homepage>
+        <ActivityStudent></ActivityStudent>
+        <ReadStudents></ReadStudents>
+      </header>
+    </div>
+    <Stack>
         <AddItems/>
         <AnswerAssessment/>
     </Stack>*/
