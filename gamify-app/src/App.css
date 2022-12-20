@@ -36,3 +36,181 @@
     transform: rotate(360deg);
   }
 }
+.app {
+  font-family: sans-serif;
+  display: flex;
+  align-items: normal;
+  justify-content: left;
+  flex-direction: column;
+  gap: 20px;
+  height: 100vh;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #00FFFF;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+input[type="text"],
+input[type="password"] {
+  height: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+input[type="submit"] {
+  margin-top: 10px;
+  margin-bottom: 100px;
+  cursor: pointer;
+  font-size: 15px;
+  background: #CAFDFF;
+  border: 1px solid #CAFDFF;
+  color: #000f;
+  padding: 10px 20px;
+  border-radius: 50px;
+  width: 200px;
+}
+
+  input[type="submit"]:hover {
+      background: #6cf0c2;
+  }
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.login-form {
+  padding: 0 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-family: sans-serif;
+  display: flex;
+  align-items: normal;
+  justify-content: left;
+  flex-direction: column;
+  gap: 20px;
+  height: 100vh;
+  width:600px;
+  background-color: #00FFFF;
+  height: 100vh;
+}
+
+.list-container {
+  display: left;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.title {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.text {
+  font-size: 10px;
+  padding-bottom: 200px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 10px;
+}
+.landing {
+  background-image: url(Images/Cahutay/abstractbluewhitegradientgeometricbackground23106-v73c-1400h.jpg);
+  background-blend-mode: multiply;
+  color: black;
+  width: auto;
+  height: 780px;
+}
+.App-header2-gc {
+  background-color: #00FFFF;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.Registration-container-gc {
+  background: linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45));
+  background-blend-mode: overlay;
+  background-position: center;
+  background-size: cover;
+  height: 550px;
+  width: 440px;
+  padding: 1rem;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  margin-top: 40px;
+  margin-bottom: 120px;
+  margin-left: 155px;
+  border-radius: 20px;
+  box-shadow: 3px 3px #6e6e6e;
+}
+
+.bg-registration-gc {
+  background-image: url(Images/registrationbg.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 700px;
+  width: 1200px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  box-shadow: 1px 3px #525252;
+}
+
+.line-gc{
+  height: 2px;
+  border-top: 3px solid #609292;
+}
+
+.line-mid-gc{
+  height: 680px;
+  border-left: 6px solid #609292;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  top: 2;
+}
+
+.welcome-gc {
+  margin-top: 120px;
+  margin-bottom: 120px;
+  margin-left: 100px;
+}
+
+.landing-gc {
+  background-image: url(Images/registrationbg.jpg);
+  background-color: #00FFFF;
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+  color: black;
+  width: 1400px;
+  height: 700px;
+}
+
+.landing-bg-gc {
+  background-image: url(Images/landingbg.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 700px;
+  width: 660px;
+  margin-left: 45px;
+}
+
+.activity-gc {
+  background-color: #FFFFFF;
+  color: black;
+  width: 1800px;
+  height: 800px;
+}
+
