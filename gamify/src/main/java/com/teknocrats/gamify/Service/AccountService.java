@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.teknocrats.gamify.Entity.AccountEntity;
+import com.teknocrats.gamify.Entity.TeacherEntity;
 import com.teknocrats.gamify.Repository.AccountRepository;
 
 @Service
@@ -21,6 +22,15 @@ public class AccountService {
 	
 	public List<AccountEntity> getAllAccounts(){
 		return accountRepository.findAll();
+	}
+	
+	public AccountEntity findByAccountid(int accountid) {
+		if(accountRepository.findByAccountid(accountid) != null) {
+			return accountRepository.findByAccountid(accountid);
+		}
+		else {
+			return null;
+		}
 	}
 	
 	public AccountEntity findByUsername(String username) {
@@ -60,4 +70,5 @@ public class AccountService {
 		}
 		return msg;
 	}
+
 }

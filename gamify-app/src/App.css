@@ -24,6 +24,16 @@
   color: white;
 }
 
+.App-header2-gc {
+  background-color: #00FFFF;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
 .App-link {
   color: #61dafb;
 }
@@ -126,16 +136,6 @@ input[type="submit"] {
   color: black;
   width: auto;
   height: 780px;
-}
-.App-header2-gc {
-  background-color: #00FFFF;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 .Registration-container-gc {
   background: linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45));
