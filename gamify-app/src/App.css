@@ -36,3 +36,91 @@
     transform: rotate(360deg);
   }
 }
+
+.App-header2-gc {
+  background-color: #00FFFF;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Registration-container-gc {
+  background: linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45));
+  background-blend-mode: overlay;
+  background-position: center;
+  background-size: cover;
+  height: 550px;
+  width: 440px;
+  padding: 1rem;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  margin-top: 40px;
+  margin-bottom: 120px;
+  margin-left: 155px;
+  border-radius: 20px;
+  box-shadow: 3px 3px #6e6e6e;
+}
+
+.bg-registration-gc {
+  background-image: url(Images/registrationbg.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 700px;
+  width: 1200px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  box-shadow: 1px 3px #525252;
+}
+
+.line-gc{
+  height: 2px;
+  border-top: 3px solid #609292;
+}
+
+.line-mid-gc{
+  height: 680px;
+  border-left: 6px solid #609292;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  top: 2;
+}
+
+.welcome-gc {
+  margin-top: 120px;
+  margin-bottom: 120px;
+  margin-left: 100px;
+}
+
+.landing-gc {
+  background-image: url(Images/registrationbg.jpg);
+  background-color: #00FFFF;
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+  color: black;
+  width: 1400px;
+  height: 700px;
+}
+
+.landing-bg-gc {
+  background-image: url(Images/landingbg.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 700px;
+  width: 660px;
+  margin-left: 45px;
+}
+
+.activity-gc {
+  background-color: #FFFFFF;
+  color: black;
+  width: 1800px;
+  height: 800px;
+}
