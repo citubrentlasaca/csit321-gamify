@@ -15,7 +15,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import BadgeIcon from '@mui/icons-material/Badge';
 import axios from 'axios';
-import ResultService from '../gamify/src/main/java/com/teknocrats/gamify/Service/ResultService';
+
 
 function TeacherDownloadResultPage() {
     const [resultId, setResultId] = React.useState();
@@ -56,14 +56,6 @@ function TeacherDownloadResultPage() {
             console.log(error);
           });
       };
-
-      const getAllResult = async () => {
-        ResultService.getAllResult().then((res) =>{
-            this.setState({
-                results:res.data
-            });
-        });
-      }
     
       const getResultId = async () => {
         try {
