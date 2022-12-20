@@ -1,17 +1,38 @@
-//import { Visibility, VisibilityOff } from "@mui/icons-material";
+import * as React from 'react';
+import axios from 'axios';
 import { TextField, Stack, Button } from "@mui/material";
 import logo from '../../Images/applogo.png';
-//import RegistrationFormStudent from "./RegistrationFormStudent";
-//import * as React from 'react';
-//import { useHistory } from "react-router-dom";
 
 function SetUpAccount() {
-    //const history = useHistory();
-  
-    /*const routeChange = () =>{ 
-        let path = RegistrationFormStudent; 
-        history.push(path);
-    }*/
+    const [username, setUsername] = React.useState("");
+    const [email, setEmail] = React.useState("");
+    const [password, setPassword] = React.useState("");
+
+    const changeUsername = (event) => {
+        setUsername(event.target.value);
+    };
+    const changeEmail = (event) => {
+        setEmail(event.target.value);
+    };
+    const changePassword = (event) => {
+        setPassword(event.target.value);
+    };
+    
+    const createAccount = () => {
+        axios
+          .post('http://localhost:8080/account/postAccount', {
+            username: username,
+            email: email,
+            password: password,
+          })
+          .then((response) => {
+            console.log(response);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
+
     return (
         <div className="bg-registration-gc">
             <hr className="line-mid-gc"></hr>
@@ -35,24 +56,32 @@ function SetUpAccount() {
                         <TextField
                             id="outlined-username"
                             label="Username"
+                            value={username}
+                            onChange={changeUsername}
                             sx={{backgroundColor: "white", borderRadius: 3}}
-                            //onChange={handleUsernameChange}
                         />
                         <TextField
                             id="outlined-email"
                             label="Email"
+                            value={email}
+                            onChange={changeEmail}
                             sx={{backgroundColor: "white", borderRadius: 3}}
-                            aize="small"
-                            //onChange={handleUsernameChange}
                         />
                         <TextField
                             id="outlined-password"
                             label="Password"
+                            value={password}
+                            onChange={changePassword}
                             sx={{backgroundColor: "white", borderRadius: 3}}
-                            //onChange={handleChange('password')}
                         />
                     </Stack>
-                <Button size="large" variant="contained" style={{backgroundColor: "black", marginTop: 40, borderRadius: 10, fontWeight: "bold", marginLeft: 180}}>Next</Button>
+                <Button
+                    size="large" 
+                    variant="contained" 
+                    onClick={createAccount}
+                    style={{backgroundColor: "black", marginTop: 40, borderRadius: 10, fontWeight: "bold", marginLeft: 180}}>
+                        Next
+                    </Button>
                 </div>
             </Stack>
         </div>
