@@ -2,6 +2,7 @@ import * as React from 'react';
 import axios from 'axios';
 import { TextField, Stack, Button } from "@mui/material";
 import logo from '../../Images/applogo.png';
+import { useNavigate } from "react-router-dom";
 
 function SetUpAccount() {
     const [username, setUsername] = React.useState("");
@@ -17,6 +18,8 @@ function SetUpAccount() {
     const changePassword = (event) => {
         setPassword(event.target.value);
     };
+
+    const navigate = useNavigate();
     
     const createAccount = () => {
         axios
@@ -27,6 +30,11 @@ function SetUpAccount() {
           })
           .then((response) => {
             console.log(response);
+            navigate("/register-student", {
+                state: {
+                    accountid: response.accountid,
+                }
+            });
           })
           .catch((error) => {
             console.log(error);

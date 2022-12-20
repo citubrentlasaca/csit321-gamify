@@ -1,8 +1,64 @@
 //import { Visibility, VisibilityOff } from "@mui/icons-material";
+import * as React from 'react';
+import axios from 'axios';
 import { TextField, Stack, Button, Radio, FormControlLabel, RadioGroup} from "@mui/material";
 import logo from '../../Images/applogo.png';
+import { useLocation, useNavigate } from "react-router-dom";
 
 function RegistrationFormStudent() {
+    const state = useLocation();
+    const accountid = React.useState(state);
+
+    const [firstname, setFirstname] = React.useState("");
+    const [lastname, setLastname] = React.useState("");
+    const [gender, setGender] = React.useState("");
+    const [birthday, setBirthday] = React.useState("");
+    const [program, setProgram] = React.useState("");
+    const [yearlevel, setYearlevel] = React.useState("");
+
+    const changeFirstname = (event) => {
+        setFirstname(event.target.value);
+    };
+    const changeLastname = (event) => {
+        setLastname(event.target.value);
+    };
+    const changeGender = (event) => {
+        setGender(event.target.value);
+    };
+    const changeBirthday = (event) => {
+        setBirthday(event.target.value);
+    };
+    const changeProgram = (event) => {
+        setProgram(event.target.value);
+    };
+    const changeYearlevel = (event) => {
+        setYearlevel(event.target.value);
+    };
+
+    const navigate = useNavigate();
+    
+    const createStudent = () => {
+        axios
+          .post('http://localhost:8080/student/postStudent', {
+            firstname: firstname,
+            lastname: lastname,
+            gender: gender,
+            birthday: birthday,
+            program: program,
+            yearlevel: yearlevel,
+            account: {
+                accountid: accountid
+            },
+          })
+          .then((response) => {
+            console.log(response);
+            navigate("/register-choose-avatar");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+    };
+
     return (
         <div classname="App">
             <header className="App-header2-gc">
@@ -30,14 +86,16 @@ function RegistrationFormStudent() {
                                         <TextField
                                         id="outlined-firstname"
                                         label="Firstname"
+                                        value={firstname}
+                                        onChange={changeFirstname}
                                         sx={{backgroundColor: "white", borderRadius: 3, marginRight: 2, width: 300}}
-                                        //onChange={handleFirstnameChange}
                                         />
                                         <TextField
                                         id="outlined-lastname"
                                         label="Lastname"
+                                        value={lastname}
+                                        onChange={changeLastname}
                                         sx={{backgroundColor: "white", borderRadius: 3, width: 300}}
-                                        //onChange={handleLastnameChange}
                                         />
                                     </Stack>
                                 </div>
@@ -49,6 +107,8 @@ function RegistrationFormStudent() {
                                             aria-labelledby="register-gender"
                                             name="gender"
                                             defaultValue="male"
+                                            value={gender}
+                                            onChange={changeGender}
                                         >
                                             <FormControlLabel
                                             value="male"
@@ -70,8 +130,9 @@ function RegistrationFormStudent() {
                                     <TextField
                                         id="outlined-birthday"
                                         label="mm/dd/yyyy"
+                                        value={birthday}
+                                        onChange={changeBirthday}
                                         sx={{backgroundColor: "white", borderRadius: 3, width: 215}}
-                                        //onChange={handleBirthdayChange}
                                     />
                                 </div>
                                 <div>
@@ -80,19 +141,21 @@ function RegistrationFormStudent() {
                                         <TextField
                                         id="outlined-program"
                                         label="Program"
+                                        value={program}
+                                        onChange={changeProgram}
                                         sx={{backgroundColor: "white", borderRadius: 3, marginRight: 2, width: 305}}
-                                        //onChange={handleFirstnameChange}
                                         />
                                         <TextField
                                         id="outlined-yearlevel"
                                         label="Yearlevel"
+                                        value={yearlevel}
+                                        onChange={changeYearlevel}
                                         sx={{backgroundColor: "white", borderRadius: 3, width: 300}}
-                                        //onChange={handleLastnameChange}
                                         />
                                     </Stack>
                                 </div>
                             </Stack>
-                        <Button size="large" variant="contained" style={{backgroundColor: "black", marginTop: 30, borderRadius: 10, fontWeight: "bold", marginLeft: 180}}>Next</Button>
+                        <Button size="large" variant="contained" onClick={createStudent} style={{backgroundColor: "black", marginTop: 30, borderRadius: 10, fontWeight: "bold", marginLeft: 180}}>Next</Button>
                         </div>
                     </Stack>
                 </div>

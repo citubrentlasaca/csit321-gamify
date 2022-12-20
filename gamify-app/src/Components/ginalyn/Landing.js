@@ -6,6 +6,11 @@ import appicon from '../../Images/appicon.png';
 import { useNavigate } from "react-router-dom";
 
 function Landing() {
+    const navigate = useNavigate();
+
+    const handleSignupClick = () => {
+        navigate("/register");
+    }
     return (
         <div classname="App">
             <header className="App-header2-gc">
@@ -24,7 +29,7 @@ function Landing() {
                             {'Contact'}
                         </Link>
                         <div className="landing-bg-gc">
-                            <Button variant="contained" style={{backgroundColor: "#00E4F9", borderRadius: 10, fontWeight: "bold", color: "black", fontSize: 28, height: 52, marginTop: 25, marginLeft: 460}}>
+                            <Button variant="contained" onClick={handleSignupClick} style={{backgroundColor: "#00E4F9", borderRadius: 10, fontWeight: "bold", color: "black", fontSize: 28, height: 52, marginTop: 25, marginLeft: 460}}>
                                 Sign up
                             </Button>
                         </div>
