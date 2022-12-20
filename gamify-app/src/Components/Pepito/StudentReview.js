@@ -1,4 +1,4 @@
-import logo from '../../images/logo.png';
+import logo from '../../Images/Pepito/logo.png';
 import * as React from 'react';
 import { Stack, Tabs, Tab, Menu, MenuItem, IconButton, ListItemIcon, ListItemText, Divider } from "@mui/material";
 import { BsFillCaretLeftFill } from "react-icons/bs";
@@ -9,7 +9,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import MenuIcon from '@mui/icons-material/Menu';
 import LogoutIcon from '@mui/icons-material/Logout';
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
-import brand from '../../images/brand.png';
+import brand from '../../Images/Pepito/brand.png';
 
 
 function StudentReview() {
