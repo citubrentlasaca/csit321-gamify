@@ -1,10 +1,10 @@
-import logo from '../../images/logo.png';
+import logo from '../../Images/Pepito/logo.png';
 import * as React from 'react';
 import { Stack, Tabs, Tab, Menu, MenuItem, IconButton, ListItemIcon, ListItemText, Divider } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import LogoutIcon from '@mui/icons-material/Logout';
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
-import brand from '../../images/brand.png';
+import brand from '../../Images/Pepito/brand.png';
 import Collapsible from 'react-collapsible';
 
 
@@ -64,9 +64,9 @@ return (
         </div>
 
         <h1 style={{ margin: 30 }}>Frequently Asked Questions (FAQ)</h1>
-        <div style={{backgroundColor: "#609292", marginLeft: 30, marginRight: 30, borderLeft: 10, borderStyle: "solid", borderColor:"#016B85"}}>
-            <Collapsible triggerStyle={{backgroundColor: "white"}} trigger="● How do I enter a class?">
-                <p style = {{marginLeft: 20, color: "white"}}>
+        <div style={{backgroundColor: "white", marginLeft: 30, marginRight: 30, borderLeft: 10, borderStyle: "solid", borderColor:"white"}}>
+            <Collapsible fullWidth triggerStyle={{backgroundColor: "white", width: "70vh"}} trigger="● How do I enter a class?">
+                <p style = {{marginLeft: 20, color: "#016B85"}}>
                 You simply ask for the class code from the teacher. 
                 Then, click Join class. Put in the given code. 
                 Click enter and wait for you to be accepted by the teacher.
@@ -75,8 +75,8 @@ return (
             </Collapsible>
         </div>
         
-        <div style={{backgroundColor: "#609292", marginLeft: 30, marginRight: 30, borderLeft: 10, borderStyle: "solid", borderColor:"#016B85"}}>
-            <Collapsible triggerStyle={{backgroundColor: "white", IconButton}} trigger="● How to fix if I forgot my password?">
+        <div style={{backgroundColor: "#016B85", marginLeft: 30, marginRight: 30, borderLeft: 10, borderStyle: "solid", borderColor:"#016B85"}}>
+            <Collapsible fullWidth triggerStyle={{backgroundColor: "#016B85",color: "white", IconButton}} trigger="● How to fix if I forgot my password?">
                 <p style = {{marginLeft: 20, color: "white"}}>
                     In the log in page, click the forgot password button. 
                     Follow the verification process. Then create a new password.
@@ -84,17 +84,18 @@ return (
             </Collapsible>
         </div>
 
-        <div style={{backgroundColor: "#609292", marginLeft: 30, marginRight: 30, borderLeft: 10, borderStyle: "solid", borderColor:"#016B85"}}>
-            <Collapsible triggerStyle={{backgroundColor: "white", IconButton}} trigger="● How to sign up?">
-                <p style = {{marginLeft: 20, color: "white"}}>
-                    In the main page, click sign up. Then choose account whether you are a teacher or student.
-                    After that simply follow the steps in the account creation process.
+        <div style={{backgroundColor: "white", marginLeft: 30, marginRight: 30, borderLeft: 10, borderStyle: "solid", borderColor:"white"}}>
+            <Collapsible fullWidth triggerStyle={{backgroundColor: "white", width: "70vh"}} trigger="● How to sign up?">
+                <p style = {{marginLeft: 20, color: "#016B85"}}>
+                In the main page, click sign up. Then choose account whether you are a teacher or student.
+                After that simply follow the steps in the account creation process.
                 </p>
+
             </Collapsible>
         </div>
-
-        <div style={{backgroundColor: "#609292", marginLeft: 30, marginRight: 30, borderLeft: 10, borderStyle: "solid", borderColor:"#016B85"}}>
-            <Collapsible triggerStyle={{backgroundColor: "white", IconButton}} trigger="● How to upgrade pricing plans?">
+        
+        <div style={{backgroundColor: "#016B85", marginLeft: 30, marginRight: 30, borderLeft: 10, borderStyle: "solid", borderColor:"#016B85"}}>
+            <Collapsible fullWidth triggerStyle={{backgroundColor: "#016B85",color: "white", IconButton}} trigger="● How to upgrade pricing plans?">
                 <p style = {{marginLeft: 20, color: "white"}}>
                     Click your profile. Go to subscription. Click edit subscription. 
                     Verify account. Then, change to the plan you wanted. Settle payment method. After that, click save.
@@ -102,13 +103,15 @@ return (
             </Collapsible>
         </div>
         
-        <div style={{backgroundColor: "#609292", marginLeft: 30, marginRight: 30, borderLeft: 10, borderStyle: "solid", borderColor:"#016B85"}}>
-            <Collapsible triggerStyle={{backgroundColor: "white", IconButton}} trigger="● How to create an assessment using a template?">
-                <p style = {{marginLeft: 20, color: "white"}}>
-                    Click create assessment. Browse templates. Choose one then edit the template.
+        <div style={{backgroundColor: "white", marginLeft: 30, marginRight: 30, borderLeft: 10, borderStyle: "solid", borderColor:"white"}}>
+            <Collapsible fullWidth triggerStyle={{backgroundColor: "white", width: "70vh"}} trigger="● How to create an assessment using a template?">
+                <p style = {{marginLeft: 20, color: "#016B85"}}>
+                Click create assessment. Browse templates. Choose one then edit the template.
                 </p>
+
             </Collapsible>
         </div>
+        
     </div>
 
   );
