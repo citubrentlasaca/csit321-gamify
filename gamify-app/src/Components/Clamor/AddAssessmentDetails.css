@@ -1,0 +1,487 @@
+.jonas-angelo-clamor-update-assessment-details{
+  width: 100%;
+  height: 1080px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  border-color: transparent;
+  background-size: cover;
+  background-image: url("../../Images/Clamor/istockphoto-1295094894-612x612.jpg");
+}
+  /**body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 100vh;
+    background-color: #00FFFF;
+    background-image: url("D:\gamify_teknocrats\public\istockphoto-1295094894-612x612.jpg");
+    background-repeat: round;
+  }**/
+  /**.jonas-angelo-clamor-update-assessment-details{
+    margin-block-end: auto;
+    width: 100%;
+    height: 1080px;
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    background-image: url("../../Images/Clamor/istockphoto-1295094894-612x612.jpg");
+  }**/
+  .jonas-angelo-clamor-update-assessment-details-text {
+    top: 105px;
+    left: 108px;
+    color: rgba(0, 0, 0, 1);
+    height: auto;
+    position: absolute;
+    font-size: 60px;
+    align-self: auto;
+    font-style: Extra Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .jonas-angelo-clamor-update-assessment-details-text05 {
+    top: 240px;
+    left: 437px;
+    color: rgba(0, 0, 0, 1);
+    height: auto;
+    position: absolute;
+    font-size: 40px;
+    align-self: auto;
+    font-style: Extra Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .jonas-angelo-clamor-update-assessment-details-text10 {
+    top: 421px;
+    left: 437px;
+    color: rgba(0, 0, 0, 1);
+    height: auto;
+    position: absolute;
+    font-size: 40px;
+    align-self: auto;
+    font-style: Extra Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .jonas-angelo-clamor-update-assessment-details-text15 {
+    top: 610px;
+    left: 438px;
+    color: rgba(0, 0, 0, 1);
+    height: auto;
+    position: absolute;
+    font-size: 40px;
+    align-self: auto;
+    font-style: Extra Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .jonas-angelo-clamor-update-assessment-details-rectangle7 {
+    top: 304px;
+    left: 437px;
+    width: 700px;
+    height: 50px;
+    position: absolute;
+    border-color: transparent;
+    background-color: white;
+  }
+  .jonas-angelo-clamor-update-assessment-details-rectangle19 {
+    top: 493px;
+    left: -160px;
+    width: 700px;
+    height: 50px;
+    position: absolute;
+    border-color: transparent;
+    background-color: white;
+  }
+  .jonas-angelo-clamor-update-assessment-details-rectangle20 {
+    top: 680px;
+    left: -760px;
+    width: 1500px;
+    height: 50px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .jonas-angelo-clamor-update-assessment-details-plus1 {
+    top: 240px;
+    left: 249px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .jonas-angelo-clamor-update-assessment-details-plus1:hover {
+    box-shadow: inset 100px 0 0 0 #54b3d6;
+    color: black;
+  }
+  .jonas-angelo-clamor-update-assessment-details-plus1:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-update-assessment-details-plus2 {
+    top: 421px;
+    left: 249px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .jonas-angelo-clamor-update-assessment-details-plus2:hover {
+    box-shadow: inset 100px 0 0 0 #54b3d6;
+    color: black;
+  }
+  .jonas-angelo-clamor-update-assessment-details-plus2:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-update-assessment-details-plus3 {
+    top: 602px;
+    left: 249px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .jonas-angelo-clamor-update-assessment-details-plus3:hover {
+    box-shadow: inset 100px 0 0 0 #54b3d6;
+    color: black;
+  }
+  .jonas-angelo-clamor-update-assessment-details-plus3:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-update-assessment-details-pencil1 {
+    top: 240px;
+    left: 343px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .jonas-angelo-clamor-update-assessment-details-pencil1:hover {
+    box-shadow: inset 100px 0 0 0 #54b3d6;
+    color: black;
+  }
+  .jonas-angelo-clamor-update-assessment-details-pencil1:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-update-assessment-details-pencil2 {
+    top: 421px;
+    left: 343px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .jonas-angelo-clamor-update-assessment-details-pencil2:hover {
+    box-shadow: inset 100px 0 0 0 #54b3d6;
+    color: black;
+  }
+  .jonas-angelo-clamor-update-assessment-details-pencil2:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-update-assessment-details-pencil3 {
+    top: 602px;
+    left: 343px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .jonas-angelo-clamor-update-assessment-details-pencil3:hover {
+    box-shadow: inset 100px 0 0 0 #54b3d6;
+    color: black;
+  }
+  .jonas-angelo-clamor-update-assessment-details-pencil3:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-update-assessment-details-quiz1 {
+    top: 769.3129272460938px;
+    left: 1624.803955078125px;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .jonas-angelo-clamor-update-assessment-details-science1 {
+    top: 762px;
+    left: 165px;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .jonas-angelo-clamor-update-assessment-details-group42 {
+    top: 803px;
+    left: 437px;
+    width: 396px;
+    height: 68px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    margin-right: 0;
+    border-radius: 20px;
+    margin-bottom: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: rgba(0, 0, 0, 1);
+  }
+  .jonas-angelo-clamor-update-assessment-details-group42:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-update-assessment-details-text26 {
+    top: 13px;
+    left: 35px;
+    color: rgba(255, 255, 255, 1);
+    width: 326px;
+    height: auto;
+    position: absolute;
+    font-size: 36px;
+    align-self: auto;
+    font-style: Semi Bold;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .jonas-angelo-clamor-update-assessment-details-group43 {
+    top: 950px;
+    left: 548px;
+    width: 845.7907104492188px;
+    height: 83px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    margin-right: 0;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: black;
+    border-radius: 20px;
+    box-sizing: border-box;
+  }
+  .jonas-angelo-clamor-update-assessment-details-group43:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-update-assessment-details-rectangle10 {
+    top: 0px;
+    left: 125px;
+    width: 591px;
+    height: 68px;
+    position: absolute;
+    border-color: transparent;
+    border-radius: 20px;
+  }
+  .jonas-angelo-clamor-update-assessment-details-text28 {
+    top: 20px;
+    color: rgba(255, 255, 255, 1);
+    align-content: center;
+    width: 846px;
+    height: 68px;
+    position: absolute;
+    font-size: 36px;
+    align-self: center;
+    font-style: Semi Bold;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .jonas-angelo-clamor-update-assessment-details-group47 {
+    top: 803px;
+    left: 1028px;
+    width: 550px;
+    height: 70px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: black;
+    border-style: none;
+    border-width: 0;
+    margin-right: 0;
+    border-radius: 20px;
+    margin-bottom: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: black;
+  }
+  .jonas-angelo-clamor-update-assessment-details-group47:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-update-assessment-details-rectangle101 {
+    top: 0px;
+    left: 83.2848129272461px;
+    width: 384px;
+    height: 70px;
+    position: absolute;
+    border-color: transparent;
+    border-radius: 20px;
+  }
+  .jonas-angelo-clamor-update-assessment-details-text30 {
+    top: 815px;
+    left: 1040px;
+    color: rgba(255, 255, 255, 1);
+    width: 550px;
+    height: auto;
+    position: absolute;
+    font-size: 36px;
+    align-self: auto;
+    font-style: Semi Bold;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .jonas-angelo-clamor-update-assessment-details-text30:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-update-assessment-details-puzzlepiece1 {
+    top: 5750px;
+    left: 1440.55029296875px;
+    width: 225px;
+    height: 225px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .jonas-angelo-clamor-update-assessment-details-component2 {
+    top: 105px;
+    left: 1132px;
+    width: 695px;
+    height: 115px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+  }
+  .jonas-angelo-clamor-update-assessment-details-rectangle85 {
+    top: 5405px;
+    left: -10px;
+    width: 695px;
+    height: 115px;
+    position: absolute;
+    border-color: rgba(0, 0, 0, 0.5);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 30px;
+    background-color: black;
+  }
+  .jonas-angelo-clamor-update-assessment-details-rectangle86 {
+    top: 5420px;
+    left: 27px;
+    width: 100px;
+    height: 85px;
+    position: absolute;
+    border-color: transparent;
+    font-weight: 400;
+  }
+  .jonas-angelo-clamor-update-assessment-details-text32 {
+    top: 33px;
+    left: 91px;
+    color: rgba(0, 0, 0, 0.5);
+    width: 301px;
+    height: auto;
+    position: absolute;
+    font-size: 40px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .jonas-angelo-clamor-update-assessment-details-rectangle87 {
+    top: 5420px;
+    left: 500px;
+    width: 162px;
+    height: 80px;
+    position: absolute;
+    border-color: transparent;
+    border-radius: 25px;
+  }
+  .jonas-angelo-clamor-update-assessment-details-rectangle87:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-update-assessment-details-text34 {
+    top: 5435px;
+    left: 517px;
+    color: rgba(0, 0, 0, 1);
+    width: 145px;
+    height: auto;
+    position: absolute;
+    font-size: 40px;
+    align-self: auto;
+    font-style: Medium;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 500;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .jonas-angelo-clamor-update-assessment-details-text34:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
