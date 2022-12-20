@@ -3,9 +3,9 @@ import * as React from 'react';
 import AddItems from './Components/Lasaca/AddItems.js'
 import AnswerAssessment from './Components/Lasaca/AnswerAssessment.js';
 import Landing from './Components/ginalyn/Landing.js';
-import SetUpAccount from './Components/ginalyn/SetUpAccount.js';
+//import SetUpAccount from './Components/ginalyn/SetUpAccount.js';
 import RegistrationFormStudent from './Components/ginalyn/RegistrationFormStudent.js';
-import ChooseAvatar from './Components/ginalyn/ChooseAvatar.js';
+//import ChooseAvatar from './Components/ginalyn/ChooseAvatar.js';
 import Homepage from './Components/ginalyn/Homepage.js';
 import ActivityStudent from './Components/ginalyn/ActivityStudent.js';
 import {Stack} from "@mui/material";
@@ -40,15 +40,15 @@ function App() {
        <AddItems/>
         
          <AnswerAssessment/>
-    </Stack> */
-  )
+    </Stack> 
+
     <Routes>
       <Route path="" element={<Landing />}></Route>
       <Route path="register" element={<SetUpAccount />}></Route>
       <Route path="register-student" element={<RegistrationFormStudent />}></Route>
       <Route path="register-choose-avatar" element={<ChooseAvatar />}></Route>
       <Route path="*" element={<Navigate to="/" replace />}/>
-    </Routes>
+    </Routes>*/
     /*<div>
       <Landing></Landing>
       <SetUpAccount></SetUpAccount>
