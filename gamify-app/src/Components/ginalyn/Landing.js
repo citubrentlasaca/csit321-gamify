@@ -5,12 +5,21 @@ import brand from '../../Images/brand.png';
 import appicon from '../../Images/appicon.png';
 import { useNavigate } from "react-router-dom";
 
-function Landing() {
+function Landing() {  
     const navigate = useNavigate();
 
     const handleSignupClick = () => {
         navigate("/register");
     }
+
+    const handleAboutClick = () => {
+        navigate("/about-us");
+    }
+
+    const handleSignInClick = () => {
+        navigate("/login-teacher");
+    }
+
     return (
         <div classname="App">
             <header className="App-header2-gc">
@@ -22,7 +31,7 @@ function Landing() {
                         <div>
                             <img src={brand} alt="brand name" style={{width: 200, height: 60, paddingTop: 20}}/>
                         </div>
-                        <Link href="#" color="inherit" underline="none" style={{fontSize: 32, fontWeight: "bold", paddingTop: 25, paddingLeft: 80}}>
+                        <Link href="about-us" to={handleAboutClick} color="inherit" underline="none" style={{fontSize: 32, fontWeight: "bold", paddingTop: 25, paddingLeft: 80}}>
                             {'About'}
                         </Link>
                         <Link href="#" color="inherit" underline="none" style={{fontSize: 32, fontWeight: "bold", paddingTop: 25, paddingLeft: 60}}>
@@ -42,7 +51,7 @@ function Landing() {
                                 digitized and gamified assessments, <br/>
                                 all made possible with Gamify.</em>
                             </p>
-                            <Button size="large" variant="contained" endIcon={<ArrowForwardIcon style={{fontSize: 34}}/>} style={{backgroundColor: "black", borderRadius:10, fontWeight: "bold", color: "white", fontSize: 24, marginTop: 25, width: "fit-content", marginLeft: 255}}>
+                            <Button size="large" onClick={handleSignInClick} variant="contained" endIcon={<ArrowForwardIcon style={{fontSize: 34}}/>} style={{backgroundColor: "black", borderRadius:10, fontWeight: "bold", color: "white", fontSize: 24, marginTop: 25, width: "fit-content", marginLeft: 255}}>
                                 Get Started
                             </Button>
                         </Stack>

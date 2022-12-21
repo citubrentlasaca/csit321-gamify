@@ -5,11 +5,24 @@ import MenuIcon from '@mui/icons-material/Menu';
 import LogoutIcon from '@mui/icons-material/Logout';
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 import brand from '../../Images/Pepito/brand.png';
-
-
+import { useNavigate } from "react-router-dom";
 
 function Price() {
-    const [value, setValue] = React.useState(0);  
+    const navigate = useNavigate();
+
+    const handlePriceClick = () => {
+        navigate("/plans-and-pricing");
+    }
+
+    const handleFaqClick = () => {
+        navigate("/faq");
+    }
+
+    const handleAboutClick = () => {
+        navigate("/about-us");
+    }
+
+    const [value, setValue] = React.useState(1);  
     const handleChange = (event,newValue) => {
         setValue(newValue);
 }
@@ -23,7 +36,7 @@ return (
                 <img src={brand} alt="brand name" style={{width: 200, height: 60, paddingTop: 20}}/>
             </div>
             <Tabs value={value} onChange={handleChange} style={{marginTop: 15, marginLeft: 70}}>
-                <Tab label="About Us" href="/home" 
+                <Tab label="About Us" href="/about-us" 
                     style={{font:"Arial", fontSize: 32, fontWeight: "bold", color: "black", marginRight: 20}}/>
                 <Tab label="Contact Us" href="/activity" 
                     style={{font:"Arial", fontSize: 32, fontWeight: "bold", color: "black", marginRight: 450}}/>
@@ -54,11 +67,11 @@ return (
 
             <div>
                 <Tabs value={value} onChange={handleChange} style={{marginTop: 15, marginLeft: 60}}>
-                    <Tab label="ABOUT GAMIFY" href="/home" 
+                    <Tab label="ABOUT GAMIFY" href="/about-us" to={handleAboutClick}
                         style={{fontSize: 20, fontWeight: "bold", color: "black", marginRight: 40}}/>
-                    <Tab label="PLANS AND PRICING" href="/actvity" 
+                    <Tab label="PLANS AND PRICING" href="/plans-and-pricing" to={handlePriceClick} 
                         style={{fontSize: 20, fontWeight: "bold", color: "black", marginRight: 35}}/>
-                    <Tab label="FAQ" href="/assessments" 
+                    <Tab label="FAQ" href="/faq" to={handleFaqClick}
                         style={{fontSize: 20, fontWeight: "bold", color: "black", marginRight: 60}}/>
                 </Tabs>
             </div>

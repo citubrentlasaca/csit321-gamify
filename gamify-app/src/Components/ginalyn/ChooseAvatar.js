@@ -1,8 +1,11 @@
 //import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { Stack, Button, Avatar} from "@mui/material";
 import logo from '../../Images/applogo.png';
+import { useLocation, useNavigate } from "react-router-dom";
 
 function ChooseAvatar() {
+    const {state} = useLocation();
+
     return (
         <div classname="App">
             <header className="App-header2-gc">

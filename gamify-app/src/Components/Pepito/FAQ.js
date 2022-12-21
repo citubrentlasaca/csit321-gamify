@@ -6,10 +6,24 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 import brand from '../../Images/Pepito/brand.png';
 import Collapsible from 'react-collapsible';
-
+import { useNavigate } from "react-router-dom";
 
 function FAQ() {
-    const [value, setValue] = React.useState(0);  
+    const navigate = useNavigate();
+    
+    const handlePriceClick = () => {
+        navigate("/plans-and-pricing");
+    }
+
+    const handleFaqClick = () => {
+        navigate("/faq");
+    }
+
+    const handleAboutClick = () => {
+        navigate("/about-us");
+    }
+
+    const [value, setValue] = React.useState(2);  
     const handleChange = (event,newValue) => {
         setValue(newValue);
 }
@@ -54,11 +68,11 @@ return (
 
         <div>
             <Tabs value={value} onChange={handleChange} style={{marginTop: 15, marginLeft: 60}}>
-                <Tab label="ABOUT GAMIFY" href="/home" 
+                <Tab label="ABOUT GAMIFY" href="/about-us" to={handleAboutClick}
                     style={{fontSize: 20, fontWeight: "bold", color: "black", marginRight: 40}}/>
-                <Tab label="PLANS AND PRICING" href="/actvity" 
+                <Tab label="PLANS AND PRICING" href="/plans-and-pricing" to={handlePriceClick}
                     style={{fontSize: 20, fontWeight: "bold", color: "black", marginRight: 35}}/>
-                <Tab label="FAQ" href="/assessments" 
+                <Tab label="FAQ" href="/faq" to={handleFaqClick}
                 style={{fontSize: 20, fontWeight: "bold", color: "black", marginRight: 60}}/>
             </Tabs>
         </div>

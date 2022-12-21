@@ -6,8 +6,7 @@ import logo from '../../Images/applogo.png';
 import { useLocation, useNavigate } from "react-router-dom";
 
 function RegistrationFormStudent() {
-    const state = useLocation();
-    const accountid = React.useState(state);
+    const {state} = useLocation();
 
     const [firstname, setFirstname] = React.useState("");
     const [lastname, setLastname] = React.useState("");
@@ -47,12 +46,12 @@ function RegistrationFormStudent() {
             program: program,
             yearlevel: yearlevel,
             account: {
-                accountid: accountid
+                accountid: state.accountid
             },
           })
           .then((response) => {
             console.log(response);
-            navigate("/register-choose-avatar");
+            navigate("/register-choose-student-avatar");
           })
           .catch((error) => {
             console.log(error);

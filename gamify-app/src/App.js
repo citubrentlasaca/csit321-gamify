@@ -29,7 +29,21 @@ import RegistrationFormTeacher from './Components/Cahutay/RegistrationFormTeache
 import CahutayChooseAvatar from './Components/Cahutay/ChooseAvatar';
 function App() {
   return (
-    <div>
+    <Routes>
+      <Route path="" element={<Landing />}></Route>
+      <Route path="register" element={<CahutayChooseAccount />}></Route>
+      <Route path="register-student" element={<RegistrationFormStudent />}></Route>
+      <Route path="register-choose-student-avatar" element={<ChooseAvatar />}></Route>
+      <Route path="register-setup-student-account" element={<SetUpAccount />}></Route>
+      <Route path="register-setup-teacher-account" element={<CahutaySetUpAccount />}></Route>
+      <Route path="register-choose-student-avatar" element={<CahutayChooseAvatar />}></Route>
+      <Route path="about-us" element={<AboutUs />}></Route>
+      <Route path="plans-and-pricing" element={<Price />}></Route>
+      <Route path="faq" element={<FAQ />}></Route>
+      <Route path="login-teacher" element={<CahutayLoginAccountForm />}></Route>
+      <Route path="*" element={<Navigate to="/" replace />}/>
+    </Routes>
+    /*<div>
         <AboutUs></AboutUs>
         <Price></Price>
         <FAQ></FAQ>
@@ -39,7 +53,7 @@ function App() {
         <TeacherDownloadResult></TeacherDownloadResult>
     </div>
 
-    /* 
+     
         <Stack>
           <AddItems/>
           <AnswerAssessment/> 

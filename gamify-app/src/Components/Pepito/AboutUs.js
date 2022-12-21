@@ -6,9 +6,23 @@ import MenuIcon from '@mui/icons-material/Menu';
 import LogoutIcon from '@mui/icons-material/Logout';
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 import brand from '../../Images/Pepito/brand.png';
-
+import { useNavigate } from "react-router-dom";
 
 function AboutUs() {
+    const navigate = useNavigate();
+
+    const handlePriceClick = () => {
+        navigate("/plans-and-pricing");
+    }
+
+    const handleFaqClick = () => {
+        navigate("/faq");
+    }
+
+    const handleAboutClick = () => {
+        navigate("/about-us");
+    }
+
     const [value, setValue] = React.useState(0);  
     const handleChange = (event,newValue) => {
         setValue(newValue);
@@ -54,11 +68,11 @@ return (
         <Stack direction="row" backgroundColor = "rgba(0, 0, 0, 0.829)" height= "120vh">
             <div>
                 <Tabs value={value} onChange={handleChange} style={{marginTop: 15, marginLeft: 60}}>
-                    <Tab label="ABOUT GAMIFY" href="/home" 
+                    <Tab label="ABOUT GAMIFY" href="/about-us" to={handleAboutClick}
                         style={{fontSize: 20, fontWeight: "normal", color: "white", marginRight: 40}}/>
-                    <Tab label="PLANS AND PRICING" href="/actvity" 
+                    <Tab label="PLANS AND PRICING" href="/plans-and-pricing" to={handlePriceClick}
                         style={{fontSize: 20, fontWeight: "normal", color: "white", marginRight: 35}}/>
-                    <Tab label="FAQ" href="/assessments" 
+                    <Tab label="FAQ" href="/faq"  to={handleFaqClick}
                         style={{fontSize: 20, fontWeight: "normal", color: "white", marginRight: 60}}/>
                 </Tabs>
                 <h2 style ={{color: "white", margin: 50, fontWeight: "normal", textAlign: "justify", 
