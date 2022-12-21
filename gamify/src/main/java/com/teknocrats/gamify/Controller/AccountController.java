@@ -37,6 +37,12 @@ public class AccountController {
 		return acctserv.getAllAccounts();
 	}
 	
+	//Read a record by id
+	@GetMapping("/getByAccountid")
+	public AccountEntity findByAccountid(@RequestParam int accountid) {
+		return acctserv.findByAccountid(accountid);
+	}
+	
 	//Read a record by Username
 	@GetMapping("getByUsername")
 		public AccountEntity findByUsername(@RequestParam String username) {
