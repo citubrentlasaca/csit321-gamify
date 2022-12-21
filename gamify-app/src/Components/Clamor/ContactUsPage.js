@@ -8,10 +8,16 @@ import facebook from '../../Images/Clamor/facebook.png'
 import instagram from '../../Images/Clamor/instagram.png'
 import twitter from '../../Images/Clamor/twitter.png'
 import linkedin from '../../Images/Clamor/linkedin.png'
+import { useNavigate } from "react-router-dom";
 
 import '../../Components/Clamor/ContactUsPage.css'
 
-const JonasAngeloClamorContactUs = (props) => {
+function ContactUsPage() {
+  const navigate = useNavigate();
+
+  const proceedSubjects = () => {
+      navigate("/subjects");
+}
   return (
     <div>
       <div className="jonas-angelo-clamor-contact-us-jonas-angelo-clamor-contact-us">
@@ -30,6 +36,7 @@ const JonasAngeloClamorContactUs = (props) => {
             alt="MinimalistQuotePoster113"
             src={logo}
             className="jonas-angelo-clamor-contact-us-minimalist-quote-poster1"
+            onClick={proceedSubjects}
           />
           <img
             alt="facebook115"
@@ -250,4 +257,4 @@ const JonasAngeloClamorContactUs = (props) => {
   )
 }
 
-export default JonasAngeloClamorContactUs
+export default ContactUsPage;
