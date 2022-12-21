@@ -4,7 +4,17 @@ import logo from '../../Images/applogo.png';
 import { useLocation, useNavigate } from "react-router-dom";
 
 function ChooseAvatar() {
+    const navigate = useNavigate();
+
     const {state} = useLocation();
+
+    const handleLoginStudentClick = () => {
+        navigate("/login-student", {
+            state: {
+                studentid: state.studentid
+            }
+        });
+    }
 
     return (
         <div classname="App">
@@ -43,9 +53,9 @@ function ChooseAvatar() {
                                     </div>
                                 </Stack>
                             </Stack>
-                            <Button size="large" variant="contained" style={{backgroundColor: "black", marginTop: 60, borderRadius: 10, fontWeight: "bold", marginBottom: 2, marginLeft: 180}}>Save</Button>
+                            <Button size="large" variant="contained" onClick={handleLoginStudentClick} style={{backgroundColor: "black", marginTop: 60, borderRadius: 10, fontWeight: "bold", marginBottom: 2, marginLeft: 180}}>Save</Button>
                             <div>
-                                <Button size="large" variant="text" style={{fontWeight: "bold", color: "black", marginLeft: 152}}>Skip for now</Button>
+                                <Button size="large" variant="text" onClick={handleLoginStudentClick} style={{fontWeight: "bold", color: "black", marginLeft: 152}}>Skip for now</Button>
                             </div>
                         </div>
                     </Stack>

@@ -1,5 +1,6 @@
 //import { Visibility, VisibilityOff } from "@mui/icons-material";
 import * as React from 'react';
+import axios from 'axios';
 import { Stack, Tabs, Tab, Menu, MenuItem, IconButton, ListItemIcon, ListItemText, Divider, Box, Button } from "@mui/material";
 import HomeIcon from '@mui/icons-material/Home';
 import HistoryIcon from '@mui/icons-material/History';
@@ -15,7 +16,7 @@ import brand from '../../Images/brand.png';
 import appicon from '../../Images/appicon.png';
 import db1 from '../../Images/dbimage1.png';
 import db2 from '../../Images/dbimage2.png';
-//import buttonbg from '../../Images/registrationbg.jpg';
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -57,6 +58,31 @@ const Search = styled('div')(({ theme }) => ({
   }));
 
 function Homepage() {
+    const navigate = useNavigate();
+    const {state} = useLocation();
+
+    const [firstname, setFirstname] = React.useState("");
+    const [lastname, setLastname] = React.useState("");
+    const [gender, setGender] = React.useState("");
+    const [birthday, setBirthday] = React.useState("");
+    const [program, setProgram] = React.useState("");
+    const [yearlevel, setYearlevel] = React.useState("");
+    
+    const getStudentById = async () => {
+        try {
+          const response = await axios.get(`http://localhost:8080/student/getByStudentId?studentid=${18}`);
+          const data = response.data;
+          navigate("/student-profile", {
+            state: {
+                studentname: response.firstname
+            }
+          })
+          console.log(data);
+        } catch (error) {
+          console.error(error); // catch any errors
+        }
+      }
+
     const [value, setValue] = React.useState(0);  
     const handleChange = (event,newValue) => {
         setValue(newValue);
@@ -76,7 +102,7 @@ function Homepage() {
                             <Tab label="Home" href="/home" icon={<HomeIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
                             <Tab label="Activity" href="/actvity" icon={<HistoryIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
                             <Tab label="Assessments" href="/assessments" icon={<ViewListIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
-                            <Tab label="Profile" href="/profile" icon={<PersonIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
+                            <Tab label="Profile" href="/student-profile" to={getStudentById} icon={<PersonIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
                         </Tabs>
                         <PopupState variant="popover" popupId="demo-popup-menu">
                             {(popupState) => (

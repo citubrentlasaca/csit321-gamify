@@ -51,7 +51,11 @@ function RegistrationFormStudent() {
           })
           .then((response) => {
             console.log(response);
-            navigate("/register-choose-student-avatar");
+            navigate("/register-choose-student-avatar", {
+                state: {
+                    studentid: response.data.studentid
+                }
+            });
           })
           .catch((error) => {
             console.log(error);

@@ -1063,3 +1063,21 @@
     align-self: auto;
     font-style: italic;
   }
+
+  .text310 {
+    top: 80px;
+    left: 200px;
+    color: rgba(95, 145, 145, 1);
+    width: 423px;
+    height: auto;
+    position: absolute;
+    font-size: 28px;
+    align-self: auto;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
