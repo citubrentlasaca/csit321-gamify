@@ -8,6 +8,13 @@ import RegistrationFormStudent from './Components/ginalyn/RegistrationFormStuden
 import ChooseAvatar from './Components/ginalyn/ChooseAvatar.js';
 import Homepage from './Components/ginalyn/Homepage.js';
 import ActivityStudent from './Components/ginalyn/ActivityStudent.js';
+import StudentResult from './Components/Pepito/StudentResult';
+import StudentReview from './Components/Pepito/StudentReview';
+import TeacherResult from './Components/Pepito/TeacherResult';
+import TeacherDownloadResult from './Components/Pepito/TeacherDownloadResult';
+import Price from './Components/Pepito/Price';
+import AboutUs from './Components/Pepito/AboutUs';
+import FAQ from './Components/Pepito/FAQ';
 import {Stack} from "@mui/material";
 import { Route, Routes, Navigate } from 'react-router-dom';
 import CahutayChooseAccount from './Components/Cahutay/CahutayChooseAccount';
@@ -21,60 +28,23 @@ import CahutaySetUpAccount from './Components/Cahutay/SetupAccount';
 import RegistrationFormTeacher from './Components/Cahutay/RegistrationFormTeacher';
 import CahutayChooseAvatar from './Components/Cahutay/ChooseAvatar';
 function App() {
-  return(
-    <Routes>
-      <Route path="" element={<Landing />}></Route>
-      <Route path="register" element={<CahutayChooseAccount />}></Route>
-      <Route path="register-student" element={<RegistrationFormStudent />}></Route>
-      <Route path="register-choose-student-avatar" element={<ChooseAvatar />}></Route>
-      <Route path="register-setup-student-account" element={<SetUpAccount />}></Route>
-      <Route path="register-setup-teacher-account" element={<CahutaySetUpAccount />}></Route>
-      <Route path="register-choose-student-avatar" element={<CahutayChooseAvatar />}></Route>
-      <Route path="*" element={<Navigate to="/" replace />}/>
-    </Routes>
-    /*<div classname="App">
-    <header className="App-header2-gc">
-        <CahutayChooseAccount></CahutayChooseAccount>
-        <CahutayLoginAccountForm></CahutayLoginAccountForm>
-        <CahutayTeachersProfile></CahutayTeachersProfile>
-        <CahutayManageTeachersProfilePage1></CahutayManageTeachersProfilePage1>
-        <CahutayManageTeachersProfilePage2></CahutayManageTeachersProfilePage2>
-        <CahutayDeactivateTeacherAccount></CahutayDeactivateTeacherAccount>
-        <CahutayDeactivateTeacherAccountConfirmation></CahutayDeactivateTeacherAccountConfirmation>
-        <SetUpAccount></SetUpAccount>
-        <RegistrationFormTeacher></RegistrationFormTeacher>
-        <ChooseAvatar></ChooseAvatar>
-      </header>
+  return (
+    <div>
+        <AboutUs></AboutUs>
+        <Price></Price>
+        <FAQ></FAQ>
+        <StudentResult></StudentResult>
+        <StudentReview></StudentReview>
+        <TeacherResult></TeacherResult>
+        <TeacherDownloadResult></TeacherDownloadResult>
     </div>
-    <Stack>
-       <AddItems/>
-        
-         <AnswerAssessment/>
-    </Stack> 
 
+    /* 
+        <Stack>
+          <AddItems/>
+          <AnswerAssessment/> 
+        </Stack>
     */
-    /*<div>
-      <Landing></Landing>
-      <SetUpAccount></SetUpAccount>
-      <RegistrationFormStudent></RegistrationFormStudent>
-      <ChooseAvatar></ChooseAvatar>
-      <Homepage></Homepage>
-    </div>
-    <div classname="App">
-      <header className="App-header2-gc">
-        <Landing></Landing>
-        {/*<SetUpAccount></SetUpAccount>
-        <RegistrationFormStudent></RegistrationFormStudent>
-        <ChooseAvatar></ChooseAvatar>
-        <Homepage></Homepage>
-        <ActivityStudent></ActivityStudent>
-        <ReadStudents></ReadStudents>
-      </header>
-    </div>
-    <Stack>
-        <AddItems/>
-        <AnswerAssessment/>
-    </Stack>*/
   );
 }
 
