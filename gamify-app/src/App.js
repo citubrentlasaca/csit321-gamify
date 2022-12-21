@@ -13,13 +13,13 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 
 function App() {
   return(
-    <Routes>
-      <Route path="" element={<Landing />}></Route>
-      <Route path="register" element={<SetUpAccount />}></Route>
-      <Route path="register-student" element={<RegistrationFormStudent />}></Route>
-      <Route path="register-choose-avatar" element={<ChooseAvatar />}></Route>
-      <Route path="*" element={<Navigate to="/" replace />}/>
-    </Routes>
+    // <Routes>
+    //   <Route path="" element={<Landing />}></Route>
+    //   <Route path="register" element={<SetUpAccount />}></Route>
+    //   <Route path="register-student" element={<RegistrationFormStudent />}></Route>
+    //   <Route path="register-choose-avatar" element={<ChooseAvatar />}></Route>
+    //   <Route path="*" element={<Navigate to="/" replace />}/>
+    // </Routes>
     /*<div>
       <Landing></Landing>
       <SetUpAccount></SetUpAccount>
@@ -37,11 +37,11 @@ function App() {
         <ActivityStudent></ActivityStudent>
         <ReadStudents></ReadStudents>
       </header>
-    </div>
+    </div>*/
     <Stack>
-        <AddItems/>
+        {/* <AddItems/> */}
         <AnswerAssessment/>
-    </Stack>*/
+    </Stack>
   );
 }
 

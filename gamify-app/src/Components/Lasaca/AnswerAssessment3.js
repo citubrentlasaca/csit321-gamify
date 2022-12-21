@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ReactDOM from 'react-dom';
-import AnswerAssessment2 from '../../Components/Lasaca/AnswerAssessment2.js'
+import AddItems from './AddItems.js'
 
 const theme = createTheme({
   palette: {
@@ -38,42 +38,42 @@ function AnswerAssessment(){
 
   useEffect(() => {
     async function fetchData() {
-      const response = await axios.get(`http://localhost:8080/item/getTimerByItemid?itemid=${1}`);
+      const response = await axios.get(`http://localhost:8080/item/getTimerByItemid?itemid=${3}`);
       setTimer(response.data);
     }
     fetchData();
   }, []);
   useEffect(() => {
     async function fetchData() {
-      const response = await axios.get(`http://localhost:8080/item/getQuestionByItemid?itemid=${1}`);
+      const response = await axios.get(`http://localhost:8080/item/getQuestionByItemid?itemid=${3}`);
       setQuestion(response.data);
     }
     fetchData();
   }, []);
   useEffect(() => {
     async function fetchData() {
-      const response = await axios.get(`http://localhost:8080/item/getAnswerByItemid?itemid=${1}`);
+      const response = await axios.get(`http://localhost:8080/item/getAnswerByItemid?itemid=${3}`);
       setCorrectAnswer(response.data);
     }
     fetchData();
   }, []);
   useEffect(() => {
     async function fetchData() {
-      const response = await axios.get(`http://localhost:8080/item/getChoiceoneByItemid?itemid=${1}`);
+      const response = await axios.get(`http://localhost:8080/item/getChoiceoneByItemid?itemid=${3}`);
       setchoiceOne(response.data);
     }
     fetchData();
   }, []);
   useEffect(() => {
     async function fetchData() {
-      const response = await axios.get(`http://localhost:8080/item/getChoicetwoByItemid?itemid=${1}`);
+      const response = await axios.get(`http://localhost:8080/item/getChoicetwoByItemid?itemid=${3}`);
       setchoiceTwo(response.data);
     }
     fetchData();
   }, []);
   useEffect(() => {
     async function fetchData() {
-      const response = await axios.get(`http://localhost:8080/item/getChoicethreeByItemid?itemid=${1}`);
+      const response = await axios.get(`http://localhost:8080/item/getChoicethreeByItemid?itemid=${3}`);
       setchoiceThree(response.data);
     }
     fetchData();
@@ -84,7 +84,7 @@ function AnswerAssessment(){
         clearInterval(intervalId);
         const container = document.getElementById('root');
       console.log('rendering new component'); // add this line to verify that a new component is being rendered
-      ReactDOM.render(<AnswerAssessment2 />, container);
+      ReactDOM.render(<AddItems />, container);
       } else {
         setTimer(currentTimer => currentTimer - 1);
       }
@@ -96,7 +96,7 @@ function AnswerAssessment(){
     setTimeout(() => {
       const container = document.getElementById('root');
       console.log('rendering new component'); // add this line to verify that a new component is being rendered
-      ReactDOM.render(<AnswerAssessment2 />, container);
+      ReactDOM.render(<AddItems />, container);
     }, 1000); // unmount component after 3 seconds
   };
   
@@ -112,14 +112,7 @@ function AnswerAssessment(){
         <br/><br/><br/><br/><br/>
         <Stack direction="row" justifyContent="space-evenly">
         <ThemeProvider theme={theme} id="root">
-  <Button variant="contained" size="large" color={correctColor}
-          onClick={() => {
-            setCorrectColor('green');
-            timeoutAfterAnswer();
-          }}
-          sx={{maxWidth: '300px', maxHeight: '200px', minWidth: '300px', minHeight: '200px'}}>
-    {correctAnswer}
-  </Button>
+  
   <Button variant="contained" size="large" color={choiceOneColor}
           onClick={() => {
             setChoiceOneColor('red');
@@ -135,6 +128,14 @@ function AnswerAssessment(){
           }}
           sx={{maxWidth: '300px', maxHeight: '200px', minWidth: '300px', minHeight: '200px'}}>
     {choiceTwo}
+  </Button>
+  <Button variant="contained" size="large" color={correctColor}
+          onClick={() => {
+            setCorrectColor('green');
+            timeoutAfterAnswer();
+          }}
+          sx={{maxWidth: '300px', maxHeight: '200px', minWidth: '300px', minHeight: '200px'}}>
+    {correctAnswer}
   </Button>
   <Button variant="contained" size="large" color={choiceThreeColor}
           onClick={() => {
