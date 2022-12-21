@@ -186,6 +186,11 @@ function CahutayManageTeachersProfilePage1() {
             </Stack>                  
           </div>
 
+             <div className={styles['groupget']}>
+             <Button size="large" variant="contained"
+              style={{backgroundColor: "transparent", width: 110, marginTop: 15, borderRadius: 40, fontWeight: "bold"}}>Display</Button>
+             </div>
+
              <div className={styles['groupnext']}>
              <Button size="large" variant="contained"
               style={{backgroundColor: "cyan", width: 110, marginTop: 15, borderRadius: 40, fontWeight: "bold"}}>Next</Button>

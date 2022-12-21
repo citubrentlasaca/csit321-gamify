@@ -851,6 +851,23 @@
     justify-content: flex-start;
     background-color: transparent;
   }
+  .groupget {
+    top: 580px;
+    left: 1020px;
+    width: 380px;
+    height: 70px;
+    display: flex;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-radius: 40px 40px 40px 40px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
   .groupnext {
     top: 580px;
     left: 1180px;
