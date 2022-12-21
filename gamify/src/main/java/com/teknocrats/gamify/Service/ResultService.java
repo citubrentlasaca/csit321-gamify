@@ -32,7 +32,7 @@ public class ResultService {
 			return null;
 	}
 	
-	public int getResultId(int resultid) {
+	public int getStudentResultId(int resultid) {
 		return resultrepo.findStudentResultId(resultid);
 	}
 	
