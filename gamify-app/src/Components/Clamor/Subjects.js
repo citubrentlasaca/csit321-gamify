@@ -10,10 +10,26 @@ import robot from '../../Images/Clamor/robot 1.png'
 import data from '../../Images/Clamor/data 1.png'
 import teacher from '../../Images/Clamor/teacher 1.png'
 import { MdKeyboardBackspace } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 import '../../Components/Clamor/Subjects.css'
 
-const JonasAngeloClamorViewCollectionOfAssessmentsListOf = (props) => {
+function Subjects() {
+  const navigate = useNavigate();
+
+  const proceedAutomataAssessments = () => {
+      navigate("/automata/assessments");
+  } 
+  const proceedAppDevAssessments = () => {
+    navigate("/appdev/assessments");
+  }
+  const proceedIntelligentSystemsAssessments = () => {
+    navigate("/intelligentsystems/assessments");
+  }
+  const proceedIndustryElectiveAssessments = () => {
+    navigate("/industryelective/assessments");
+  }     
+
   return (
     <div>
       <div className="jonas-angelo-clamor-view-collection-of-assessments-list-of-jonas-angelo-clamor-view-collection-of-assessments-list-of">
@@ -57,16 +73,16 @@ const JonasAngeloClamorViewCollectionOfAssessmentsListOf = (props) => {
             <span>Teacher</span>
           </span>
         </div>
-        <span className="jonas-angelo-clamor-view-collection-of-assessments-list-of-text08">
+        <span className="jonas-angelo-clamor-view-collection-of-assessments-list-of-text08" onClick={proceedAutomataAssessments}>
           <span>CS313 Automata Theory and Formal Languages</span>
         </span>
-        <span className="jonas-angelo-clamor-view-collection-of-assessments-list-of-text10">
+        <span className="jonas-angelo-clamor-view-collection-of-assessments-list-of-text10" onClick={proceedIntelligentSystemsAssessments}>
           <span>CS345 Intelligent Systems 1</span>
         </span>
-        <span className="jonas-angelo-clamor-view-collection-of-assessments-list-of-text12">
+        <span className="jonas-angelo-clamor-view-collection-of-assessments-list-of-text12" onClick={proceedIndustryElectiveAssessments}>
           <span>CSIT340 Industry Elective 1</span>
         </span>
-        <span className="jonas-angelo-clamor-view-collection-of-assessments-list-of-text14">
+        <span className="jonas-angelo-clamor-view-collection-of-assessments-list-of-text14" onClick={proceedAppDevAssessments}>
           <span>
             <span>
               CSIT321 Applications Development and
@@ -80,28 +96,28 @@ const JonasAngeloClamorViewCollectionOfAssessmentsListOf = (props) => {
             <span>Emerging Technologies</span>
           </span>
         </span>
-        <span className="jonas-angelo-clamor-view-collection-of-assessments-list-of-text19">
+        <span className="jonas-angelo-clamor-view-collection-of-assessments-list-of-text19" onClick={proceedAutomataAssessments}>
           <span>
             <span>Number Of Assessments Available : 4</span>
             <br></br>
             <span></span>
           </span>
         </span>
-        <span className="jonas-angelo-clamor-view-collection-of-assessments-list-of-text24">
+        <span className="jonas-angelo-clamor-view-collection-of-assessments-list-of-text24"onClick={proceedIntelligentSystemsAssessments}>
           <span>
             <span>Number Of Assessments Available : 2</span>
             <br></br>
             <span></span>
           </span>
         </span>
-        <span className="jonas-angelo-clamor-view-collection-of-assessments-list-of-text29">
+        <span className="jonas-angelo-clamor-view-collection-of-assessments-list-of-text29" onClick={proceedIndustryElectiveAssessments}>
           <span>
             <span>Number Of Assessments Available : 1</span>
             <br></br>
             <span></span>
           </span>
         </span>
-        <span className="jonas-angelo-clamor-view-collection-of-assessments-list-of-text34">
+        <span className="jonas-angelo-clamor-view-collection-of-assessments-list-of-text34" onClick={proceedAppDevAssessments}>
           <span>
             <span>Number Of Assessments Available : 3</span>
             <br></br>
@@ -115,16 +131,19 @@ const JonasAngeloClamorViewCollectionOfAssessmentsListOf = (props) => {
           src={calculate}
           alt="calculating1166"
           className="jonas-angelo-clamor-view-collection-of-assessments-list-of-calculating1"
+          onClick={proceedAutomataAssessments}
         />
         <img
           src={robot}
           alt="robot1167"
           className="jonas-angelo-clamor-view-collection-of-assessments-list-of-robot1"
+          onClick={proceedIntelligentSystemsAssessments}
         />
         <img
           src={application}
           alt="application1168"
           className="jonas-angelo-clamor-view-collection-of-assessments-list-of-application1"
+          onClick={proceedAppDevAssessments}
         />
         <img
           src={game}
@@ -197,6 +216,7 @@ const JonasAngeloClamorViewCollectionOfAssessmentsListOf = (props) => {
           src={data}
           alt="data1180"
           className="jonas-angelo-clamor-view-collection-of-assessments-list-of-data1"
+          onClick={proceedIndustryElectiveAssessments}
         />
         <img
           src={teacher}
@@ -216,4 +236,4 @@ const JonasAngeloClamorViewCollectionOfAssessmentsListOf = (props) => {
   )
 }
 
-export default JonasAngeloClamorViewCollectionOfAssessmentsListOf;
+export default Subjects;
