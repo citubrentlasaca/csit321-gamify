@@ -20,12 +20,14 @@ import CahutayDeactivateTeacherAccountConfirmation from './Components/Cahutay/Ca
 import SetUpAccount from './Components/Cahutay/SetupAccount';
 import RegistrationFormTeacher from './Components/Cahutay/RegistrationFormTeacher';
 import ChooseAvatar from './Components/Cahutay/ChooseAvatar';
+import HomepageTeacher from './Components/Cahutay/HomepageTeacher';
 function App() {
   return(
     <div classname="App">
     <header className="App-header2-gc">
         <CahutayChooseAccount></CahutayChooseAccount>
         <CahutayLoginAccountForm></CahutayLoginAccountForm>
+        <HomepageTeacher></HomepageTeacher>
         <CahutayTeachersProfile></CahutayTeachersProfile>
         <CahutayManageTeachersProfilePage1></CahutayManageTeachersProfilePage1>
         <CahutayManageTeachersProfilePage2></CahutayManageTeachersProfilePage2>
