@@ -118,22 +118,6 @@ function App() {
       <Route path="/intelligentsystems/assessments/dip-long-quiz" element={<AssessmentTwelve />}></Route>
       <Route path="*" element={<Navigate to="/" replace />}/>
     </Routes>
-    /*<div>
-        <AboutUs></AboutUs>
-        <Price></Price>
-        <FAQ></FAQ>
-        <StudentResult></StudentResult>
-        <StudentReview></StudentReview>
-        <TeacherResult></TeacherResult>
-        <TeacherDownloadResult></TeacherDownloadResult>
-    </div>
-
-     
-        <Stack>
-          <AddItems/>
-          <AnswerAssessment/> 
-        </Stack>
-    */   
   );
 }
 
