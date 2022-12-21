@@ -9,10 +9,16 @@ import star from '../../Images/Clamor/Star 2.png'
 import videogames from '../../Images/Clamor/video-games 1.png'
 import gameconsole from '../../Images/Clamor/game-console 1.png'
 import { TextField } from "@mui/material";
-
+import { useNavigate } from "react-router-dom";
 import '../../Components/Clamor/AssessmentFour.css'
 
 const JonasAngeloClamorViewCollectionOfAssessmentsInputA = (props) => {
+  const navigate = useNavigate();
+
+  const handleStartClick = () => {
+      navigate("/answer-assessment");
+  } 
+
   return (
     <div>
       <div className="jonas-angelo-clamor-view-collection-of-assessments-input-a-jonas-angelo-clamor-view-collection-of-assessments-input-a">
@@ -118,7 +124,7 @@ const JonasAngeloClamorViewCollectionOfAssessmentsInputA = (props) => {
             alt="Rectangle101170"
             className="jonas-angelo-clamor-view-collection-of-assessments-input-a-rectangle10"
           />
-          <span className="jonas-angelo-clamor-view-collection-of-assessments-input-a-text28">
+          <span className="jonas-angelo-clamor-view-collection-of-assessments-input-a-text28" onClick={handleStartClick}>
             <span>
               <span>Start</span>
               <br></br>

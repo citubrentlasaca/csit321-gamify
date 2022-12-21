@@ -29,6 +29,9 @@ function Subjects() {
   const proceedIndustryElectiveAssessments = () => {
     navigate("/industryelective/assessments");
   }     
+  const handleBackClick = () => {
+    navigate("/student-homepage");
+  } 
 
   return (
     <div>
@@ -230,7 +233,7 @@ function Subjects() {
             <span></span>
           </span>
         </span>
-        <MdKeyboardBackspace className='jonas-angelo-clamor-view-collection-of-assessments-list-of-arrow1'></MdKeyboardBackspace>
+        <MdKeyboardBackspace className='jonas-angelo-clamor-view-collection-of-assessments-list-of-arrow1' onClick={handleBackClick}></MdKeyboardBackspace>
       </div>
     </div>
   )

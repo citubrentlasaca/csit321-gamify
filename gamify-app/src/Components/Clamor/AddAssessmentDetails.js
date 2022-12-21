@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import '../../Components/Clamor/AddAssessmentDetails.css';
 
  function AddAssessmentDetails(){
+
     const [assessmentId, setAssessmentId] = React.useState();
     const [title, setTitle] = React.useState("");
     const [instructions, setInstructions] = React.useState("");
@@ -35,11 +36,16 @@ import '../../Components/Clamor/AddAssessmentDetails.css';
           description: description,
           teacher:
           {
-              teacherid : 4
+              teacherid : 2
           }
         })
         .then((response) => {
           console.log(response);
+          navigate("/add-items",{
+            state: {
+              assessmentid: response.data.assessmentid
+            }
+          });
         })
         .catch((error) => {
           console.log(error);

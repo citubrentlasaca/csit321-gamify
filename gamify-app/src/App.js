@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 /**import AddItems from './Components/Lasaca/AddItems.js'**/
 import AddAssessmentDetails from './Components/Clamor/AddAssessmentDetails.js';
+import AnswerAssessment from './Components/Lasaca/AnswerAssessment';
 import Subjects from './Components/Clamor/Subjects.js'
 import AssessmentOne from './Components/Clamor/AssessmentOne.js'
 import AssessmentTwo from './Components/Clamor/AssessmentTwo.js'
@@ -36,7 +37,6 @@ import Price from './Components/Pepito/Price';
 import AboutUs from './Components/Pepito/AboutUs';
 import FAQ from './Components/Pepito/FAQ';
 import {Stack} from "@mui/material";
-import { Route, Routes, Navigate } from 'react-router-dom';
 import CahutayChooseAccount from './Components/Cahutay/CahutayChooseAccount';
 import CahutayLoginAccountForm from './Components/Cahutay/CahutayLoginAccountForm';
 import LoginStudent from './Components/ginalyn/LoginStudent';
@@ -53,6 +53,7 @@ import ManageStudentProfilePage1 from './Components/ginalyn/ManageStudentProfile
 import ManageStudentProfilePage2 from './Components/ginalyn/ManageStudentProfilePage2';
 import DeactivateStudentAccount from './Components/ginalyn/DeactivateStudentAccount';
 import DeactivateStudentAccountConfirmation from './Components/ginalyn/DeactivateStudentAccountConfirmation';
+import AddItems from './Components/Lasaca/AddItems';
 
 function App() {
   return (
@@ -75,9 +76,13 @@ function App() {
       <Route path="student-manage-account-page-two" element={<ManageStudentProfilePage2 />}></Route>
       <Route path="student-deactivate-account" element={<DeactivateStudentAccount />}></Route>
       <Route path="student-deactivate-account-confirmation" element={<DeactivateStudentAccountConfirmation />}></Route>
-      <Route path="" element={<AddAssessmentDetails />}></Route>
+      {/*<Route path="" element={<AddAssessmentDetails />}></Route>*/}
       <Route path="/contact-us-page" element={<ContactUsPage />}></Route>
-      <Route path="/subjects" element={<Subjects />}></Route>
+      <Route path="/contact-us" element={<ContactUsPage />}></Route>
+      <Route path="assessments" element={<Subjects />}></Route>
+      <Route path="answer-assessment" element={<AnswerAssessment />}></Route>
+      <Route path="add-assessment-details" element={<AddAssessmentDetails />}></Route>
+      <Route path="add-items" element={<AddItems />}></Route>
 
       <Route path="/appdev/assessments" element={<AssessmentPageOne />}></Route>
       <Route path="/automata/assessments" element={<AssessmentPageTwo />}></Route>
