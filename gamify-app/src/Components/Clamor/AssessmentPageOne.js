@@ -7,10 +7,23 @@ import evaluate from '../../Images/Clamor/evaluation 2.png'
 import input from '../../Images/Clamor/input 2.png'
 import shield from '../../Images/Clamor/shield 3.png'
 import checkbox from '../../Images/Clamor/empty-checkbox 1.png'
+import { useNavigate } from "react-router-dom";
 
 import '../../Components/Clamor/AssessmentPageOne.css'
 
-const JonasAngeloClamorViewCollectionOfAssessmentsAssess = (props) => {
+function AppDev() {
+  const navigate = useNavigate();
+
+  const proceedAssessmentOne = () => {
+      navigate("/appdev/assessments/week7-synch-springboot-seatwork");
+  }
+  const proceedAssessmentTwo = () => {
+    navigate("/appdev/assessments/week7-uml-long-quiz");
+  }
+  const proceedAssessmentThree = () => {
+    navigate("/appdev/assessments/week8-synch-seatwork-crud");
+  }
+  
   return (
     <div>
       <div className="jonas-angelo-clamor-view-collection-of-assessments-assess-jonas-angelo-clamor-view-collection-of-assessments-assess">
@@ -29,10 +42,10 @@ const JonasAngeloClamorViewCollectionOfAssessmentsAssess = (props) => {
             CSIT321 APPLICATIONS DEVELOPMENT AND EMERGING TECHNOLOGIES
           </span>
         </span>
-        <span className="jonas-angelo-clamor-view-collection-of-assessments-assess-text09">
+        <span className="jonas-angelo-clamor-view-collection-of-assessments-assess-text09" onClick={proceedAssessmentOne}>
           <span>Week 7_Synch Springboot Seatwork</span>
         </span>
-        <span className="jonas-angelo-clamor-view-collection-of-assessments-assess-text11">
+        <span className="jonas-angelo-clamor-view-collection-of-assessments-assess-text11" onClick={proceedAssessmentThree}>
           <span>Week 8_Synch Seatwork on UD of CRUD</span>
         </span>
         <span className="jonas-angelo-clamor-view-collection-of-assessments-assess-text13">
@@ -73,7 +86,7 @@ const JonasAngeloClamorViewCollectionOfAssessmentsAssess = (props) => {
             </span>
           </span>
         </span>
-        <span className="jonas-angelo-clamor-view-collection-of-assessments-assess-text24">
+        <span className="jonas-angelo-clamor-view-collection-of-assessments-assess-text24" onClick={proceedAssessmentTwo}>
           <span>Week 7_UML Long Quiz</span>
         </span>
         <img
@@ -210,19 +223,22 @@ const JonasAngeloClamorViewCollectionOfAssessmentsAssess = (props) => {
             src="/playground_assets/rectangle61101-qm2q.svg"
             alt="Rectangle61101"
             className="jonas-angelo-clamor-view-collection-of-assessments-assess-rectangle61"
+            onClick={proceedAssessmentOne}
           />
         <div
         src="/playground_assets/rectangle61101-qm2q.svg"
         alt="Rectangle61102"
         className="jonas-angelo-clamor-view-collection-of-assessments-assess-rectangle62"
+        onClick={proceedAssessmentTwo}
         />
         <div
         src="/playground_assets/rectangle61101-qm2q.svg"
         alt="Rectangle61103"
         className="jonas-angelo-clamor-view-collection-of-assessments-assess-rectangle63"
+        onClick={proceedAssessmentThree}
         />
     </div>
   )
 }
 
-export default JonasAngeloClamorViewCollectionOfAssessmentsAssess
+export default AppDev;
