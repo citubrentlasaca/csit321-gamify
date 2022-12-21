@@ -7,6 +7,7 @@ import logo from '../../Images/Clamor/science.png';
 import puzzle from '../../Images/Clamor/puzzle.png';
 import quiz from '../../Images/Clamor/quiz.png';
 import button from '../../Images/Clamor/button.jpg';
+import { useNavigate } from "react-router-dom";
 
 import '../../Components/Clamor/AddAssessmentDetails.css';
 
@@ -111,6 +112,12 @@ import '../../Components/Clamor/AddAssessmentDetails.css';
       await fetch(`http://localhost:8080/assessment/deleteAssessment/${assessment}`, {
         method: "DELETE"
       });
+    }
+
+    const navigate = useNavigate();
+
+    const proceedContactUsPage = () => {
+      navigate("/contact-us-page");
     };
 
   return (
@@ -279,6 +286,7 @@ import '../../Components/Clamor/AddAssessmentDetails.css';
             src={button}
             alt="Rectangle871152"
             className="jonas-angelo-clamor-update-assessment-details-rectangle87"
+            onClick={proceedContactUsPage}
           />
           <span className="jonas-angelo-clamor-update-assessment-details-text34" >
           <span>SHARE</span>
