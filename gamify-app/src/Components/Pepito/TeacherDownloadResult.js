@@ -42,11 +42,11 @@ function TeacherDownloadResultPage() {
             attempt: attempt,
             student:
             {
-                studentid : 1
+                studentid : 3
             },
             assessment:
             {
-                assessmentid : 1
+                assessmentid : 3
             }
           })
           .then((response) => {
@@ -125,12 +125,12 @@ function TeacherDownloadResultPage() {
       }
 
       const deleteResult = async () => {
-        const response = await fetch(`http://localhost:8080/result/getByResultid?resultid=${resultId}`);
-        const result = await response.json();
-    
-        await fetch(`localhost:8080/result/deleteResult//${result}`, {
-          method: "DELETE"
-        });
+        try {
+            const response = await axios.delete(`http://localhost:8080/result/deleteResult/${resultId}`);
+            console.log(response.data); // log the data to the console
+          } catch (error) {
+            console.error(error); // catch any errors
+          }
       };
 
     const [value, setValue] = React.useState(0);  
