@@ -4,6 +4,7 @@ import styles from './stephanie-micah-cahutay-teachers-profile.module.css'
 import login from '../../Images/Cahutay/login.png';
 import teacher from '../../Images/Cahutay/teacher.png';
 import { Stack, TextField, Button } from "@mui/material";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function AddAccount(){
   const [accountId, setAccountId] = React.useState();
@@ -41,6 +42,12 @@ function AddAccount(){
 }
 
 const CahutayLoginAccountForm = (props) => {
+  const navigate = useNavigate();
+  const {state} = useLocation();
+
+  const handleSubmitClick = () => {
+    navigate("/teacher-homepage");
+  }
   return (
     <div>
     
@@ -74,7 +81,7 @@ const CahutayLoginAccountForm = (props) => {
                     label="password"
                     sx={{backgroundColor: "transparent", borderRadius: 3, marginRight: 3, width: 330, marginTop: 5}} required
                     />
-                <Button size="large" variant="contained"  //onClick={createAccount} 
+                <Button size="large" variant="contained"  onClick={handleSubmitClick} 
               style={{background: "#CAFDFF", width: 150, marginTop: 25, borderRadius: 40, marginTop: 55,color:"black"
                       , marginTop: 40, marginLeft: 80}}  >Submit</Button>
                 <h5 style={{textAlign: "center", color: "black", fontSize: 10, marginTop: 50}}>Do you have an account? Register</h5>

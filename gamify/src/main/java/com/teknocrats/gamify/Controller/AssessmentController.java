@@ -3,6 +3,7 @@ package com.teknocrats.gamify.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +19,7 @@ import com.teknocrats.gamify.Service.AssessmentService;
 
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/assessment")
 public class AssessmentController {
     
@@ -36,11 +38,24 @@ public class AssessmentController {
         return assessmentService.getAllAssessments();
     }
     
+    @GetMapping("/getAssessmentId")
+	public int getAssessmentId(@RequestParam String title) {
+	  return assessmentService.getAssessmentId(title);
+	}
+    
     //Read an assessment by its corresponding Title
     @GetMapping("/getByTitle")
     public AssessmentEntity findByTitle(@RequestParam String title) throws Exception{
     	return assessmentService.findByTitle(title);
     }
+    @GetMapping("/getDescription")
+	public String getDescription(@RequestParam String title) {
+	  return assessmentService.getDescription(title);
+	}
+    @GetMapping("/getInstructions")
+	public String getInstructions(@RequestParam String title) {
+	  return assessmentService.getInstructions(title);
+	}
     
     //Update an assessment record
     @PutMapping("/putAssessment")

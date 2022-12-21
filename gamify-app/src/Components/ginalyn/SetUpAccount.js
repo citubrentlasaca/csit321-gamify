@@ -32,7 +32,7 @@ function SetUpAccount() {
             console.log(response);
             navigate("/register-student", {
                 state: {
-                    accountid: response.accountid,
+                    accountid: response.data.accountid
                 }
             });
           })

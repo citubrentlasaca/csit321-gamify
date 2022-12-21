@@ -26,10 +26,10 @@ function ManageStudentAccount() {
                     <img src={brand} alt="brand name" style={{width: 200, height: 60, paddingTop: 20}}/>
                 </div>
                 <Tabs value={value} onChange={handleChange} style={{marginTop: 15, marginLeft: 100}}>
-                    <Tab label="Home" href="/home" icon={<HomeIcon style={{fontSize: 40}}/>} iconPosition="start" style={{fontSize: 32, fontWeight: "bold", color: "black", marginRight: 30}}/>
-                    <Tab label="Activity" href="/actvity" icon={<HistoryIcon style={{fontSize: 40}}/>} iconPosition="start" style={{fontSize: 32, fontWeight: "bold", color: "black", marginRight: 30}}/>
+                    <Tab label="Home" href="/student-homepage" icon={<HomeIcon style={{fontSize: 40}}/>} iconPosition="start" style={{fontSize: 32, fontWeight: "bold", color: "black", marginRight: 30}}/>
+                    <Tab label="Activity" href="/student-actvity" icon={<HistoryIcon style={{fontSize: 40}}/>} iconPosition="start" style={{fontSize: 32, fontWeight: "bold", color: "black", marginRight: 30}}/>
                     <Tab label="Assessments" href="/assessments" icon={<ViewListIcon style={{fontSize: 40}}/>} iconPosition="start" style={{fontSize: 32, fontWeight: "bold", color: "black", marginRight: 30}}/>
-                    <Tab label="Profile" href="/profile" icon={<PersonIcon style={{fontSize: 40}}/>} iconPosition="start" style={{fontSize: 32, fontWeight: "bold", color: "black", marginRight: 30}}/>
+                    <Tab label="Profile" href="/student-profile" icon={<PersonIcon style={{fontSize: 40}}/>} iconPosition="start" style={{fontSize: 32, fontWeight: "bold", color: "black", marginRight: 30}}/>
                 </Tabs>
                 <PopupState variant="popover" popupId="demo-popup-menu">
                     {(popupState) => (
