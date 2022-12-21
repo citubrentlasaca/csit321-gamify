@@ -15,9 +15,14 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import BadgeIcon from '@mui/icons-material/Badge';
 import axios from 'axios';
-
+import { useNavigate } from "react-router-dom";
 
 function TeacherDownloadResultPage() {
+    const navigate = useNavigate();
+
+    const handleBackClick = () => {
+        navigate("/teacher-assessments");
+    }
     const [resultId, setResultId] = React.useState();
     const [studentScore, setStudentScore] = React.useState();
     const [perfectScore, setPerfectScore] = React.useState();
@@ -133,7 +138,7 @@ function TeacherDownloadResultPage() {
           }
       };
 
-    const [value, setValue] = React.useState(0);  
+    const [value, setValue] = React.useState(2);  
     const handleChange = (event,newValue) => {
         setValue(newValue);
 }
@@ -147,13 +152,13 @@ function TeacherDownloadResultPage() {
                     <img src={brand} alt="brand name" style={{width: 200, height: 60, paddingTop: 20}}/>
                 </div>
                 <Tabs value={value} onChange={handleChange} style={{marginTop: 15, marginLeft: 70}}>
-                    <Tab label="Home" href="/home" icon={<HomeIcon style={{fontSize: 40}}/>} iconPosition="start" 
+                    <Tab label="Home" href="/teacher-homepage" icon={<HomeIcon style={{fontSize: 40}}/>} iconPosition="start" 
                         style={{fontSize: 32, fontWeight: "bold", color: "black", marginRight: 10}}/>
                     <Tab label="Activity" href="/actvity" icon={<HistoryIcon style={{fontSize: 40}}/>} iconPosition="start" 
                         style={{fontSize: 32, fontWeight: "bold", color: "black", marginRight: 10}}/>
-                    <Tab label="Assessments" href="/assessments" icon={<ViewListIcon style={{fontSize: 40}}/>} iconPosition="start" 
+                    <Tab label="Assessments" href="/teacher-assessments" icon={<ViewListIcon style={{fontSize: 40}}/>} iconPosition="start" 
                             style={{fontSize: 32, fontWeight: "bold", color: "black", marginRight: 10}}/>
-                    <Tab label="Profile" href="/profile" icon={<PersonIcon style={{fontSize: 40}}/>} iconPosition="start" 
+                    <Tab label="Profile" href="/teacher-profile" icon={<PersonIcon style={{fontSize: 40}}/>} iconPosition="start" 
                             style={{fontSize: 32, fontWeight: "bold", color: "black", marginRight: 10}}/>
                 </Tabs>
                 <PopupState variant="popover" popupId="demo-popup-menu">
@@ -191,7 +196,7 @@ function TeacherDownloadResultPage() {
 
             <div className= "Assessment-title">
                 <Stack direction = "row" justifyContent = 'center'>
-                    <IconButton size = "large"> <BsFillCaretLeftFill fontSize= "inherit"/> </IconButton> 
+                    <IconButton size = "large"> <BsFillCaretLeftFill fontSize= "inherit" onClick={handleBackClick}/> </IconButton> 
                     <div>
                         <h2 style={{align: "center"}}>Review on OOP Concepts Assessment</h2>
                     </div>

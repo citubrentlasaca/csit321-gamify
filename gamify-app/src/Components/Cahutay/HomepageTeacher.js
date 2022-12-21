@@ -16,6 +16,7 @@ import appicon from '../../Images/appicon.png';
 import db1 from '../../Images/dbimage1.png';
 import db2 from '../../Images/dbimage2.png';
 //import buttonbg from '../../Images/registrationbg.jpg';
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -57,6 +58,17 @@ const Search = styled('div')(({ theme }) => ({
   }));
 
 function Homepage() {
+    const navigate = useNavigate();
+    const {state} = useLocation();
+
+    const handleCreateAssessmentClick = () => {
+        navigate("/add-assessment-details");
+    }
+
+    const handleProfileClick = () => {
+        navigate("/teacher-profile");
+    }
+
     const [value, setValue] = React.useState(0);  
     const handleChange = (event,newValue) => {
         setValue(newValue);
@@ -73,10 +85,10 @@ function Homepage() {
                             <img src={brand} alt="brand name" style={{width: 180, height: 50, paddingTop: 25}}/>
                         </div>
                         <Tabs value={value} onChange={handleChange} style={{marginTop: 15, marginLeft: 40}}>
-                            <Tab label="Home" href="/home" icon={<HomeIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
+                            <Tab label="Home" href="/teacher-homepage" icon={<HomeIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
                             <Tab label="Activity" href="/actvity" icon={<HistoryIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
-                            <Tab label="Assessments" href="/assessments" icon={<ViewListIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
-                            <Tab label="Profile" href="/profile" icon={<PersonIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
+                            <Tab label="Assessments" href="/teacher-assessments" icon={<ViewListIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
+                            <Tab label="Profile" href="/teacher-profile" icon={<PersonIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
                         </Tabs>
                         <PopupState variant="popover" popupId="demo-popup-menu">
                             {(popupState) => (
@@ -121,7 +133,7 @@ function Homepage() {
                             <Box style={{width: 520, backgroundColor: "#D9D9D9", height: 100, borderRadius: 30, marginLeft: 20, marginTop: 35, borderStyle: "solid", borderColor: "#707070"}}>
                                 <Stack direction="row">
                                    
-                                    <Button size="large" variant="contained" style={{borderRadius: 30, fontSize: 24, color: "black", width: 500, marginLeft: 10, height: 80, marginTop: 10}}>
+                                    <Button size="large" variant="contained" onClick={handleCreateAssessmentClick} style={{borderRadius: 30, fontSize: 24, color: "black", width: 500, marginLeft: 10, height: 80, marginTop: 10}}>
                                             Create Assessment
                                     </Button>
                                 </Stack>

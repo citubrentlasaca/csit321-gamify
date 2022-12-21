@@ -14,8 +14,16 @@ import transparent from '../../Images/Cahutay/rectangle23.png';
 import gamify from '../../Images/Cahutay/gamify.png';
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from "react-router-dom";
 
 function CahutayDeactivateTeacherAccountConfirmation() {
+    const navigate = useNavigate();
+    const {state} = useLocation();
+
+    const handleCancelClick = () => {
+      navigate("/teacher-profile");
+    }
+
     const [value, setValue] = React.useState(0);  
     const [teacherId, setTeacherId] = React.useState();
     const handleChange = (event,newValue) => {
@@ -33,6 +41,7 @@ function CahutayDeactivateTeacherAccountConfirmation() {
       try {
         const response = await axios.delete(`http://localhost:8080/teacher/deleteTeacher/${4}`);
         console.log(response.data); // log the data to the console
+        navigate("/login-teacher");
       } catch (error) {
         console.error(error); // catch any errors
       }
@@ -47,10 +56,10 @@ function CahutayDeactivateTeacherAccountConfirmation() {
                     <img src={gamify} alt="brand name" style={{width: 160, height: 40, paddingTop: 30}}/>
                 </div>
                 <Tabs value={value} onChange={handleChange} style={{marginTop: 15, marginLeft: 30}}>
-                    <Tab label="Home" href="/home" icon={<HomeIcon style={{fontSize: 28}}/>} iconPosition="start" style={{fontSize: 30, fontWeight: "bold", color: "black", marginRight: 30}}/>
+                    <Tab label="Home" href="/teacher-homepage" icon={<HomeIcon style={{fontSize: 28}}/>} iconPosition="start" style={{fontSize: 30, fontWeight: "bold", color: "black", marginRight: 30}}/>
                     <Tab label="Activity" href="/actvity" icon={<HistoryIcon style={{fontSize: 28}}/>} iconPosition="start" style={{fontSize: 30, fontWeight: "bold", color: "black", marginRight: 30}}/>
                     <Tab label="Assessments" href="/assessments" icon={<ViewListIcon style={{fontSize: 28}}/>} iconPosition="start" style={{fontSize: 30, fontWeight: "bold", color: "black", marginRight: 30}}/>
-                    <Tab label="Profile" href="/profile" icon={<PersonIcon style={{fontSize: 28}}/>} iconPosition="start" style={{fontSize: 30, fontWeight: "bold", color: "black", marginRight: 30}}/>
+                    <Tab label="Profile" href="/teacher-profile" icon={<PersonIcon style={{fontSize: 28}}/>} iconPosition="start" style={{fontSize: 30, fontWeight: "bold", color: "black", marginRight: 30}}/>
                 </Tabs>
                 <PopupState variant="popover" popupId="demo-popup-menu">
                     {(popupState) => (
@@ -193,7 +202,7 @@ function CahutayDeactivateTeacherAccountConfirmation() {
                                 //onChange={handlePasswordChange}
                                 />
         <Stack direction="row">
-             <Button size="small" variant="contained"
+             <Button size="small" variant="contained" onClick={handleCancelClick}
               style={{backgroundColor: "#618888", width: 120, height: 40, marginTop: 180, fontWeight: "bold", left: 130, borderRadius: 40}}>Cancel</Button>
                <Button size="small" variant="contained" onClick={deleteTeacher}
               style={{backgroundColor: "red", width: 120, height: 40, marginTop: 180, fontWeight: "bold", left: 260, borderRadius: 40}}>Proceed</Button>

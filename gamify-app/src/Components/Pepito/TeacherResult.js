@@ -11,10 +11,15 @@ import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 import brand from '../../Images/Pepito/brand.png';
 import { BsFillCaretLeftFill, BsFillEyeFill} from "react-icons/bs";
 import Collapsible from 'react-collapsible';
-
+import { useNavigate } from "react-router-dom";
 
 function TeacherResult() {
-    const [value, setValue] = React.useState(0);  
+    const navigate = useNavigate();
+
+    const handleViewScoreClick = () => {
+        navigate("/teacher-view-assessment-results");
+    }
+    const [value, setValue] = React.useState(2);  
     const handleChange = (event,newValue) => {
         setValue(newValue);
 }
@@ -28,13 +33,13 @@ return (
                 <img src={brand} alt="brand name" style={{width: 200, height: 60, paddingTop: 20}}/>
             </div>
             <Tabs value={value} onChange={handleChange} style={{marginTop: 15, marginLeft: 70}}>
-                <Tab label="Home" href="/home" icon={<HomeIcon style={{fontSize: 40}}/>} iconPosition="start" 
+                <Tab label="Home" href="/teacher-homepage" icon={<HomeIcon style={{fontSize: 40}}/>} iconPosition="start" 
                     style={{fontSize: 32, fontWeight: "bold", color: "black", marginRight: 10}}/>
                 <Tab label="Activity" href="/actvity" icon={<HistoryIcon style={{fontSize: 40}}/>} iconPosition="start" 
                     style={{fontSize: 32, fontWeight: "bold", color: "black", marginRight: 10}}/>
-                <Tab label="Assessments" href="/assessments" icon={<ViewListIcon style={{fontSize: 40}}/>} iconPosition="start" 
+                <Tab label="Assessments" href="/teacher-assessments" icon={<ViewListIcon style={{fontSize: 40}}/>} iconPosition="start" 
                         style={{fontSize: 32, fontWeight: "bold", color: "black", marginRight: 10}}/>
-                <Tab label="Profile" href="/profile" icon={<PersonIcon style={{fontSize: 40}}/>} iconPosition="start" 
+                <Tab label="Profile" href="/teacher-profile" icon={<PersonIcon style={{fontSize: 40}}/>} iconPosition="start" 
                         style={{fontSize: 32, fontWeight: "bold", color: "black", marginRight: 10}}/>
             </Tabs>
             <PopupState variant="popover" popupId="demo-popup-menu">
@@ -79,7 +84,7 @@ return (
                             <h2 style={{align: "right", marginTop: 30, marginLeft: 30, marginRight: 90, color: "black"}}>[CSIT321 F1 - C0]<br/>Review on OOP Concepts</h2>
                         </div>
                         <div>
-                            <Button variant="contained" size="small" startIcon={<BsFillEyeFill color = "black"/>} 
+                            <Button variant="contained" size="small" startIcon={<BsFillEyeFill color = "black"/>} onClick={handleViewScoreClick}
                             style={{ height: 50, backgroundColor: "#CAFDFF", marginTop: 35, marginBottom: 20, 
                             color:"black", fontWeight: "bolder", marginLeft:"550px", borderRadius: "50px"}}>View Student's Scores</Button>
                         </div>   

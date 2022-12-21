@@ -8,11 +8,7 @@ function ChooseAvatar() {
     const {state} = useLocation();
 
     const handleLoginTeacherClick = () => {
-        navigate("/login-teacher", {
-            state: {
-                studentid: state.studentid
-            }
-        });
+        navigate("/login-teacher");
     }
 
     return (

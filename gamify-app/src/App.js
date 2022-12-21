@@ -74,10 +74,15 @@ function App() {
       <Route path="login-student" element={<LoginStudent />}></Route>
       <Route path="student-homepage" element={<Homepage />}></Route>
       <Route path="student-profile" element={<StudentProfile />}></Route>
+      <Route path="teacher-profile" element={<CahutayTeachersProfile />}></Route>
       <Route path="student-manage-account-page-one" element={<ManageStudentProfilePage1 />}></Route>
       <Route path="student-manage-account-page-two" element={<ManageStudentProfilePage2 />}></Route>
+      <Route path="teacher-manage-account-page-one" element={<CahutayManageTeachersProfilePage1 />}></Route>
+      <Route path="teacher-manage-account-page-two" element={<CahutayManageTeachersProfilePage2 />}></Route>
       <Route path="student-deactivate-account" element={<DeactivateStudentAccount />}></Route>
       <Route path="student-deactivate-account-confirmation" element={<DeactivateStudentAccountConfirmation />}></Route>
+      <Route path="teacher-deactivate-account" element={<CahutayDeactivateTeacherAccount />}></Route>
+      <Route path="teacher-deactivate-account-confirmation" element={<CahutayDeactivateTeacherAccountConfirmation />}></Route>
       <Route path="teacher-homepage" element={<HomepageTeacher />}></Route>
       <Route path="/contact-us-page" element={<ContactUsPage />}></Route>
       <Route path="/contact-us" element={<ContactUsPage />}></Route>
@@ -85,6 +90,11 @@ function App() {
       <Route path="answer-assessment" element={<AnswerAssessment />}></Route>
       <Route path="add-assessment-details" element={<AddAssessmentDetails />}></Route>
       <Route path="add-items" element={<AddItems />}></Route>
+      <Route path="student-activity" element={<ActivityStudent />}></Route>
+      <Route path="teacher-assessments" element={<TeacherResult />}></Route>
+      <Route path="teacher-view-assessment-results" element={<TeacherDownloadResult />}></Route>
+      {/*<Route path="student-results" element={<StudentResult />}></Route>*/}
+      <Route path="student-review-assessment-result" element={<StudentReview />}></Route>
 
       <Route path="/appdev/assessments" element={<AssessmentPageOne />}></Route>
       <Route path="/automata/assessments" element={<AssessmentPageTwo />}></Route>
@@ -123,9 +133,7 @@ function App() {
           <AddItems/>
           <AnswerAssessment/> 
         </Stack>
-    */
-
-    
+    */   
   );
 }
 

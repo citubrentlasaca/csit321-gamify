@@ -45,12 +45,8 @@ const CahutayLoginAccountForm = (props) => {
   const navigate = useNavigate();
   const {state} = useLocation();
 
-  const handleLoginTeacherClick = () => {
-    navigate("/teacher-homepage", {
-      state: {
-        teacherid: state.teacherid
-      }
-    });
+  const handleSubmitClick = () => {
+    navigate("/teacher-homepage");
   }
   return (
     <div>
@@ -85,7 +81,7 @@ const CahutayLoginAccountForm = (props) => {
                     label="password"
                     sx={{backgroundColor: "transparent", borderRadius: 3, marginRight: 3, width: 330, marginTop: 5}} required
                     />
-                <Button size="large" variant="contained"  onClick={handleLoginTeacherClick} 
+                <Button size="large" variant="contained"  onClick={handleSubmitClick} 
               style={{background: "#CAFDFF", width: 150, marginTop: 25, borderRadius: 40, marginTop: 55,color:"black"
                       , marginTop: 40, marginLeft: 80}}  >Submit</Button>
                 <h5 style={{textAlign: "center", color: "black", fontSize: 10, marginTop: 50}}>Do you have an account? Register</h5>
