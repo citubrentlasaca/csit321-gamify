@@ -156,7 +156,6 @@ function AddItems(){
         <DeleteIcon fontSize="large"/>
       </IconButton>
     </Box>
-
     <Box
       sx={{
         width: '600px',
@@ -182,18 +181,17 @@ function AddItems(){
       </Stack>
     </Box>
     </Stack>
-    
     <Stack justifyContent="center" alignItems="center">
       <AddItemButton/>
     </Stack>
-      <Box
+      {/*<Box
       sx={{
         width: '100%',
-        height: '200px',
+        height: '100px',
         backgroundColor: 'white',
         bottom: 0,
         position: 'fixed',
-        zIndex: '999'
+        zIndex: '999',
       }}
       >
         <Stack direction="row" justifyContent="center" spacing={2} marginTop="80px">
@@ -204,9 +202,9 @@ function AddItems(){
             Discard Changes
           </Button>
         </Stack>
-      </Box>
+      </Box>*/}
     </Stack>
   );
-}
+}//-->
 
 export default AddItems;
