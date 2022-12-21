@@ -41,8 +41,8 @@ function App() {
       <Route path="/appdev/assessments/week8-synch-seatwork-crud" element={<AssessmentThree/>}></Route>
 
       <Route path="/automata/assessments/regular-expression-quiz" element={<AssessmentFour/>}></Route>
-      <Route path="/automata/assessments/cfg-long-quiz" element={<AssessmentFive />}></Route>
-      <Route path="/automata/assessments/nfa-quiz" element={<AssessmentSix />}></Route>
+      <Route path="/automata/assessments/nfa-quiz" element={<AssessmentFive />}></Route>
+      <Route path="/automata/assessments/cfg-long-quiz" element={<AssessmentSix />}></Route>
 
       <Route path="/industryelective/assessments/quiz-oop-and-solid" element={<AssessmentSeven />}></Route>
       <Route path="/industryelective/assessments/quiz-design-patterns" element={<AssessmentEight />}></Route>
