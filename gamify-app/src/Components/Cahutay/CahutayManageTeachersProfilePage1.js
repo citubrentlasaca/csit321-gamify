@@ -14,15 +14,68 @@ import appicon from '../../Images/Cahutay/applogo.png';
 import teacher from '../../Images/Cahutay/teacher.png';
 import transparent from '../../Images/Cahutay/rectangle23.png';
 import gamify from '../../Images/Cahutay/gamify.png';
+import axios from 'axios';
 
 function CahutayManageTeachersProfilePage1() {
     const [value, setValue] = React.useState(0);  
+    const [firstname, setFirstname] = React.useState("");
+    const [lastname, setLastname] = React.useState("");
+    const [gender, setGender] = React.useState("");
+    const [birthday, setBirthday] = React.useState("");
+    const [subjectnumber, setSubjectnumber] = React.useState("");
+    const [descriptivetitle, setDescriptivetitle] = React.useState("");
+    const changeFirstname = (event) => {
+        setFirstname(event.target.value);
+    };
+    const changeLastname = (event) => {
+        setLastname(event.target.value);
+    };
+    const changeGender = (event) => {
+        setGender(event.target.value);
+    };
+    const changeBirthday = (event) => {
+        setBirthday(event.target.value);
+    };
+    const changeSubjectnumber = (event) => {
+        setSubjectnumber(event.target.value);
+    };
+    const changeDescriptivetitle = (event) => {
+        setDescriptivetitle(event.target.value);
+    };
     const handleChange = (event,newValue) => {
         setValue(newValue);
+
+        
     }
+    const getTeacher = async () => {
+        try {
+          const response = await axios.get(`http://localhost:8080/teacher/getByTeacherid?teacherid=${4}`);
+          setFirstname(response.data.firstname);
+          setLastname(response.data.lastname);
+          setGender(response.data.gender);
+          setBirthday(response.data.birthday);
+          setSubjectnumber(response.data.subjectnumber);
+          setDescriptivetitle(response.data.descriptivetitle);
+          console.log(response.data); // log the data to the console
+        } catch (error) {
+          console.error(error); // catch any errors
+        }
+      };
+
+      const updateTeacher = async () => {
+        try {
+          const response = await axios.put(`http://localhost:8080/teacher/putTeacher?teacherid=${4}`, {
+            subjectnumber: subjectnumber,
+            descriptivetitle: descriptivetitle
+          });
+          console.log(response.data); // log the data to the console
+        } catch (error) {
+          console.error(error); // catch any errors
+        }
+      }
     return (
         <div className="landing">
-            <Stack direction="row">
+            <Stack direction="row"> 
                 <div>
                     <img src={appicon} alt="app icon" style={{width: 90, height: 50, paddingLeft: 10}}/>
                 </div>
@@ -108,12 +161,16 @@ function CahutayManageTeachersProfilePage1() {
                 <TextField
                     id="outlined-firstname"
                     label="Firstname"
+                    value={firstname}
+                    onChange={changeFirstname}
                     sx={{backgroundColor: "white", borderRadius: 3, marginRight: 3, width: 280}}
                     //onChange={handleFirstnameChange}
                 />
                 <TextField
                     id="outlined-lastname"
                     label="Lastname"
+                    value={lastname}
+                    onChange={changeLastname}
                     sx={{backgroundColor: "white", borderRadius: 3, marginRight: 3, width: 290}}
                     //onChange={handleLastnameChange}
                 />            
@@ -127,27 +184,13 @@ function CahutayManageTeachersProfilePage1() {
         </div>
 
           <div className={styles['group61']}>
-                <Stack direction="row">
-                    <RadioGroup
-                        row
-                        aria-labelledby="register-gender"
-                        name="gender"
-                        defaultValue="male"
-                    >
-                    <FormControlLabel
-                        value="male"
-                        control={<Radio />}
-                        label="Male"
-                        sx={{color: "white", marginLeft: 8, marginRight: 15}}
-                    />
-                    <FormControlLabel
-                        value="female"
-                        control={<Radio />}
-                        label="Female"
-                        sx={{color: "white"}}
-                    />
-                    </RadioGroup>
-                </Stack>
+          <TextField
+                    id="outlined-birthday"
+                    label="gender"
+                    value={gender}
+                    onChange={changeGender}
+                    sx={{backgroundColor: "white", borderRadius: 3, width: 240}}
+                />
             </div>
            
             <div>
@@ -159,6 +202,8 @@ function CahutayManageTeachersProfilePage1() {
                 <TextField
                     id="outlined-birthday"
                     label="mm/dd/yyyy"
+                    value={birthday}
+                    onChange={changeBirthday}
                     sx={{backgroundColor: "white", borderRadius: 3, width: 240}}
                     //onChange={handleBirthdayChange}
                     />
@@ -174,17 +219,26 @@ function CahutayManageTeachersProfilePage1() {
                 <TextField
                     id="outlined-subjectnum"
                     label="Subject Number"
+                    value={subjectnumber}
+                    onChange={changeSubjectnumber}
                     sx={{backgroundColor: "white", borderRadius: 3, marginRight: 3, width: 280}}
                     //onChange={handleFirstnameChange}
                 />
                 <TextField
                     id="outlined-descriptivetitle"
                     label="Descriptive Title"
+                    value={descriptivetitle}
+                    onChange={changeDescriptivetitle}
                     sx={{backgroundColor: "white", borderRadius: 3, marginRight: 3, width: 290,}}
                     //onChange={handleLastnameChange}
                 />            
             </Stack>                  
           </div>
+
+             <div className={styles['groupget']}>
+             <Button size="large" variant="contained" onClick={getTeacher}
+              style={{backgroundColor: "transparent", width: 110, marginTop: 15, borderRadius: 40, fontWeight: "bold"}}>Display</Button>
+             </div>
 
              <div className={styles['groupnext']}>
              <Button size="large" variant="contained"
@@ -192,7 +246,7 @@ function CahutayManageTeachersProfilePage1() {
              </div>
 
              <div className={styles['groupsave']}>
-             <Button size="large" variant="contained"
+             <Button size="large" variant="contained" onClick={updateTeacher}
               style={{backgroundColor: "black", width: 110, marginTop: 15, borderRadius: 40, fontWeight: "bold"}}>Save</Button>
              </div>
              

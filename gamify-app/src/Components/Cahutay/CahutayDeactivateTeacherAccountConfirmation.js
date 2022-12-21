@@ -1,5 +1,4 @@
 //import { Visibility, VisibilityOff } from "@mui/icons-material";
-import * as React from 'react';
 import styles from './stephanie-micah-cahutay-teachers-profile.module.css'
 import { Stack, Tabs, Tab, Menu, MenuItem, IconButton, ListItemIcon, ListItemText, Divider, TextField, Button } from "@mui/material";
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
@@ -13,11 +12,30 @@ import appicon from '../../Images/Cahutay/applogo.png';
 import teacher from '../../Images/Cahutay/teacher.png';
 import transparent from '../../Images/Cahutay/rectangle23.png';
 import gamify from '../../Images/Cahutay/gamify.png';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 
 function CahutayDeactivateTeacherAccountConfirmation() {
     const [value, setValue] = React.useState(0);  
+    const [teacherId, setTeacherId] = React.useState();
     const handleChange = (event,newValue) => {
         setValue(newValue);
+    }
+
+    useEffect(() => {
+      async function fetchData() {
+        const response = await axios.get(`http://localhost:8080/teacher/getByTeacherid?teacherid=${4}`);
+        setTeacherId(response.data.teacherid);
+      }
+      fetchData();
+    }, []);
+    const deleteTeacher = async () => {
+      try {
+        const response = await axios.delete(`http://localhost:8080/teacher/deleteTeacher/${4}`);
+        console.log(response.data); // log the data to the console
+      } catch (error) {
+        console.error(error); // catch any errors
+      }
     }
     return (
         <div className="landing">
@@ -65,7 +83,7 @@ function CahutayDeactivateTeacherAccountConfirmation() {
 
         <div className={styles['group82']}>
           <span className={styles['text']}>
-            <span>Jane Doe</span>
+            <span>Leah Barbaso</span>
           </span>
           <span className={styles['text02']}>
             <span>CSIT321</span>
@@ -75,7 +93,7 @@ function CahutayDeactivateTeacherAccountConfirmation() {
         <div className={styles['group87']}>
           <span className={styles['text04']}>
             <span>
-              <span>@janeee</span>
+              <span>@leah</span>
               <br></br>
               <span></span>
             </span>
@@ -108,7 +126,7 @@ function CahutayDeactivateTeacherAccountConfirmation() {
               <span>Email</span>
             </span>
             <span className={styles['text23']}>
-              <span>janedoe@gmail.com</span>
+              <span>leahbarbaso@gmail.com</span>
             </span>
           </div>
           <div className={styles['group84']}>
@@ -119,7 +137,7 @@ function CahutayDeactivateTeacherAccountConfirmation() {
               <span>Date of Birth</span>
             </span>
             <span className={styles['text27']}>
-              <span>01 - 01 - 1899</span>
+              <span>01 - 01 - 1997</span>
             </span>
           </div>
           <div className={styles['group86']}>
@@ -177,7 +195,7 @@ function CahutayDeactivateTeacherAccountConfirmation() {
         <Stack direction="row">
              <Button size="small" variant="contained"
               style={{backgroundColor: "#618888", width: 120, height: 40, marginTop: 180, fontWeight: "bold", left: 130, borderRadius: 40}}>Cancel</Button>
-               <Button size="small" variant="contained"
+               <Button size="small" variant="contained" onClick={deleteTeacher}
               style={{backgroundColor: "red", width: 120, height: 40, marginTop: 180, fontWeight: "bold", left: 260, borderRadius: 40}}>Proceed</Button>
               </Stack>
               </Stack>

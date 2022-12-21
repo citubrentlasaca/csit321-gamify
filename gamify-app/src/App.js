@@ -55,6 +55,7 @@ import DeactivateStudentAccount from './Components/ginalyn/DeactivateStudentAcco
 import DeactivateStudentAccountConfirmation from './Components/ginalyn/DeactivateStudentAccountConfirmation';
 import AddItems from './Components/Lasaca/AddItems';
 
+import HomepageTeacher from './Components/Cahutay/HomepageTeacher';
 function App() {
   return (
     <Routes>

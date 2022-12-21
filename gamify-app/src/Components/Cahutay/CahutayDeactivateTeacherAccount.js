@@ -65,7 +65,7 @@ function CahutayDeactivateTeacherAccount() {
 
         <div className={styles['group82']}>
           <span className={styles['text']}>
-            <span>Jane Doe</span>
+            <span>Leah Barbaso</span>
           </span>
           <span className={styles['text02']}>
             <span>CSIT321</span>
@@ -75,7 +75,7 @@ function CahutayDeactivateTeacherAccount() {
         <div className={styles['group87']}>
           <span className={styles['text04']}>
             <span>
-              <span>@janeee</span>
+              <span>@leah</span>
               <br></br>
               <span></span>
             </span>
@@ -108,7 +108,7 @@ function CahutayDeactivateTeacherAccount() {
               <span>Email</span>
             </span>
             <span className={styles['text23']}>
-              <span>janedoe@gmail.com</span>
+              <span>leahbarbaso@gmail.com</span>
             </span>
           </div>
           <div className={styles['group84']}>
@@ -119,7 +119,7 @@ function CahutayDeactivateTeacherAccount() {
               <span>Date of Birth</span>
             </span>
             <span className={styles['text27']}>
-              <span>01 - 01 - 1899</span>
+              <span>01 - 01 - 1997</span>
             </span>
           </div>
           <div className={styles['group86']}>
