@@ -7,10 +7,23 @@ import evaluate from '../../Images/Clamor/evaluation 2.png'
 import input from '../../Images/Clamor/input 2.png'
 import shield from '../../Images/Clamor/shield 3.png'
 import checkbox from '../../Images/Clamor/empty-checkbox 1.png'
+import { useNavigate } from "react-router-dom";
 
 import '../../Components/Clamor/AssessmentPageThree.css'
 
-const JonasAngeloClamorViewCollectionOfAssessmentsAssess = (props) => {
+function IndustryElective() {
+  const navigate = useNavigate();
+
+  const proceedAssessmentSeven = () => {
+      navigate("/industryelective/assessments/quiz-oop-and-solid");
+  }
+  const proceedAssessmentEight = () => {
+    navigate("/industryelective/assessments/quiz-design-patterns");
+  }
+  const proceedAssessmentNine = () => {
+    navigate("/industryelective/assessments/quiz-unit-test");
+  }
+
   return (
     <div>
       <div className="jonas-angelo-clamor-view-collection-of-assessments-assess-jonas-angelo-clamor-view-collection-of-assessments-assess">
@@ -190,19 +203,22 @@ const JonasAngeloClamorViewCollectionOfAssessmentsAssess = (props) => {
             src="/playground_assets/rectangle61101-qm2q.svg"
             alt="Rectangle61101"
             className="jonas-angelo-clamor-view-collection-of-assessments-assess-rectangle61"
+            onClick={proceedAssessmentSeven}
           />
         <div
         src="/playground_assets/rectangle61101-qm2q.svg"
         alt="Rectangle61102"
         className="jonas-angelo-clamor-view-collection-of-assessments-assess-rectangle62"
+        onClick={proceedAssessmentNine}
         />
         <div
         src="/playground_assets/rectangle61101-qm2q.svg"
         alt="Rectangle61103"
         className="jonas-angelo-clamor-view-collection-of-assessments-assess-rectangle63"
+        onClick={proceedAssessmentEight}
         />
     </div>
   )
 }
 
-export default JonasAngeloClamorViewCollectionOfAssessmentsAssess
+export default IndustryElective;
