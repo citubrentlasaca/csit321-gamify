@@ -30,7 +30,7 @@ function SetUpAccount() {
           })
           .then((response) => {
             console.log(response);
-            navigate("/register-student", {
+            navigate("/register-teacher", {
                 state: {
                     accountid: response.data.accountid
                 }

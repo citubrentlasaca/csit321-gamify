@@ -62,10 +62,11 @@ function App() {
       <Route path="" element={<Landing />}></Route>
       <Route path="register" element={<CahutayChooseAccount />}></Route>
       <Route path="register-student" element={<RegistrationFormStudent />}></Route>
+      <Route path="register-teacher" element={<RegistrationFormTeacher />}></Route>
       <Route path="register-choose-student-avatar" element={<ChooseAvatar />}></Route>
       <Route path="register-setup-student-account" element={<SetUpAccount />}></Route>
       <Route path="register-setup-teacher-account" element={<CahutaySetUpAccount />}></Route>
-      <Route path="register-choose-student-avatar" element={<CahutayChooseAvatar />}></Route>
+      <Route path="register-choose-teacher-avatar" element={<CahutayChooseAvatar />}></Route>
       <Route path="about-us" element={<AboutUs />}></Route>
       <Route path="plans-and-pricing" element={<Price />}></Route>
       <Route path="faq" element={<FAQ />}></Route>
@@ -77,7 +78,7 @@ function App() {
       <Route path="student-manage-account-page-two" element={<ManageStudentProfilePage2 />}></Route>
       <Route path="student-deactivate-account" element={<DeactivateStudentAccount />}></Route>
       <Route path="student-deactivate-account-confirmation" element={<DeactivateStudentAccountConfirmation />}></Route>
-      {/*<Route path="" element={<AddAssessmentDetails />}></Route>*/}
+      <Route path="teacher-homepage" element={<HomepageTeacher />}></Route>
       <Route path="/contact-us-page" element={<ContactUsPage />}></Route>
       <Route path="/contact-us" element={<ContactUsPage />}></Route>
       <Route path="assessments" element={<Subjects />}></Route>
