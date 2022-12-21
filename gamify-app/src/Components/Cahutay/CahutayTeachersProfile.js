@@ -13,9 +13,21 @@ import appicon from '../../Images/Cahutay/applogo.png';
 import teacher from '../../Images/Cahutay/teacher.png';
 import transparent from '../../Images/Cahutay/rectangle23.png';
 import gamify from '../../Images/Cahutay/gamify.png';
+import { useLocation, useNavigate } from "react-router-dom";
 
 function CahutayTeachersProfile() {
-    const [value, setValue] = React.useState(0);  
+    const navigate = useNavigate();
+    const {state} = useLocation();
+
+    const handleManageAccountClick = () => {
+        navigate("/teacher-manage-account-page-one");
+    }
+
+    const handleDeactivateAccountClick = () => {
+        navigate("/teacher-deactivate-account");
+    }
+
+    const [value, setValue] = React.useState(3);  
     const handleChange = (event,newValue) => {
         setValue(newValue);
     }
@@ -29,10 +41,10 @@ function CahutayTeachersProfile() {
                     <img src={gamify} alt="brand name" style={{width: 160, height: 40, paddingTop: 30}}/>
                 </div>
                 <Tabs value={value} onChange={handleChange} style={{marginTop: 15, marginLeft: 30}}>
-                    <Tab label="Home" href="/home" icon={<HomeIcon style={{fontSize: 28}}/>} iconPosition="start" style={{fontSize: 30, fontWeight: "bold", color: "black", marginRight: 30}}/>
+                    <Tab label="Home" href="/teacher-homepage" icon={<HomeIcon style={{fontSize: 28}}/>} iconPosition="start" style={{fontSize: 30, fontWeight: "bold", color: "black", marginRight: 30}}/>
                     <Tab label="Activity" href="/actvity" icon={<HistoryIcon style={{fontSize: 28}}/>} iconPosition="start" style={{fontSize: 30, fontWeight: "bold", color: "black", marginRight: 30}}/>
-                    <Tab label="Assessments" href="/assessments" icon={<ViewListIcon style={{fontSize: 28}}/>} iconPosition="start" style={{fontSize: 30, fontWeight: "bold", color: "black", marginRight: 30}}/>
-                    <Tab label="Profile" href="/profile" icon={<PersonIcon style={{fontSize: 28}}/>} iconPosition="start" style={{fontSize: 30, fontWeight: "bold", color: "black", marginRight: 30}}/>
+                    <Tab label="Assessments" href="/teacher-assessments" icon={<ViewListIcon style={{fontSize: 28}}/>} iconPosition="start" style={{fontSize: 30, fontWeight: "bold", color: "black", marginRight: 30}}/>
+                    <Tab label="Profile" href="/teacher-profile" icon={<PersonIcon style={{fontSize: 28}}/>} iconPosition="start" style={{fontSize: 30, fontWeight: "bold", color: "black", marginRight: 30}}/>
                 </Tabs>
                 <PopupState variant="popover" popupId="demo-popup-menu">
                     {(popupState) => (
@@ -65,7 +77,7 @@ function CahutayTeachersProfile() {
 
                 <div className={styles['group82']}>
                 <span className={styles['text']}>
-                    <span>Jane Doe</span>
+                    <span>Leah Barbaso</span>
                 </span>
                 <span className={styles['text02']}>
                     <span>CSIT321</span>
@@ -75,7 +87,7 @@ function CahutayTeachersProfile() {
                 <div className={styles['group87']}>
                 <span className={styles['text04']}>
                     <span>
-                    <span>@janeee</span>
+                    <span>@leah</span>
                     <br></br>
                     <span></span>
                     </span>
@@ -108,7 +120,7 @@ function CahutayTeachersProfile() {
                     <span>Email</span>
                     </span>
                     <span className={styles['text23']}>
-                    <span>janedoe@gmail.com</span>
+                    <span>leahbarbaso@gmail.com</span>
                     </span>
                 </div>
                 <div className={styles['group84']}>
@@ -119,7 +131,7 @@ function CahutayTeachersProfile() {
                     <span>Date of Birth</span>
                     </span>
                     <span className={styles['text27']}>
-                    <span>01 - 01 - 1899</span>
+                    <span>01 - 01 - 1997</span>
                     </span>
                 </div>
                 <div className={styles['group86']}>
@@ -135,11 +147,11 @@ function CahutayTeachersProfile() {
                 </div>
                 </div>
                 <div className={styles['group53']}>
-                <Button size="large" variant="contained"
+                <Button size="large" variant="contained" onClick={handleManageAccountClick}
                 style={{backgroundColor: "cyan",width: 294, marginTop: 15, borderRadius: 40, fontWeight: "bold"}}>Manage Account</Button>
                 </div>
                 <div className={styles['group79']}>
-                <Button size="large" variant="contained"
+                <Button size="large" variant="contained" onClick={handleDeactivateAccountClick}
                 style={{backgroundColor: "red",width: 294, marginTop: 15, borderRadius: 40, fontWeight: "bold"}}>Deactivate Account</Button>
                 
                 </div>

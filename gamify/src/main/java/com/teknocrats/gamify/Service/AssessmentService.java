@@ -39,6 +39,18 @@ public class AssessmentService {
 		else 
 			return null;
 	}
+	
+	public int getAssessmentId(String title) {
+		return assessmentRepository.findAssessmentIdByTitle(title);
+	}
+	
+	public String getDescription(String title) {
+		return assessmentRepository.findDesciptionByTitle(title);
+	}
+	
+	public String getInstructions(String title) {
+		return assessmentRepository.findInstructionsByTitle(title);
+	}
 		
 	//Update an assessment record
 	public AssessmentEntity putAssessment(int id, AssessmentEntity newAssessmentDetails) throws Exception {

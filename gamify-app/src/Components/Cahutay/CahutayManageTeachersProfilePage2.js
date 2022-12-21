@@ -14,12 +14,59 @@ import appicon from '../../Images/Cahutay/applogo.png';
 import teacher from '../../Images/Cahutay/teacher.png';
 import transparent from '../../Images/Cahutay/rectangle23.png';
 import gamify from '../../Images/Cahutay/gamify.png';
+import axios from 'axios';
+import { useLocation, useNavigate } from "react-router-dom";
 
 function ManageTeachersProfilePage2() {
-    const [value, setValue] = React.useState(0);  
+    const navigate = useNavigate();
+    const {state} = useLocation();
+
+    const handleBackClick = () => {
+        navigate("/teacher-manage-account-page-one");
+    }
+    const [value, setValue] = React.useState(0);
+    const [accountId, setAccountId] = React.useState(); 
+    const [username, setUsername] = React.useState(""); 
+    const [email, setEmail] = React.useState(""); 
+    const [password, setPassword] = React.useState(""); 
     const handleChange = (event,newValue) => {
         setValue(newValue);
     }
+    const changeUsername = (event) => {
+        setUsername(event.target.value);
+      };
+      const changeEmail = (event) => {
+        setEmail(event.target.value);
+      };
+      const changePassword = (event) => {
+        setPassword(event.target.value);
+      };
+
+    const getTeacher = async () => {
+        try {
+          const response = await axios.get(`http://localhost:8080/account/getByAccountid?accountid=${7}`);
+          const data = response.data;
+          setAccountId(data.accountid)
+          setUsername(data.username);
+          setEmail(data.email);
+          setPassword(data.password);
+          console.log(response.data); // log the data to the console
+        } catch (error) {
+          console.error(error); // catch any errors
+        }
+      }
+      const updateAccount = async () => {
+        try {
+          const response = await axios.put(`http://localhost:8080/account/putAccount?accountid=${accountId}`, {
+            username: username,
+            email: email,
+            password: password
+          });
+          console.log(response.data); // log the data to the console
+        } catch (error) {
+          console.error(error); // catch any errors
+        }
+      }
     return (
         <div className="landing">
             <Stack direction="row">
@@ -30,10 +77,10 @@ function ManageTeachersProfilePage2() {
                     <img src={gamify} alt="brand name" style={{width: 160, height: 40, paddingTop: 30}}/>
                 </div>
                 <Tabs value={value} onChange={handleChange} style={{marginTop: 15, marginLeft: 30}}>
-                    <Tab label="Home" href="/home" icon={<HomeIcon style={{fontSize: 28}}/>} iconPosition="start" style={{fontSize: 30, fontWeight: "bold", color: "black", marginRight: 30}}/>
+                    <Tab label="Home" href="/teacher-homepage" icon={<HomeIcon style={{fontSize: 28}}/>} iconPosition="start" style={{fontSize: 30, fontWeight: "bold", color: "black", marginRight: 30}}/>
                     <Tab label="Activity" href="/actvity" icon={<HistoryIcon style={{fontSize: 28}}/>} iconPosition="start" style={{fontSize: 30, fontWeight: "bold", color: "black", marginRight: 30}}/>
                     <Tab label="Assessments" href="/assessments" icon={<ViewListIcon style={{fontSize: 28}}/>} iconPosition="start" style={{fontSize: 30, fontWeight: "bold", color: "black", marginRight: 30}}/>
-                    <Tab label="Profile" href="/profile" icon={<PersonIcon style={{fontSize: 28}}/>} iconPosition="start" style={{fontSize: 30, fontWeight: "bold", color: "black", marginRight: 30}}/>
+                    <Tab label="Profile" href="/teacher-profile" icon={<PersonIcon style={{fontSize: 28}}/>} iconPosition="start" style={{fontSize: 30, fontWeight: "bold", color: "black", marginRight: 30}}/>
                 </Tabs>
                 <PopupState variant="popover" popupId="demo-popup-menu">
                     {(popupState) => (
@@ -107,6 +154,8 @@ function ManageTeachersProfilePage2() {
                 <TextField
                     id="outlined-username"
                     label="username"
+                    value={username}
+                    onChange={changeUsername}
                     sx={{backgroundColor: "white", borderRadius: 3, marginRight: 3, width: 500}}
                     //onChange={handleFirstnameChange}
                 />                
@@ -120,6 +169,8 @@ function ManageTeachersProfilePage2() {
                 <TextField
                     id="outlined-email"
                     label="email"
+                    value={email}
+                    onChange={changeEmail}
                     sx={{backgroundColor: "white", borderRadius: 3, marginRight: 3, width: 500}}
                     //onChange={handleBirthdayChange}
                     />
@@ -133,17 +184,25 @@ function ManageTeachersProfilePage2() {
                 <TextField
                     id="outlined-password"
                     label="password"
+                    value={password}
+                    onChange={changePassword}
                     sx={{backgroundColor: "white", borderRadius: 3, marginRight: 3, width: 500}}
                     //onChange={handleBirthdayChange}
                     />
             </div>
+
+            <div className={styles['groupget']}>
+             <Button size="large" variant="contained"  onClick={getTeacher}
+              style={{backgroundColor: "transparent", width: 110, marginTop: 15, borderRadius: 40, fontWeight: "bold"}}>Display</Button>
+             </div>
+
             <div className={styles['groupnext']}>
-             <Button size="large" variant="contained"
+             <Button size="large" variant="contained" onClick={handleBackClick}
               style={{backgroundColor: "cyan", width: 110, marginTop: 15, borderRadius: 40, fontWeight: "bold"}}>Back</Button>
              </div>
 
              <div className={styles['groupsave']}>
-             <Button size="large" variant="contained"
+             <Button size="large" variant="contained" onClick={updateAccount}
               style={{backgroundColor: "black", width: 110, marginTop: 15, borderRadius: 40, fontWeight: "bold"}}>Save</Button>
              </div>
              

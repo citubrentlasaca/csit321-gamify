@@ -15,9 +15,14 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import BadgeIcon from '@mui/icons-material/Badge';
 import axios from 'axios';
-
+import { useNavigate } from "react-router-dom";
 
 function TeacherDownloadResultPage() {
+    const navigate = useNavigate();
+
+    const handleBackClick = () => {
+        navigate("/teacher-assessments");
+    }
     const [resultId, setResultId] = React.useState();
     const [studentScore, setStudentScore] = React.useState();
     const [perfectScore, setPerfectScore] = React.useState();
@@ -42,11 +47,11 @@ function TeacherDownloadResultPage() {
             attempt: attempt,
             student:
             {
-                studentid : 1
+                studentid : 3
             },
             assessment:
             {
-                assessmentid : 1
+                assessmentid : 3
             }
           })
           .then((response) => {
@@ -59,11 +64,53 @@ function TeacherDownloadResultPage() {
     
       const getResultId = async () => {
         try {
+          const response = await axios.get(`http://localhost:8080/result/getResultId?resultid=${resultId}`);
+          setResultId(response.data);
+          //setAttempt(response.data.attempt);
+          //setStudentScore(response.data.studentScore);
+          //setPerfectScore(response.data.perfectScore);
+          console.log(response.data); // log the data to the console
+        } catch (error) {
+          console.error(error); // catch any errors
+        }
+      } 
+
+      const getResult = async () => {
+        try {
           const response = await axios.get(`http://localhost:8080/result/getByResultid?resultid=${resultId}`);
-          //setResultId(response.data);
           setAttempt(response.data.attempt);
-          setStudentScore(response.data.studentScore);
-          setPerfectScore(response.data.perfectScore);
+          setStudentScore(response.data.studentscore);
+          setPerfectScore(response.data.perfectscore);
+          console.log(response.data); // log the data to the console
+        } catch (error) {
+          console.error(error); // catch any errors
+        }
+      } 
+
+      const getAttempt = async () => {
+        try {
+          const response = await axios.get(`http://localhost:8080/result/getAttempt?resultid=${resultId}`);
+          setAttempt(response.data);
+          console.log(response.data); // log the data to the console
+        } catch (error) {
+          console.error(error); // catch any errors
+        }
+      }
+
+      const getStudentScore = async () => {
+        try {
+          const response = await axios.get(`http://localhost:8080/result/getStudentScore?resultid=${resultId}`);
+          setStudentScore(response.data);
+          console.log(response.data); // log the data to the console
+        } catch (error) {
+          console.error(error); // catch any errors
+        }
+      }
+
+      const getPerfectScore = async () => {
+        try {
+          const response = await axios.get(`http://localhost:8080/result/getPerfectScore?resultid=${resultId}`);
+          setPerfectScore(response.data);
           console.log(response.data); // log the data to the console
         } catch (error) {
           console.error(error); // catch any errors
@@ -83,22 +130,15 @@ function TeacherDownloadResultPage() {
       }
 
       const deleteResult = async () => {
-        const response = await fetch(`http://localhost:8080/result/getByResultid?resultid=${resultId}`);
-        const result = await response.json();
-    
-        await fetch(`localhost:8080/result/deleteResult//${result}`, {
-          method: "DELETE"
-        });
+        try {
+            const response = await axios.delete(`http://localhost:8080/result/deleteResult/${resultId}`);
+            console.log(response.data); // log the data to the console
+          } catch (error) {
+            console.error(error); // catch any errors
+          }
       };
 
-    /*const data = [
-        { resultid: 1, attempt: 1, studentscore: 50, perfectscore: 50},
-        { resultid: 2, attempt: 1, studentscore: 50, perfectscore: 50},
-        { resultid: 3, attempt: 1, studentscore: 50, perfectscore: 50},
-        { resultid: 4, attempt: 1, studentscore: 50, perfectscore: 50},
-        { resultid: 5, attempt: 1, studentscore: 50, perfectscore: 50},
-      ]*/
-    const [value, setValue] = React.useState(0);  
+    const [value, setValue] = React.useState(2);  
     const handleChange = (event,newValue) => {
         setValue(newValue);
 }
@@ -112,13 +152,13 @@ function TeacherDownloadResultPage() {
                     <img src={brand} alt="brand name" style={{width: 200, height: 60, paddingTop: 20}}/>
                 </div>
                 <Tabs value={value} onChange={handleChange} style={{marginTop: 15, marginLeft: 70}}>
-                    <Tab label="Home" href="/home" icon={<HomeIcon style={{fontSize: 40}}/>} iconPosition="start" 
+                    <Tab label="Home" href="/teacher-homepage" icon={<HomeIcon style={{fontSize: 40}}/>} iconPosition="start" 
                         style={{fontSize: 32, fontWeight: "bold", color: "black", marginRight: 10}}/>
                     <Tab label="Activity" href="/actvity" icon={<HistoryIcon style={{fontSize: 40}}/>} iconPosition="start" 
                         style={{fontSize: 32, fontWeight: "bold", color: "black", marginRight: 10}}/>
-                    <Tab label="Assessments" href="/assessments" icon={<ViewListIcon style={{fontSize: 40}}/>} iconPosition="start" 
+                    <Tab label="Assessments" href="/teacher-assessments" icon={<ViewListIcon style={{fontSize: 40}}/>} iconPosition="start" 
                             style={{fontSize: 32, fontWeight: "bold", color: "black", marginRight: 10}}/>
-                    <Tab label="Profile" href="/profile" icon={<PersonIcon style={{fontSize: 40}}/>} iconPosition="start" 
+                    <Tab label="Profile" href="/teacher-profile" icon={<PersonIcon style={{fontSize: 40}}/>} iconPosition="start" 
                             style={{fontSize: 32, fontWeight: "bold", color: "black", marginRight: 10}}/>
                 </Tabs>
                 <PopupState variant="popover" popupId="demo-popup-menu">
@@ -156,7 +196,7 @@ function TeacherDownloadResultPage() {
 
             <div className= "Assessment-title">
                 <Stack direction = "row" justifyContent = 'center'>
-                    <IconButton size = "large"> <BsFillCaretLeftFill fontSize= "inherit"/> </IconButton> 
+                    <IconButton size = "large"> <BsFillCaretLeftFill fontSize= "inherit" onClick={handleBackClick}/> </IconButton> 
                     <div>
                         <h2 style={{align: "center"}}>Review on OOP Concepts Assessment</h2>
                     </div>
@@ -166,40 +206,63 @@ function TeacherDownloadResultPage() {
             <div>
                 <div className = "Student-scores">
                     <Stack direction="row" justifyContent = 'center'>
-                        <TextField  id = "resultid" value = {resultId} variant="outlined" fullWidth 
-                                    label = "Result Id Number" helperText="Please Enter Result Id Number to View Record"
-                                    style = {{width:"60vh", align: "center", marginTop: 50, color: "black", marginBottom: 20}} />
-                        <IconButton aria-label = "badge" size = "large" onClick = {getResultId}> <BsSearch/> </IconButton> 
+                        <TextField  
+                            id = "resultid" 
+                            value = {resultId} 
+                            onChange = {changeResultId}
+                            variant="outlined" 
+                            fullWidth        
+                            label = "Result Id Number" 
+                            helperText="Please Enter Result Id Number to View Record"
+                            style = {{
+                                width:"60vh", 
+                                align: "center", 
+                                marginTop: 50, 
+                                color: "black",
+                                marginBottom: 20}} />
+                        <IconButton aria-label = "badge" size = "large" onClick = {getResult}> <BsSearch/> </IconButton> 
                     </Stack>
 
                     <Stack direction="row" justifyContent="space-between">
-                        <FormControl fullWidth>
-                            <InputLabel id = "attempt">Select how many attempts allowed</InputLabel>
-                            <Select
-                                labelId = "attempt"
-                                id = "attempt"
-                                value = {attempt}
-                                label = "Enter number of attempt/s"
-                                onChange = {changeAttempt}
-                                >
-                                <MenuItem value={1}>1</MenuItem>
-                                <MenuItem value={2}>2</MenuItem>
-                                <MenuItem value={3}>3</MenuItem>
-                                <MenuItem value={4}>4</MenuItem>
-                                <MenuItem value={5}>5</MenuItem>
-                            </Select>
-                        </FormControl>
-                        <TextField id="studentscore" label="Student Score" value={studentScore} onChange={changeStudentScore} variant="outlined" 
-                            style={{width:"150vh", align: "center", borderColor: "black", marginBottom: 20}}/>
-                        <TextField id="perfectscore" label="Perfect Score" value={perfectScore} onChange={changePerfectScore} variant="outlined"
-                            style={{borderStyle: "solid", width:"150vh", align: "center", borderColor: "black", marginBottom: 20}}/>     
+                        <TextField 
+                            id="attempt" 
+                            value={attempt} 
+                            onChange={changeAttempt} 
+                            variant="outlined" 
+                            style={{
+                                width:"150vh", 
+                                align: "center", 
+                                borderColor: "black", 
+                                marginBottom: 20}}/>
+                        <TextField 
+                            id="studentscore" 
+                            value={studentScore} 
+                            onChange={changeStudentScore} 
+                            variant="outlined" 
+                            style={{
+                                width:"150vh", 
+                                align: "center", 
+                                borderColor: "black", 
+                                marginBottom: 20}}/>
+                        <TextField 
+                            id="perfectscore" 
+                            value={perfectScore} 
+                            onChange={changePerfectScore} 
+                            variant="outlined"
+                            style={{
+                                borderStyle: "solid", 
+                                width:"150vh", 
+                                align: "center", 
+                                borderColor: "black", 
+                                marginBottom: 20}}/>     
                 </Stack>
             
                     <Stack direction = "row" justifyContent = 'right'>   
                         <IconButton className="checkButton" aria-label="check" size="large" onClick={createResult} sx={{color:"green", marginTop:"20px"}}>
                             <CheckIcon fontSize="large"/>
                         </IconButton>
-                        <IconButton className="badgeButton" aria-label="badge" size="large" onClick={getResultId} sx={{color:"blue", marginTop:"20px"}}>
+                        <IconButton className="badgeButton" aria-label="badge" size="large" 
+                        sx={{color:"blue", marginTop:"20px"}}>
                             <BadgeIcon fontSize="large"/>
                         </IconButton>
                         <IconButton className="editButton" aria-label="edit" size="large" onClick={updateResult} sx={{color:"blue", marginTop:"20px"}}>

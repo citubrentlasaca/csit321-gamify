@@ -1,0 +1,545 @@
+.jonas-angelo-clamor-view-collection-of-assessments-assess-jonas-angelo-clamor-view-collection-of-assessments-assess {
+    width: 100%;
+    height: 1080px;
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    border-color: transparent;
+    background-size: cover;
+    background-image: url("../../Images/Clamor/istockphoto-1145351600-612x612.jpg");
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-text {
+    top: 615px;
+    left: 115px;
+    color: rgba(0, 0, 0, 1);
+    height: auto;
+    position: absolute;
+    font-size: 40px;
+    align-self: auto;
+    font-style: Extra Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: underline;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-text:hover {
+    box-shadow: inset 100px 10 0 0 #54b3d6;
+    color: black;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-text:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-text02 {
+    top: 285px;
+    left: 122px;
+    color: rgba(0, 0, 0, 1);
+    height: auto;
+    position: absolute;
+    font-size: 40px;
+    align-self: auto;
+    font-style: Extra Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: underline;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-text02:hover {
+    box-shadow: inset 100px 10 0 0 #54b3d6;
+    color: black;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-text02:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-text07 {
+    top: 183px;
+    left: 122px;
+    color: rgba(0, 0, 0, 1);
+    height: auto;
+    position: absolute;
+    font-size: 40px;
+    align-self: auto;
+    font-style: Extra Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: underline;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-text07:hover {
+    box-shadow: inset 100px 10 0 0 #54b3d6;
+    color: black;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-text07:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-text09 {
+    top: 729px;
+    left: 246px;
+    text-emphasis-color: black;
+    height: auto;
+    position: absolute;
+    font-display: auto;
+    font-size: 30px;
+    align-self: auto;
+    font-style: Extra Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+    text-shadow: white 0px 0px 10px;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-text11 {
+    top: 975px;
+    left: 246px;
+    color: rgba(0, 0, 0, 1);
+    height: auto;
+    position: absolute;
+    font-size: 30px;
+    align-self: auto;
+    font-style: Extra Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-text13 {
+    top: 346px;
+    left: 121px;
+    color: rgba(0, 0, 0, 1);
+    height: auto;
+    position: absolute;
+    font-size: 35px;
+    align-self: auto;
+    font-style: Extra Bold;
+    text-align: justified;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-text24 {
+    top: 854px;
+    left: 245px;
+    color: rgba(0, 0, 0, 1);
+    height: auto;
+    position: absolute;
+    font-size: 30px;
+    align-self: auto;
+    font-style: Extra Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-shield1 {
+    top: 726px;
+    left: 134px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-shield2 {
+    top: 847px;
+    left: 134px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-shield3 {
+    top: 968px;
+    left: 134px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-emptycheckbox1 {
+    top: 726px;
+    left: 1650px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-emptycheckbox2 {
+    top: 847px;
+    left: 1650px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-emptycheckbox3 {
+    top: 968px;
+    left: 1650px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-group44 {
+    top: 702px;
+    left: 112px;
+    width: 1630px;
+    height: 90px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-group45 {
+    top: 827px;
+    left: 112px;
+    width: 1630px;
+    height: 90px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-group46 {
+    top: 948px;
+    left: 112px;
+    width: 1630px;
+    height: 90px;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-style: none;
+    border-width: 0;
+    margin-right: 0;
+    border-radius: 0px 0px 0px 0px;
+    margin-bottom: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-line14 {
+    top: 566.459716796875px;
+    left: 110px;
+    width: 1630px;
+    height: 0px;
+    position: absolute;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-minimalist-quote-poster4 {
+    top: 1px;
+    left: 184px;
+    width: 142px;
+    height: 109px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-minimalist-quote-poster4:hover {
+    box-shadow: inset 100px 10 0 0 #54b3d6;
+    color: black;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-minimalist-quote-poster4:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-minimalist-quote-poster5 {
+    top: 32px;
+    left: 326px;
+    width: 226px;
+    height: 68px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-minimalist-quote-poster5:hover {
+    box-shadow: inset 100px 10 0 0 #54b3d6;
+    color: black;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-minimalist-quote-poster5:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-text26 {
+    top: 56px;
+    left: 780px;
+    color: rgba(0, 0, 0, 1);
+    height: auto;
+    position: absolute;
+    font-size: 30px;
+    align-self: auto;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-text26:hover {
+    box-shadow: inset 100px 10 0 0 #54b3d6;
+    color: black;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-text26:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-text28 {
+    top: 42px;
+    left: 1178px;
+    color: rgba(0, 0, 0, 1);
+    height: auto;
+    position: absolute;
+    font-size: 30px;
+    align-self: auto;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-text28:hover {
+    box-shadow: inset 100px 10 0 0 #54b3d6;
+    color: black;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-text28:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-text33 {
+    top: 38px;
+    left: 1623px;
+    color: rgba(0, 0, 0, 1);
+    height: auto;
+    position: absolute;
+    font-size: 30px;
+    align-self: auto;
+    font-style: Semi Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-text33:hover {
+    box-shadow: inset 100px 10 0 0 #54b3d6;
+    color: black;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-text33:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-line8 {
+    top: 120px;
+    left: 1076px;
+    width: 328px;
+    height: 0px;
+    position: absolute;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-line7 {
+    top: 146px;
+    left: 0px;
+    width: 1920px;
+    height: 0px;
+    position: absolute;
+    box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.25) ;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-evaluation1 {
+    top: 34px;
+    left: 1087px;
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-evaluation1:hover {
+    box-shadow: inset 100px 10 0 0 #54b3d6;
+    color: black;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-evaluation1:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-todolist1 {
+    top: 35px;
+    left: 696px;
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-todolist1:hover {
+    box-shadow: inset 100px 10 0 0 #54b3d6;
+    color: black;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-todolist1:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-input1 {
+    top: 41px;
+    left: 1524px;
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-input1:hover {
+    box-shadow: inset 100px 10 0 0 #54b3d6;
+    color: black;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-input1:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-line24 {
+    top: 256px;
+    left: 122px;
+    width: 1451px;
+    height: 0px;
+    position: absolute;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-text38 {
+    top: 1052px;
+    left: 31px;
+    color: rgba(0, 0, 0, 1);
+    height: auto;
+    position: absolute;
+    font-size: 15px;
+    align-self: auto;
+    font-style: Bold;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-arrow2 {
+    top: 15px;
+    left: 30px;
+    width: 150px;
+    height: 109px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-arrow2:hover {
+    box-shadow: inset 100px 10 0 0 #54b3d6;
+    color: black;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-arrow2:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-rectangle61 {
+    top: 705px;
+    left: 110px;
+    width: 1630px;
+    height: 90px;
+    position: absolute;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.25);
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-rectangle61:hover {
+    box-shadow: inset 100px 10 0 0 #54b3d6;
+    color: black;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-rectangle61:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-rectangle62 {
+    top: 825px;
+    left: 110px;
+    width: 1630px;
+    height: 90px;
+    position: absolute;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.25);
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-rectangle62:hover {
+    box-shadow: inset 100px 10 0 0 #54b3d6;
+    color: black;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-rectangle62:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-rectangle63 {
+    top: 950px;
+    left: 110px;
+    width: 1630px;
+    height: 90px;
+    position: absolute;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.25);
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-rectangle63:hover {
+    box-shadow: inset 100px 10 0 0 #54b3d6;
+    color: black;
+  }
+  .jonas-angelo-clamor-view-collection-of-assessments-assess-rectangle63:active{
+    cursor: pointer;
+    transform: translateY(4px);
+  }

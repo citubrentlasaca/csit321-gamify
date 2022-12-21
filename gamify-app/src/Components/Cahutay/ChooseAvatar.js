@@ -1,8 +1,16 @@
 //import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { Stack, Button, Avatar} from "@mui/material";
 import logo from '../../Images/Cahutay/applogo.png';
+import { useLocation, useNavigate } from "react-router-dom";
 
 function ChooseAvatar() {
+    const navigate = useNavigate();
+    const {state} = useLocation();
+
+    const handleLoginTeacherClick = () => {
+        navigate("/login-teacher");
+    }
+
     return (
         <div className="bg-registration-gc">
             <hr className="line-mid-gc"></hr>
@@ -38,9 +46,9 @@ function ChooseAvatar() {
                             </div>
                         </Stack>
                     </Stack>
-                    <Button size="large" variant="contained" style={{backgroundColor: "black", marginTop: 60, borderRadius: 10, fontWeight: "bold", marginBottom: 2, marginLeft: 180}}>Save</Button>
+                    <Button size="large" variant="contained" onClick={handleLoginTeacherClick} style={{backgroundColor: "black", marginTop: 60, borderRadius: 10, fontWeight: "bold", marginBottom: 2, marginLeft: 180}}>Save</Button>
                     <div>
-                        <Button size="large" variant="text" style={{fontWeight: "bold", color: "black", marginLeft: 152}}>Skip for now</Button>
+                        <Button size="large" variant="text" onClick={handleLoginTeacherClick} style={{fontWeight: "bold", color: "black", marginLeft: 152}}>Skip for now</Button>
                     </div>
                 </div>
             </Stack>

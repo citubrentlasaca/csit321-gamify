@@ -5,6 +5,7 @@ import axios from 'axios';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ReactDOM from 'react-dom';
 import AddItems from './AddItems.js'
+import StudentResult from '../Pepito/StudentResult';
 
 const theme = createTheme({
   palette: {
@@ -96,7 +97,7 @@ function AnswerAssessment(){
     setTimeout(() => {
       const container = document.getElementById('root');
       console.log('rendering new component'); // add this line to verify that a new component is being rendered
-      ReactDOM.render(<AddItems />, container);
+      ReactDOM.render(<StudentResult />, container);
     }, 1000); // unmount component after 3 seconds
   };
   

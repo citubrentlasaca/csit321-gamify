@@ -43,6 +43,25 @@ public class ResultController {
 		return resultserv.findByResultid(resultid);
 	}
 	
+    //Read result by its corresponding id
+    @GetMapping("/getResultId")
+    public int getResultId(@RequestParam int resultid) throws Exception{
+    	return resultserv.getStudentResultId(resultid);
+    }
+    @GetMapping("/getAttempt")
+	public int getAttempt(@RequestParam int resultid) {
+	  return resultserv.getAttempt(resultid);
+	}
+    @GetMapping("/getStudentScore")
+	public int getStudentScore(@RequestParam int resultid) {
+	  return resultserv.getStudentScore(resultid);
+	}
+    
+    @GetMapping("/getPerfectScore")
+	public int getPerfectScore(@RequestParam int resultid) {
+	  return resultserv.getPerfectScore(resultid);
+	}
+	
 	// Update a record
 	@PutMapping("/putResult")
 	public ResultEntity putResult(@RequestParam int resultid, @RequestBody ResultEntity newResultDetails) throws Exception{

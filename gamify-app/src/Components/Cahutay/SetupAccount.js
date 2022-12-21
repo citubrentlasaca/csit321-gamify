@@ -2,6 +2,7 @@ import * as React from 'react';
 import axios from 'axios';
 import { TextField, Stack, Button } from "@mui/material";
 import logo from '../../Images/Cahutay/applogo.png';
+import { useNavigate } from "react-router-dom";
 
 function SetUpAccount() {
     const [username, setUsername] = React.useState("");
@@ -18,6 +19,8 @@ function SetUpAccount() {
         setPassword(event.target.value);
     };
     
+    const navigate = useNavigate();
+    
     const createAccount = () => {
         axios
           .post('http://localhost:8080/account/postAccount', {
@@ -27,11 +30,16 @@ function SetUpAccount() {
           })
           .then((response) => {
             console.log(response);
+            navigate("/register-teacher", {
+                state: {
+                    accountid: response.data.accountid
+                }
+            });
           })
           .catch((error) => {
             console.log(error);
           });
-      };
+    };
 
     return (
         <div className="bg-registration-gc">

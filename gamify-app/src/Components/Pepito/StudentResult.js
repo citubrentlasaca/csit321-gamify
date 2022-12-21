@@ -9,13 +9,19 @@ import MenuIcon from '@mui/icons-material/Menu';
 import LogoutIcon from '@mui/icons-material/Logout';
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 import brand from '../../Images/Pepito/brand.png';
-
+import { useNavigate } from "react-router-dom";
 
 function StudentResult() {
+  const navigate = useNavigate();
+
+  const handleReviewAnswerClick = () => {
+      navigate("/student-review-assessment-result");
+  }
+
     const [value, setValue] = React.useState(0);  
     const handleChange = (event,newValue) => {
         setValue(newValue);
-}
+    }
 return (  
     <div className="landing">
         <Stack direction="row">
@@ -73,7 +79,7 @@ return (
             {textAlign: "left", color: "white", fontSize: 20, marginLeft: 20, marginBottom: 0, marginTop: 0}}>Review on OOP Concepts
           </h2>
         </div>
-          <Button variant="text" backgroundColor="transparent" style={{color: "#00ffff"}}>REVIEW ANSWERS</Button>
+          <Button variant="text" onClick={handleReviewAnswerClick} backgroundColor="transparent" style={{color: "#00ffff"}}>REVIEW ANSWERS</Button>
       </Stack>
       
 

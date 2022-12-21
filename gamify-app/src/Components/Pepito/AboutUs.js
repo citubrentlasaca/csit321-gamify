@@ -37,9 +37,9 @@ return (
                 <img src={brand} alt="brand name" style={{width: 200, height: 60, paddingTop: 20}}/>
             </div>
             <Tabs value={value} onChange={handleChange} style={{marginTop: 15, marginLeft: 70}}>
-                <Tab label="About Us" href="/home" 
+                <Tab label="About Us" href="/about-us" 
                     style={{font:"Arial", fontSize: 32, fontWeight: "bold", color: "black", marginRight: 20}}/>
-                <Tab label="Contact Us" href="/activity" 
+                <Tab label="Contact Us" href="/contact-us" 
                     style={{font:"Arial", fontSize: 32, fontWeight: "bold", color: "black", marginRight: 450}}/>
             </Tabs>
             <PopupState variant="popover" popupId="demo-popup-menu">

@@ -61,6 +61,10 @@ function Homepage() {
     const navigate = useNavigate();
     const {state} = useLocation();
 
+    const handleAssessmentClick = () => {
+        navigate("/subjects");
+    }
+
     const [firstname, setFirstname] = React.useState("");
     const [lastname, setLastname] = React.useState("");
     const [gender, setGender] = React.useState("");
@@ -99,9 +103,9 @@ function Homepage() {
                             <img src={brand} alt="brand name" style={{width: 180, height: 50, paddingTop: 25}}/>
                         </div>
                         <Tabs value={value} onChange={handleChange} style={{marginTop: 15, marginLeft: 40}}>
-                            <Tab label="Home" href="/home" icon={<HomeIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
-                            <Tab label="Activity" href="/actvity" icon={<HistoryIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
-                            <Tab label="Assessments" href="/assessments" icon={<ViewListIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
+                            <Tab label="Home" href="/student-homepage" icon={<HomeIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
+                            <Tab label="Activity" href="/student-activity" icon={<HistoryIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
+                            <Tab label="Assessments" href="/assessments" to={handleAssessmentClick} icon={<ViewListIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
                             <Tab label="Profile" href="/student-profile" to={getStudentById} icon={<PersonIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
                         </Tabs>
                         <PopupState variant="popover" popupId="demo-popup-menu">

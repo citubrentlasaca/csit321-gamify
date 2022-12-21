@@ -16,6 +16,10 @@ function Landing() {
         navigate("/about-us");
     }
 
+    const handleContactClick = () => {
+        navigate("/contact-us");
+    }
+
     const handleSignInClick = () => {
         navigate("/login-teacher");
     }
@@ -34,7 +38,7 @@ function Landing() {
                         <Link href="about-us" to={handleAboutClick} color="inherit" underline="none" style={{fontSize: 32, fontWeight: "bold", paddingTop: 25, paddingLeft: 80}}>
                             {'About'}
                         </Link>
-                        <Link href="#" color="inherit" underline="none" style={{fontSize: 32, fontWeight: "bold", paddingTop: 25, paddingLeft: 60}}>
+                        <Link href="contact-us" to={handleContactClick} color="inherit" underline="none" style={{fontSize: 32, fontWeight: "bold", paddingTop: 25, paddingLeft: 60}}>
                             {'Contact'}
                         </Link>
                         <div className="landing-bg-gc">

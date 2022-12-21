@@ -7,8 +7,15 @@ import CheckIcon from '@mui/icons-material/Check';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import BadgeIcon from '@mui/icons-material/Badge';
+import { useNavigate } from "react-router-dom";
 
 function AddItems(){
+  const navigate = useNavigate();
+
+  const handleSaveChangesClick = () => {
+      navigate("/add-assessment-details");
+  } 
+
   const [itemId, setItemId] = React.useState();
   const [type, setType] = React.useState("");
   const [timer, setTimer] = React.useState("");
@@ -156,7 +163,6 @@ function AddItems(){
         <DeleteIcon fontSize="large"/>
       </IconButton>
     </Box>
-
     <Box
       sx={{
         width: '600px',
@@ -182,31 +188,30 @@ function AddItems(){
       </Stack>
     </Box>
     </Stack>
-    
     <Stack justifyContent="center" alignItems="center">
       <AddItemButton/>
     </Stack>
       <Box
       sx={{
         width: '100%',
-        height: '200px',
+        height: '100px',
         backgroundColor: 'white',
         bottom: 0,
         position: 'fixed',
-        zIndex: '999'
+        zIndex: '999',
       }}
       >
-        <Stack direction="row" justifyContent="center" spacing={2} marginTop="80px">
-          <Button variant="contained" color="success" sx={{width: "200px"}}>
+        <Stack direction="row" justifyContent="center" spacing={2} marginTop="40px">
+          <Button variant="contained" onClick={handleSaveChangesClick} color="success" sx={{width: "200px"}}>
             Save Changes
           </Button>
-          <Button variant="contained" color="error" sx={{width: "200px"}}>
+          <Button variant="contained" onClick={handleSaveChangesClick} color="error" sx={{width: "200px"}}>
             Discard Changes
           </Button>
         </Stack>
       </Box>
     </Stack>
   );
-}
+}//-->
 
 export default AddItems;
