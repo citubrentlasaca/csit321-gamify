@@ -7,8 +7,19 @@ import transparent2 from '../../Images/Cahutay/rectangle2.png';
 import { Button} from "@mui/material";
 import teacher from '../../Images/Cahutay/teacher.png';
 import student from '../../Images/Cahutay/student.png';
+import { useNavigate } from "react-router-dom";
 
 const CahutayChooseAccount = (props) => {
+  const navigate = useNavigate();
+
+  const handleStudentClick = () => {
+      navigate("/register-setup-student-account");
+  }
+
+  const handleTeacherClick = () => {
+    navigate("/register-setup-teacher-account");
+  }
+
   return (
     <div>
       <div className={styles['stephanie-micah-cahutay-create-teacher-account']}>
@@ -35,7 +46,7 @@ const CahutayChooseAccount = (props) => {
           <span>Choose your Role</span>
         </span>
       <div className={styles['teacherbutton']}>
-             <Button size="large" variant="contained"
+             <Button size="large" variant="contained" onClick={handleTeacherClick}
               style={{backgroundColor: "white", color: "black", height: 300, width: 300, marginTop: 0, borderRadius: 40, fontWeight: "bold"}}>Teacher</Button>
              </div>
             <span className={styles['teachertext']}>
@@ -48,7 +59,7 @@ const CahutayChooseAccount = (props) => {
             className={styles['teacherpic']}
             />
             <div className={styles['studentbutton']}>
-             <Button size="large" variant="contained"
+             <Button size="large" variant="contained" onClick={handleStudentClick}
               style={{backgroundColor: "white", color: "black", height: 300, width: 300, marginTop: 0, borderRadius: 40, fontWeight: "bold"}}>Student</Button>
             <img 
             src={student} 

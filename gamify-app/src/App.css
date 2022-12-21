@@ -207,6 +207,262 @@ input[type="submit"] {
   margin-left: 45px;
 }
 
+.landing-ep {
+  background-image: url(/src/Images/Pepito/bg.jpg);
+  background-color: #00FFFF;
+  background-blend-mode: multiply;
+  color: black;
+  width: auto;
+  height: 100vh;
+}
+
+.bg-Student-Result{
+  background-image: url(/src/Images/Pepito/clap.png);
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
+  height: 100vh;
+  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.Review-Container{
+  display: inline-block;
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100vw;
+  height: 150px;
+}
+
+.Review-Button{
+  background-color:"transparent"; 
+  background-position: "right"; 
+  color: "#00ffff"; 
+  font-size: 20; 
+  margin-left: 25; 
+  margin-top: 0; 
+  font-weight: "bold";
+}
+
+.Score-Container{
+  background-position: right; 
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50vw;
+  height: 150px;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.Attempt-Container{
+  background-position: left; 
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 60vw;
+  height: 150px;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.Question{
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-left: 150px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  width: 80vw;
+  height: 10vh;
+}
+
+.Answer{
+  background-color: #00ffff;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-top: 0;
+  margin-left: 150px;
+  width: 80vw;
+  height: 5vh;
+}
+
+.Correct{
+  background-color: #03FF1C;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-top: 0;
+  margin-left: 150px;
+  width: 80vw;
+  height: 5vh;
+}
+
+.Incorrect{
+  background-color: #ff0303;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-top: 0;
+  margin-left: 150px;
+  width: 80vw;
+  height: 5vh;
+}
+
+.Correct-Answer{
+  background-color: #0b6940;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-top: 0;
+  margin-left: 150px;
+  width: 80vw;
+  height: 5vh;
+}
+
+.Numbers-bg{
+  background-image: url(/src/Images/Pepito/numbers.jpg);
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: auto;
+    height: 100vh;
+    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+  
+.Result{
+  background-color: #CAFDFF;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-left: 150px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  width: 80vw;
+  height: 10vh;
+  border-style: solid;
+  border-width: 5px;
+  border-color: white;
+}
+
+.Course-name{
+  background-color: black;
+  border-style: solid;
+  border-width: 5px;
+  border-color: white;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-left: 150px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  width: 80vw;
+  height: auto;
+}
+
+.WhiteView-Title{
+  background-color: rgba(255, 255, 255, 0.771);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  width: auto;
+  height: 15vh;
+}
+
+.AquaView-Title{
+  background-color: #00ffffb3;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  width: auto;
+  height: 15vh;
+}
+
+.CourseDownload-name{
+  background-color: black;
+  border-style: solid;
+  border-width: 5px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-left: 150px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  width: 80vw;
+  height: 10vh;
+}
+
+.Assessment-title{
+  background-color: #CAFDFF;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-left: 150px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  width: 80vw;
+  height: 10vh;
+  border-style: solid;
+  border-width: 5px;
+}
+
+.Student-scores{
+  background-color: white;
+  border-style: solid;
+  border-width: 5px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-left: 150px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  width: 80vw;
+  height: 80vh;
+}
+
+.Table{
+  background-color: white;
+  align-self: center;
+  margin: 50;
+}
+
+.AboutUs-bg{
+  background-image: url(/src/Images/Pepito/bg.jpg);
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.About-Gamify{
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.About-image{
+  background-position: right;
+  align-items: right;
+  width: 800px;
+  height: 88vh;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 100;
+  margin: 0;
+}
+
 .activity-gc {
   background-color: #FFFFFF;
   color: black;
