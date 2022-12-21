@@ -31,6 +31,23 @@ public class ResultService {
 		else
 			return null;
 	}
+	
+	public int getResultId(int resultid) {
+		return resultrepo.findStudentResultId(resultid);
+	}
+	
+	public int getAttempt(int resultid) {
+		return resultrepo.findAttepmt(resultid);
+	}
+	
+	public int getStudentScore(int resultid) {
+		return resultrepo.findStudentScore(resultid);
+	}
+	
+	public int getPerfectScore(int resultid) {
+		return resultrepo.findPerfectScore(resultid);
+	}
+	
 
 	// U - Update a student result record
 	public ResultEntity putResult(int resultid, ResultEntity newResultDetails) throws Exception{
