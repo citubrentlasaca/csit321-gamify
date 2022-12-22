@@ -59,6 +59,7 @@ function RegistrationFormTeacher() {
 
 
     return (
+        <div classname="App">
             <header className="App-header2-gc">
                 <div className="bg-registration-gc">
                     <hr className="line-mid-gc"></hr>
@@ -158,6 +159,7 @@ function RegistrationFormTeacher() {
                     </Stack>
                 </div>
             </header>
+        </div>
     );
   }
   
