@@ -39,7 +39,7 @@ function CahutayDeactivateTeacherAccountConfirmation() {
     }, []);
     const deleteTeacher = async () => {
       try {
-        const response = await axios.delete(`http://localhost:8080/teacher/deleteTeacher/${4}`);
+        const response = await axios.delete(`http://localhost:8080/teacher/deleteTeacher/${8}`);
         console.log(response.data); // log the data to the console
         navigate("/login-teacher");
       } catch (error) {
