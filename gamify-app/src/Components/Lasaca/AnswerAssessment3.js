@@ -85,7 +85,7 @@ function AnswerAssessment(){
         clearInterval(intervalId);
         const container = document.getElementById('root');
       console.log('rendering new component'); // add this line to verify that a new component is being rendered
-      ReactDOM.render(<AddItems />, container);
+      ReactDOM.render(<StudentResult />, container);
       } else {
         setTimer(currentTimer => currentTimer - 1);
       }

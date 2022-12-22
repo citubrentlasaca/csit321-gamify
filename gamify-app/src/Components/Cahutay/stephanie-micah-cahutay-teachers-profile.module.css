@@ -1098,3 +1098,20 @@
     font-stretch: normal;
     text-decoration: none;
   }
+
+  .stephanie-micah-cahutay-loginfor-student {
+    width: 1400;
+    height: 700;
+    overflow: hidden;
+    position: relative;
+    background-color: rgb(142, 220, 220);
+  }
+
+  .rectangle111 {
+    top: 0px;
+    left: 0px;
+    width: 700px;
+    height: 1400px;
+    position: absolute;
+    border-color: transparent;
+  }
