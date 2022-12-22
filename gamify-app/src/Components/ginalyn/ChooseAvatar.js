@@ -1,19 +1,13 @@
 //import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { Stack, Button, Avatar} from "@mui/material";
 import logo from '../../Images/applogo.png';
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function ChooseAvatar() {
     const navigate = useNavigate();
 
-    const {state} = useLocation();
-
     const handleLoginStudentClick = () => {
-        navigate("/login-student", {
-            state: {
-                studentid: state.studentid
-            }
-        });
+        navigate("/login-student");
     }
 
     return (

@@ -11,8 +11,16 @@ import VerifiedIcon from '@mui/icons-material/Verified';
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 import brand from '../../Images/brand.png';
 import appicon from '../../Images/appicon.png';
+import studentactivity from '../../Images/activity-student.png';
+import { useNavigate } from "react-router-dom";
 
 function ActivityStudent() {
+    const navigate = useNavigate();
+
+    const handleAssessmentClick = () => {
+        navigate("/student-activity-result");
+    }
+
     const [value, setValue] = React.useState(1);  
     const handleChange = (event,newValue) => {
         setValue(newValue);
@@ -67,18 +75,7 @@ function ActivityStudent() {
                                 </div>
                             </Stack>
                             <Box style={{backgroundColor: "black"}}>        
-                                <List component="nav" aria-label="assessment list">
-                                    <ListItem>
-                                        <ListItemButton>
-                                        <ListItemText primary="Spam"/>
-                                        </ListItemButton>
-                                    </ListItem>
-                                    <ListItem disablePadding>
-                                        <ListItemButton>
-                                            <ListItemText inset primary="Eric Hoffman" />
-                                        </ListItemButton>
-                                    </ListItem>
-                                </List>
+                                <img src={studentactivity} alt="activity-student" onClick={handleAssessmentClick} style={{width: 1300, height: 70, paddingLeft: 50, paddingTop: 8}}/>
                             </Box>
                         </Box>
                     </Stack>

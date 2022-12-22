@@ -54,6 +54,7 @@ import ManageStudentProfilePage2 from './Components/ginalyn/ManageStudentProfile
 import DeactivateStudentAccount from './Components/ginalyn/DeactivateStudentAccount';
 import DeactivateStudentAccountConfirmation from './Components/ginalyn/DeactivateStudentAccountConfirmation';
 import AddItems from './Components/Lasaca/AddItems';
+import StudentActivityResult from './Components/ginalyn/StudentResult';
 
 import HomepageTeacher from './Components/Cahutay/HomepageTeacher';
 function App() {
@@ -93,7 +94,7 @@ function App() {
       <Route path="student-activity" element={<ActivityStudent />}></Route>
       <Route path="teacher-assessments" element={<TeacherResult />}></Route>
       <Route path="teacher-view-assessment-results" element={<TeacherDownloadResult />}></Route>
-      {/*<Route path="student-results" element={<StudentResult />}></Route>*/}
+      <Route path="student-activity-result" element={<StudentActivityResult />}></Route>
       <Route path="student-review-assessment-result" element={<StudentReview />}></Route>
 
       <Route path="/appdev/assessments" element={<AssessmentPageOne />}></Route>
