@@ -40,7 +40,7 @@ function DeactivateStudentAccountConfirmation() {
 
     useEffect(() => {
         async function fetchData() {
-          const response = await axios.get(`http://localhost:8080/student/getByStudentId?studentid=${29}`);
+          const response = await axios.get(`http://localhost:8080/student/getByStudentId?studentid=${33}`);
           setStudentid(response.data.studentid);
         }
         fetchData();

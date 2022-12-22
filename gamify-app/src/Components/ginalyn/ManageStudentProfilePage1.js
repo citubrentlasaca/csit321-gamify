@@ -57,7 +57,7 @@ function ManageStudentProfilePage1() {
 
     const getStudent = async () => {
         try {
-          const response = await axios.get(`http://localhost:8080/student/getByStudentId?studentid=${29}`);
+          const response = await axios.get(`http://localhost:8080/student/getByStudentId?studentid=${33}`);
           setFirstname(response.data.firstname);
           setLastname(response.data.lastname);
           setGender(response.data.gender);
@@ -72,7 +72,7 @@ function ManageStudentProfilePage1() {
 
     const updateStudent = async () => {
         try {
-          const response = await axios.put(`http://localhost:8080/student/putStudent?studentid=${29}`, {
+          const response = await axios.put(`http://localhost:8080/student/putStudent?studentid=${33}`, {
             birthday: birthday,
             program: program,
             yearlevel: yearlevel
