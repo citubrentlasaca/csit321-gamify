@@ -15,16 +15,9 @@ import transparent from '../../Images/Cahutay/rectangle23.png';
 import brand from '../../Images/brand.png';
 import { useLocation, useNavigate } from "react-router-dom";
 
-function DeactivateStudentAccount() {
-  const navigate = useNavigate();
-
-  const handleYesClick = () => {
-      navigate("/student-deactivate-account-confirmation");
-  }
-  
-  const handleNoClick = () => {
-    navigate("/student-profile");
-  }
+function StudentProfile() {
+    const navigate = useNavigate();
+    const {state} = useLocation();
 
     const handleManageAccountClick = () => {
         navigate("/student-manage-account-page-one");
@@ -33,49 +26,50 @@ function DeactivateStudentAccount() {
     const handleDeactivateAccountClick = () => {
         navigate("/student-deactivate-account");
     }
+
     const [value, setValue] = React.useState(3);  
     const handleChange = (event,newValue) => {
         setValue(newValue);
     }
     return (
-      <div classname="App">
-          <header className="App-header2-gc">
-              <div className="landing-gc">
-              <Stack direction="row">
-                                        <div>
-                                            <img src={appicon} alt="app icon" style={{width: 100, height: 70, paddingLeft: 30, paddingTop: 8}}/>
-                                        </div>
-                                        <div>
-                                            <img src={brand} alt="brand name" style={{width: 180, height: 50, paddingTop: 25}}/>
-                                        </div>
-                                        <Tabs value={value} onChange={handleChange} style={{marginTop: 15, marginLeft: 40}}>
-                                            <Tab label="Home" href="/student-homepage" icon={<HomeIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
-                                            <Tab label="Activity" href="/student-activity" icon={<HistoryIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
-                                            <Tab label="Assessments" href="/assessments" icon={<ViewListIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
-                                            <Tab label="Profile" href="/student-profile" icon={<PersonIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
-                                        </Tabs>
-                                        <PopupState variant="popover" popupId="demo-popup-menu">
-                                            {(popupState) => (
-                                                <React.Fragment>
-                                                    <IconButton aria-label="menu" variant="contained" {...bindTrigger(popupState)} style={{backgroundColor: "white", height: 50, width: 50, marginTop: 25, marginLeft: 130}}>
-                                                        <MenuIcon style={{fontSize: 40, fontWeight: "bold", color: "black"}} />
-                                                    </IconButton>
-                                                    <Menu {...bindMenu(popupState)}>
-                                                        <MenuItem disabled style={{fontWeight: "bold", color: "black"}}>@ginalyn123</MenuItem>
-                                                        <Divider />
-                                                        <MenuItem onClick={popupState.close}>
-                                                        <ListItemIcon>
-                                                            <LogoutIcon style={{fontSize: 30}} />
-                                                        </ListItemIcon>
-                                                        <ListItemText style={{fontWeight: "bold", color: "black"}}>Logout</ListItemText>
-                                                        </MenuItem>
-                                                    </Menu>
-                                                </React.Fragment>
-                                            )}
-                                        </PopupState>
-                                    </Stack>
-                                    <Divider sx={{ borderBottomWidth: 7, borderColor: "#609292" }}/>
-                                    <div>
+        <div classname="App">
+            <header className="App-header2-gc">
+                <div className="landing-gc">
+                    <Stack direction="row">
+                            <div>
+                                <img src={appicon} alt="app icon" style={{width: 100, height: 70, paddingLeft: 30, paddingTop: 8}}/>
+                            </div>
+                            <div>
+                                <img src={brand} alt="brand name" style={{width: 180, height: 50, paddingTop: 25}}/>
+                            </div>
+                            <Tabs value={value} onChange={handleChange} style={{marginTop: 15, marginLeft: 40}}>
+                                <Tab label="Home" href="/student-homepage" icon={<HomeIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
+                                <Tab label="Activity" href="/student-activity" icon={<HistoryIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
+                                <Tab label="Assessments" href="/assessments" icon={<ViewListIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
+                                <Tab label="Profile" href="/student-profile" icon={<PersonIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
+                            </Tabs>
+                            <PopupState variant="popover" popupId="demo-popup-menu">
+                                {(popupState) => (
+                                    <React.Fragment>
+                                        <IconButton aria-label="menu" variant="contained" {...bindTrigger(popupState)} style={{backgroundColor: "white", height: 50, width: 50, marginTop: 25, marginLeft: 130}}>
+                                            <MenuIcon style={{fontSize: 40, fontWeight: "bold", color: "black"}} />
+                                        </IconButton>
+                                        <Menu {...bindMenu(popupState)}>
+                                            <MenuItem disabled style={{fontWeight: "bold", color: "black"}}>@ginalyn123</MenuItem>
+                                            <Divider />
+                                            <MenuItem onClick={popupState.close}>
+                                            <ListItemIcon>
+                                                <LogoutIcon style={{fontSize: 30}} />
+                                            </ListItemIcon>
+                                            <ListItemText style={{fontWeight: "bold", color: "black"}}>Logout</ListItemText>
+                                            </MenuItem>
+                                        </Menu>
+                                    </React.Fragment>
+                                )}
+                            </PopupState>
+                        </Stack>
+                        <Divider sx={{ borderBottomWidth: 7, borderColor: "#609292" }}/>
+                        <div>
                             <div className={styles['stephanie-micah-cahutay-students-profile-page']}>
                                 <img
                                     src={transparent}
@@ -153,38 +147,12 @@ function DeactivateStudentAccount() {
                                 <Button size="large" variant="contained" onClick={handleDeactivateAccountClick}
                                     style={{backgroundColor: "red",width: 294, marginTop: 0, borderRadius: 40, fontWeight: "bold"}}>Deactivate Account</Button>
                             </div>
-                
-
-                <div className={styles['group1033']}>
-                  <span className={styles['text377']}>
-                    <span className={styles['text38']}>
-                      Are you sure you want to
-                      <span
-                        dangerouslySetInnerHTML={{
-                          __html: ' ',
-                        }}
-                      />
-                      <span className={styles['text39']}>
-                      <span>deactivate</span>
-                      <br></br>
-                      <span></span>
-                    </span>
-                    <span>this account?</span>
-                    </span>
-                </span>    
-                <Stack direction="row">
-                    <Button size="small" variant="contained" onClick={handleYesClick}
-                      style={{backgroundColor: "red", width: 90, height: 90, marginTop: 180, fontWeight: "bold", left: 130, borderRadius: 100}}>YES</Button>
-                      <Button size="small" variant="contained" onClick={handleNoClick}
-                      style={{backgroundColor: "green", width: 90, height: 90, marginTop: 180, fontWeight: "bold", left: 280, borderRadius: 100}}>NO</Button>
-                      </Stack>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            </div>
-          </header>
-      </div>
+            </header>
+        </div>
     );
   }
   
-  export default DeactivateStudentAccount;
+  export default StudentProfile;

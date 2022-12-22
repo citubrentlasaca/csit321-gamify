@@ -49,6 +49,7 @@ import CahutaySetUpAccount from './Components/Cahutay/SetupAccount';
 import RegistrationFormTeacher from './Components/Cahutay/RegistrationFormTeacher';
 import CahutayChooseAvatar from './Components/Cahutay/ChooseAvatar';
 import StudentProfile from './Components/ginalyn/StudentProfile';
+import HomepageStudentProfile from './Components/ginalyn/HomepageStudentProfile';
 import ManageStudentProfilePage1 from './Components/ginalyn/ManageStudentProfilePage1';
 import ManageStudentProfilePage2 from './Components/ginalyn/ManageStudentProfilePage2';
 import DeactivateStudentAccount from './Components/ginalyn/DeactivateStudentAccount';
@@ -96,6 +97,7 @@ function App() {
       <Route path="teacher-view-assessment-results" element={<TeacherDownloadResult />}></Route>
       <Route path="student-activity-result" element={<StudentActivityResult />}></Route>
       <Route path="student-review-assessment-result" element={<StudentReview />}></Route>
+      <Route path="homepage/student-profile" element={<HomepageStudentProfile />}></Route>
 
       <Route path="/appdev/assessments" element={<AssessmentPageOne />}></Route>
       <Route path="/automata/assessments" element={<AssessmentPageTwo />}></Route>
