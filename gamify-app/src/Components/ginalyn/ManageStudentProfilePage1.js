@@ -19,6 +19,7 @@ import axios from 'axios';
 
 function ManageStudentProfilePage1() {
     const navigate = useNavigate();
+    const { state } = useLocation();
 
     const handleManageAccountPage2Click = () => {
         navigate("/student-manage-account-page-two");
@@ -56,7 +57,7 @@ function ManageStudentProfilePage1() {
 
     const getStudent = async () => {
         try {
-          const response = await axios.get(`http://localhost:8080/student/getByStudentId?studentid=${26}`);
+          const response = await axios.get(`http://localhost:8080/student/getByStudentId?studentid=${29}`);
           setFirstname(response.data.firstname);
           setLastname(response.data.lastname);
           setGender(response.data.gender);
@@ -71,7 +72,7 @@ function ManageStudentProfilePage1() {
 
     const updateStudent = async () => {
         try {
-          const response = await axios.put(`http://localhost:8080/student/putStudent?studentid=${26}`, {
+          const response = await axios.put(`http://localhost:8080/student/putStudent?studentid=${29}`, {
             birthday: birthday,
             program: program,
             yearlevel: yearlevel

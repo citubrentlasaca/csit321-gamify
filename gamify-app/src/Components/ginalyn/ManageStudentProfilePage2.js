@@ -52,7 +52,7 @@ function ManageStudentProfilePage2() {
 
     const getStudent = async () => {
         try {
-          const response = await axios.get(`http://localhost:8080/account/getByAccountid?accountid=${25}`);
+          const response = await axios.get(`http://localhost:8080/account/getByAccountid?accountid=${28}`);
           const data = response.data;
           setAccountid(data.accountid)
           setUsername(data.username);
@@ -71,7 +71,7 @@ function ManageStudentProfilePage2() {
             password: password
           });
           console.log(response.data); // log the data to the console
-          const student = await axios.get(`http://localhost:8080/student/getByStudentId?studentid=${26}`, {
+          const student = await axios.get(`http://localhost:8080/student/getByStudentId?studentid=${29}`, {
             firstname: firstname,
             gender: gender,
             birthday: birthday,

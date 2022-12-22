@@ -40,7 +40,7 @@ function DeactivateStudentAccountConfirmation() {
 
     useEffect(() => {
         async function fetchData() {
-          const response = await axios.get(`http://localhost:8080/student/getByStudentId?studentid=${26}`);
+          const response = await axios.get(`http://localhost:8080/student/getByStudentId?studentid=${29}`);
           setStudentid(response.data.studentid);
         }
         fetchData();
@@ -79,7 +79,7 @@ function DeactivateStudentAccountConfirmation() {
                                                     <MenuIcon style={{fontSize: 40, fontWeight: "bold", color: "black"}} />
                                                 </IconButton>
                                                 <Menu {...bindMenu(popupState)}>
-                                                    <MenuItem disabled style={{fontWeight: "bold", color: "black"}}>@brent</MenuItem>
+                                                    <MenuItem disabled style={{fontWeight: "bold", color: "black"}}>@ginalyn123</MenuItem>
                                                     <Divider />
                                                     <MenuItem onClick={popupState.close}>
                                                     <ListItemIcon>
@@ -103,17 +103,14 @@ function DeactivateStudentAccountConfirmation() {
 
                             <div className={styles['group822']}>
                                 <span className={styles['text']}>
-                                    <span>Brent</span>
-                                </span>
-                                <span className={styles['text02']}>
-                                    <span>BSCS 3</span>
+                                    <span>Ginalyn</span>
                                 </span>
                             </div>
 
                             <div className={styles['group877']}>
                                 <span className={styles['text044']}>
                                     <span>
-                                        <span>@brent</span>
+                                        <span>@ginalyn123</span>
                                         <br></br>
                                         <span></span>
                                     </span>
@@ -132,7 +129,7 @@ function DeactivateStudentAccountConfirmation() {
                                     </span>
                                 <div className={styles['rectangle633']}></div>
                                 <span className={styles['text19']}>
-                                    <span>Male</span>
+                                    <span>female</span>
                                 </span>
                             </div>
 
@@ -142,7 +139,7 @@ function DeactivateStudentAccountConfirmation() {
                                     <span>Email</span>
                                 </span>
                                 <span className={styles['text23']}>
-                                    <span>brent@gmail.com</span>
+                                    <span>ginalyn@gmail.com</span>
                                 </span>
                             </div>
 
@@ -152,7 +149,7 @@ function DeactivateStudentAccountConfirmation() {
                                     <span>Date of Birth</span>
                                 </span>
                                 <span className={styles['text27']}>
-                                    <span>01 - 01 - 1899</span>
+                                    <span>12/26/2001</span>
                                 </span>
                             </div>
                             
