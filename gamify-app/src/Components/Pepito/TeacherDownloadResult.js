@@ -30,11 +30,11 @@ function TeacherDownloadResultPage() {
     const [attempt, setAttempt] = React.useState();
 
     const results = [
-        { resultid: 1, attempt: 1, studentscore: 46, perfectscore: 50},
-        { resultid: 2, attempt: 1, studentscore: 47, perfectscore: 50},
-        { resultid: 3, attempt: 1, studentscore: 48, perfectscore: 50},
-        { resultid: 4, attempt: 1, studentscore: 50, perfectscore: 50},
-        { resultid: 5, attempt: 1, studentscore: 49, perfectscore: 50},
+        { resultid: 1, attempt: 1, studentscore: 10, perfectscore: 30},
+        { resultid: 2, attempt: 1, studentscore: 20, perfectscore: 30},
+        { resultid: 3, attempt: 1, studentscore: 30, perfectscore: 30},
+        { resultid: 4, attempt: 1, studentscore: 10, perfectscore: 30},
+        { resultid: 5, attempt: 1, studentscore: 30, perfectscore: 30},
       ]
 
     const changeResultId = (event) => {
@@ -235,9 +235,10 @@ function TeacherDownloadResultPage() {
                             variant="contained" 
                             size="small" 
                             startIcon={<BsDownload color = "black"/>} 
-                            style={{ height: 50, backgroundColor: "#CAFDFF", marginTop: 15, marginBottom: 20, 
+                            style={{ height: 50, backgroundColor: "#CAFDFF", marginTop: 15, marginBottom: 20, marginLeft: 1020,
                             color:"black", fontWeight: "bolder",  borderRadius: "550px"}}>Download Scores
                         </Button>
+                        
                         <div 
                             style={{backgroundColor: "#016B85", color: "#016B8"}}>
                             <Collapsible 
