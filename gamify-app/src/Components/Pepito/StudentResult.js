@@ -68,10 +68,10 @@ return (
       <Stack direction="row" backgroundColor="rgba(27, 24, 24, 0.626)">
         <div className="Review-Container">
           <h2 style={
-            {textAlign: "left", color: "white", fontSize: 20, marginLeft: 20, marginBottom: 0, marginTop: 50}}>CSIT321 F1 - C0
+            {textAlign: "left", color: "white", fontSize: 20, marginLeft: 20, marginBottom: 0, marginTop: 50}}>CSIT313 F1 - C0
           </h2>
           <h2 style={
-            {textAlign: "left", color: "white", fontSize: 20, marginLeft: 20, marginBottom: 0, marginTop: 0}}>Review on OOP Concepts
+            {textAlign: "left", color: "white", fontSize: 20, marginLeft: 20, marginBottom: 0, marginTop: 0}}>Review on Regular Expressions
           </h2>
         </div>
           <Button variant="text" backgroundColor="transparent" style={{color: "#00ffff"}}>REVIEW ANSWERS</Button>
@@ -105,5 +105,5 @@ return (
     </div>
   );
 }
-
+z
 export default StudentResult;
