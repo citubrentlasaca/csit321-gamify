@@ -82,13 +82,13 @@ return (
         <div className="Attempt-Container">
           <h2 style={
             {textAlign: "left", color: "black", fontSize: 20, marginLeft: 20, marginBottom: 0, fontWeight: "normal"}}>
-              Attempts Allowed: 1<br/>This quiz closed on: Friday,<br/>December 2, 2022, 10:30 AM<br/>Time Limit: 1 hour
+              Attempts Allowed: 1<br/>This quiz closed on: Friday,<br/>December 22, 2022, 10:30 AM<br/>Time Limit: 1 hour
           </h2>
         </div>
 
         <div className="Score-Container">
           <h1 style={
-            {textAlign: "right", color: "black", fontSize: 50, marginRight: 20, marginBottom: 0, fontWeight: "bold"}}>49/50
+            {textAlign: "right", color: "black", fontSize: 50, marginRight: 20, marginBottom: 0, fontWeight: "bold"}}>20/30
           </h1>
         </div>
       </Stack>
