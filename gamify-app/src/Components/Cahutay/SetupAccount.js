@@ -42,8 +42,10 @@ function SetUpAccount() {
     };
 
     return (
-        <div className="bg-registration-gc">
-            <hr className="line-mid-gc"></hr>
+        <div classname="App">
+             <header className="App-header2-gc">
+                <div className="bg-registration-gc">
+                    <hr className="line-mid-gc"></hr>
             <Stack direction="row">
                 <div className="welcome-gc">
                     <Stack>
@@ -92,6 +94,8 @@ function SetUpAccount() {
                     </Button>
                 </div>
             </Stack>
+            </div>
+        </header>
         </div>
     );
   }
