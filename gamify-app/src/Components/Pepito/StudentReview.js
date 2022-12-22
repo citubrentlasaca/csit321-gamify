@@ -67,7 +67,7 @@ return (
                     <h2 style={{align: "center", marginLeft: 590, marginRight: 570}}>REVIEW ANSWERS</h2>
                 </div>
                 <div>
-                    <h2>49/50</h2>
+                    <h2>20/30</h2>
                 </div>
             </Stack>
             
@@ -98,7 +98,7 @@ return (
                 <h2 style={{fontWeight: "bold", marginLeft: 20, marginTop: 0}}>ANSWER: (bbaa)*</h2>
             </div>
             <div className="Correct-Answer">
-                <h2 style={{color: "#ffffff", fontWeight: "normal", marginLeft: 20, marginTop: 0}}>CORRECT ANSWER: DELETE</h2>
+                <h2 style={{color: "#ffffff", fontWeight: "normal", marginLeft: 20, marginTop: 0}}>CORRECT ANSWER: (a+b)*bbaa(a+b)*</h2>
             </div>
             <div className="Incorrect">
                 <h2 style={{color: "#ffffff", fontWeight: "normal", marginLeft: 20, marginTop: 0}}>0/1 Incorrect</h2>
