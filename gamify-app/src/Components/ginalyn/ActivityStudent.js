@@ -18,7 +18,7 @@ function ActivityStudent() {
     const navigate = useNavigate();
 
     const handleAssessmentClick = () => {
-        navigate("/student-activity-result");
+        navigate("/student-result");
     }
 
     const [value, setValue] = React.useState(1);  

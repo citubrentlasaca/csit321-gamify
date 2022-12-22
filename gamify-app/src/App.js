@@ -96,6 +96,7 @@ function App() {
       <Route path="teacher-view-assessment-results" element={<TeacherDownloadResult />}></Route>
       <Route path="student-activity-result" element={<StudentActivityResult />}></Route>
       <Route path="student-review-assessment-result" element={<StudentReview />}></Route>
+      <Route path="student-result" element={<StudentResult/>}></Route>
 
       <Route path="/appdev/assessments" element={<AssessmentPageOne />}></Route>
       <Route path="/automata/assessments" element={<AssessmentPageTwo />}></Route>

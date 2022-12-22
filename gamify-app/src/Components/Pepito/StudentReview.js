@@ -13,7 +13,7 @@ import brand from '../../Images/Pepito/brand.png';
 
 
 function StudentReview() {
-    const [value, setValue] = React.useState(0);  
+    const [value, setValue] = React.useState(1);  
     const handleChange = (event,newValue) => {
         setValue(newValue);
 }

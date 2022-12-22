@@ -12,6 +12,11 @@ import brand from '../../Images/Pepito/brand.png';
 import { useNavigate } from "react-router-dom";
 
 function StudentResult() {
+  const navigate = useNavigate();
+
+  const handleReviewAnswerClick = () => {
+      navigate("/student-review-assessment-result");
+  }
 
     const [value, setValue] = React.useState(1);  
     const handleChange = (event,newValue) => {
@@ -68,13 +73,13 @@ return (
       <Stack direction="row" backgroundColor="rgba(27, 24, 24, 0.626)">
         <div className="Review-Container">
           <h2 style={
-            {textAlign: "left", color: "white", fontSize: 20, marginLeft: 20, marginBottom: 0, marginTop: 50}}>CSIT313 F1 - C0
+            {textAlign: "left", color: "white", fontSize: 20, marginLeft: 20, marginBottom: 0, marginTop: 50}}>CS313 F1 - C0
           </h2>
           <h2 style={
             {textAlign: "left", color: "white", fontSize: 20, marginLeft: 20, marginBottom: 0, marginTop: 0}}>Review on Regular Expressions
           </h2>
         </div>
-          <Button variant="text" backgroundColor="transparent" style={{color: "#00ffff"}}>REVIEW ANSWERS</Button>
+          <Button variant="text" onClick={handleReviewAnswerClick} backgroundColor="transparent" style={{color: "#00ffff"}}>REVIEW ANSWERS</Button>
       </Stack>
       
 
@@ -105,5 +110,5 @@ return (
     </div>
   );
 }
-z
+
 export default StudentResult;

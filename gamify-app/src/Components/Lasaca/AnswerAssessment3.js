@@ -97,7 +97,7 @@ function AnswerAssessment(){
     setTimeout(() => {
       const container = document.getElementById('root');
       console.log('rendering new component'); // add this line to verify that a new component is being rendered
-      ReactDOM.render(<StudentResult />, container);
+      ReactDOM.render(<AddItems />, container);
     }, 1000); // unmount component after 3 seconds
   };
   
