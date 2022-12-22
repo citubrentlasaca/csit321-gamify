@@ -14,6 +14,7 @@ import CheckIcon from '@mui/icons-material/Check';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import BadgeIcon from '@mui/icons-material/Badge';
+import Collapsible from 'react-collapsible';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
@@ -27,6 +28,14 @@ function TeacherDownloadResultPage() {
     const [studentScore, setStudentScore] = React.useState();
     const [perfectScore, setPerfectScore] = React.useState();
     const [attempt, setAttempt] = React.useState();
+
+    const results = [
+        { resultid: 1, attempt: 1, studentscore: 46, perfectscore: 50},
+        { resultid: 2, attempt: 1, studentscore: 47, perfectscore: 50},
+        { resultid: 3, attempt: 1, studentscore: 48, perfectscore: 50},
+        { resultid: 4, attempt: 1, studentscore: 50, perfectscore: 50},
+        { resultid: 5, attempt: 1, studentscore: 49, perfectscore: 50},
+      ]
 
     const changeResultId = (event) => {
         setResultId(event.target.value);
@@ -47,11 +56,11 @@ function TeacherDownloadResultPage() {
             attempt: attempt,
             student:
             {
-                studentid : 3
+                studentid : 5
             },
             assessment:
             {
-                assessmentid : 3
+                assessmentid : 1
             }
           })
           .then((response) => {
@@ -62,14 +71,9 @@ function TeacherDownloadResultPage() {
           });
       };
     
-      const getResultId = async () => {
+      const getAll = async () => {
         try {
-          const response = await axios.get(`http://localhost:8080/result/getResultId?resultid=${resultId}`);
-          setResultId(response.data);
-          //setAttempt(response.data.attempt);
-          //setStudentScore(response.data.studentScore);
-          //setPerfectScore(response.data.perfectScore);
-          console.log(response.data); // log the data to the console
+          const response = await axios.get(`http://localhost:8080/result/getAllResult`);
         } catch (error) {
           console.error(error); // catch any errors
         }
@@ -205,115 +209,135 @@ function TeacherDownloadResultPage() {
             
             <div>
                 <div className = "Student-scores">
-                    <Stack direction="row" justifyContent = 'center'>
-                        <TextField  
-                            id = "resultid" 
-                            value = {resultId} 
-                            onChange = {changeResultId}
-                            variant="outlined" 
-                            fullWidth        
-                            label = "Result Id Number" 
-                            helperText="Please Enter Result Id Number to View Record"
-                            style = {{
-                                width:"60vh", 
-                                align: "center", 
-                                marginTop: 50, 
-                                color: "black",
-                                marginBottom: 20}} />
-                        <IconButton aria-label = "badge" size = "large" onClick = {getResult}> <BsSearch/> </IconButton> 
-                    </Stack>
-
-                    <Stack direction="row" justifyContent="space-between">
-                        <TextField 
-                            id="attempt" 
-                            value={attempt} 
-                            onChange={changeAttempt} 
-                            variant="outlined" 
-                            style={{
-                                width:"150vh", 
-                                align: "center", 
-                                borderColor: "black", 
-                                marginBottom: 20}}/>
-                        <TextField 
-                            id="studentscore" 
-                            value={studentScore} 
-                            onChange={changeStudentScore} 
-                            variant="outlined" 
-                            style={{
-                                width:"150vh", 
-                                align: "center", 
-                                borderColor: "black", 
-                                marginBottom: 20}}/>
-                        <TextField 
-                            id="perfectscore" 
-                            value={perfectScore} 
-                            onChange={changePerfectScore} 
-                            variant="outlined"
-                            style={{
-                                borderStyle: "solid", 
-                                width:"150vh", 
-                                align: "center", 
-                                borderColor: "black", 
-                                marginBottom: 20}}/>     
-                </Stack>
-            
-                    <Stack direction = "row" justifyContent = 'right'>   
-                        <IconButton className="checkButton" aria-label="check" size="large" onClick={createResult} sx={{color:"green", marginTop:"20px"}}>
-                            <CheckIcon fontSize="large"/>
-                        </IconButton>
-                        <IconButton className="badgeButton" aria-label="badge" size="large" 
-                        sx={{color:"blue", marginTop:"20px"}}>
-                            <BadgeIcon fontSize="large"/>
-                        </IconButton>
-                        <IconButton className="editButton" aria-label="edit" size="large" onClick={updateResult} sx={{color:"blue", marginTop:"20px"}}>
-                            <EditIcon fontSize="large"/>
-                        </IconButton>
-                        <IconButton className="deleteButton" aria-label="delete" size="large" onClick={deleteResult} sx={{color:"red", marginTop:"20px"}}>
-                            <DeleteIcon fontSize="large"/>
-                        </IconButton>
-                        <Button variant="contained" size="small" startIcon={<BsDownload color = "black"/>} 
-                            style={{ height: 50, backgroundColor: "#CAFDFF", marginTop: 35, marginBottom: 20, 
-                            color:"black", fontWeight: "bolder",  borderRadius: "550px"}}>Download Scores
-                        </Button>
-                        <div style={{width: "30px"}}></div>      
-                    </Stack>
-
-
-                        {/*<table className = "Table">
+                    <table className = "Table" >
                         <thead>
                             <tr>
-                                <th style={{fontSize: 30, border: "solid", width: "300px", borderBottom: "solid"}}>Result Id</th>
-                                <th style={{fontSize: 30, border: "solid", width: "300px"}}>Attempt</th>
-                                <th style={{fontSize: 30, border: "solid", width: "300px"}}>Student Score</th>
-                                <th style={{fontSize: 30, border: "solid", width: "300px"}}>Perfect Score</th>
+                                <th style={{fontSize: 20, border: "solid", width: "300px", borderBottom: "solid", backgroundColor: "#00ffff"}}>Result Id</th>
+                                <th style={{fontSize: 20, border: "solid", width: "300px", backgroundColor: "#00ffff"}}>Attempt/s Allowed</th>
+                                <th style={{fontSize: 20, border: "solid", width: "300px", backgroundColor: "#00ffff"}}>Student Score</th>
+                                <th style={{fontSize: 20, border: "solid", width: "300px", backgroundColor: "#00ffff"}}>Perfect Score</th>
                             </tr>
                         </thead>
 
                         <tbody>
-                            {this.state.results.map( result => 
-                                <tr key= {result.resultId}>
-                                    <td>{result.attempt}</td>
-                                    <td>{result.studentScore}</td>
-                                    <td>{result.perfectScore}</td>
+                            { results.map((val, key) =>
+                                <tr key= {key}>
+                                    <td style={{border: "solid", width: "300px"}} >{val.resultid}</td>
+                                    <td style={{border: "solid", width: "300px"}} >{val.attempt}</td>
+                                    <td style={{border: "solid", width: "300px"}} >{val.studentscore}</td>
+                                    <td style={{border: "solid", width: "300px"}} >{val.perfectscore}</td>
                                     <td></td>
-                            </tr>
-                        )}</tbody>
-
-                        {data.map((val, key) => {
-                        return (
-
-
-
-
-                            <tr key={key}>
-                            <td justifyContent = 'center' style={{border: "solid", width: "300px"}} >{val.resultid}</td>
-                            <td justifyContent = 'center' style={{border: "solid", width: "300px"}} >{val.attempt}</td>
-                            <td justifyContent = 'center' style={{border: "solid", width: "300px", alignContent: "center"}} >{val.studentscore}</td>
-                            <td justifyContent = 'center' style={{border: "solid", width: "300px", alignContent: "center"}} >{val.perfectscore}</td>
-                            </tr>
-                        )})}
-                        </table>*/}
+                                </tr>
+                            )}</tbody>
+                        </table>
+                        <Button 
+                            justifyContent="right"
+                            variant="contained" 
+                            size="small" 
+                            startIcon={<BsDownload color = "black"/>} 
+                            style={{ height: 50, backgroundColor: "#CAFDFF", marginTop: 15, marginBottom: 20, 
+                            color:"black", fontWeight: "bolder",  borderRadius: "550px"}}>Download Scores
+                        </Button>
+                        <div 
+                            style={{backgroundColor: "#016B85", color: "#016B8"}}>
+                            <Collapsible 
+                                backgroundcolor="white"
+                                fullWidth 
+                                triggerStyle={{margin: 10,color: "white"}} 
+                                trigger=" ▼ Manage Students Scores">
+                                
+                                <div style={{backgroundColor: "white", border: "solid", borderColor: "#016B85", 
+                                    borderWidth: "10px", marginTop: 5}}>
+                                <Stack direction="row" justifyContent = 'center'>
+                                    <TextField  
+                                        id = "resultid" 
+                                        value = {resultId} 
+                                        onChange = {changeResultId}
+                                        variant="outlined" 
+                                        fullWidth        
+                                        label = "Result Id Number" 
+                                        helperText="Please Enter Result Id Number to View Record"
+                                        style = {{
+                                            width:"60vh", 
+                                            align: "center", 
+                                            marginTop: 50, 
+                                            color: "black",
+                                            marginBottom: 20}} />
+                                    <IconButton aria-label = "badge" size = "large" onClick = {getResult}> <BsSearch/> </IconButton> 
+                                </Stack>
+                            
+                                <Stack direction = "row" justifyContent = "space-between">
+                                    <TextField 
+                                        id="attempt" 
+                                        value={attempt} 
+                                        onChange={changeAttempt} 
+                                        variant="outlined" 
+                                        style={{
+                                            border: "outset", 
+                                            width:"150vh", 
+                                            align: "center", 
+                                            marginBottom: 0}}/>
+                                    <TextField 
+                                        id="studentscore" 
+                                        value={studentScore} 
+                                        onChange={changeStudentScore} 
+                                        variant="outlined" 
+                                        style={{
+                                            border: "outset", 
+                                            width:"150vh", 
+                                            align: "center", 
+                                            marginBottom: 0}}/>
+                                    <TextField 
+                                        id="perfectscore" 
+                                        value={perfectScore} 
+                                        onChange={changePerfectScore} 
+                                        variant="outlined"
+                                        style={{
+                                            border: "outset", 
+                                            width:"150vh", 
+                                            align: "center", 
+                                            marginBottom: 0}}/>     
+                                </Stack>
+                                
+                                <Stack  direction="row" justifyContent="center">
+                                    <div style={{marginRight: 200, marginTop: 0}}>Attempt/s Allowed</div>
+                                    <div style={{marginRight: 225, marginTop: 0}}>Student Score</div>
+                                    <div style={{marginLeft: 10, marginTop: 0}}>Perfect Score</div>
+                                </Stack>
                     
+                                <Stack direction = "row" justifyContent = 'center'>
+                                    <Button 
+                                        marginLeft= "100px"
+                                        variant="contained" 
+                                        size="small" 
+                                        onClick={createResult} 
+                                        startIcon = {<CheckIcon color = "black"/>} 
+                                        style={{ height: 50, borderColor: "#32CD30", border:"solid", backgroundColor: "white", marginTop: 35, marginBottom: 20, 
+                                        marginRight: 20, color:"green", fontWeight: "bolder",  borderRadius: "550px"}}>Add Score
+                                    </Button>
+                                    <Button 
+                                        variant="contained" 
+                                        size="small" 
+                                        onClick={updateResult} 
+                                        startIcon = {<EditIcon color = "blue"/>} 
+                                        style={{ borderColor: "blue", border:"solid", marginRight: 20, height: 50, backgroundColor: "white", marginTop: 35, marginBottom: 20, 
+                                        color:"blue", fontWeight: "bolder",  borderRadius: "550px"}}>Edit Score
+                                    </Button>
+                                    <Button 
+                                        variant="contained" 
+                                        size="small" 
+                                        onClick={deleteResult} 
+                                        startIcon = {<DeleteIcon color = "black"/>} 
+                                        style={{ borderColor: "#FF0000", border:"solid", marginRight: 20, height: 50, backgroundColor: "white", marginTop: 35, marginBottom: 20, 
+                                        color:"#FF0000", fontWeight: "bolder",  borderRadius: "550px"}}>Delete Score
+                                    </Button>
+                              
+                                    </Stack>
+                                </div>
+
+                                </Collapsible>
+                            </div> 
+                        
                     </div>
                 </div>
             </div>
