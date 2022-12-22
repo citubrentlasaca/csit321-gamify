@@ -84,7 +84,8 @@ function ManageStudentProfilePage1() {
                 birthday: response.data.birthday,
                 program: response.data.program,
                 yearlevel: response.data.yearlevel,
-                email: response.data.account.email
+                email: response.data.account.email,
+                username: response.data.account.username
             }
           })
         } catch (error) {

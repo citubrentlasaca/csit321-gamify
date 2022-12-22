@@ -32,7 +32,13 @@ function ManageStudentProfilePage2() {
     const [accountid, setAccountid] = React.useState(); 
     const [username, setUsername] = React.useState(""); 
     const [email, setEmail] = React.useState(""); 
-    const [password, setPassword] = React.useState(""); 
+    const [password, setPassword] = React.useState("");
+    const [firstname, setFirstname] = React.useState("");
+    const [lastname, setLastname] = React.useState("");
+    const [gender, setGender] = React.useState("");
+    const [birthday, setBirthday] = React.useState("");
+    const [program, setProgram] = React.useState("");
+    const [yearlevel, setYearlevel] = React.useState("");
 
     const changeUsername = (event) => {
         setUsername(event.target.value);
@@ -65,7 +71,26 @@ function ManageStudentProfilePage2() {
             password: password
           });
           console.log(response.data); // log the data to the console
-          navigate("/student-profile");
+          const student = await axios.get(`http://localhost:8080/student/getByStudentId?studentid=${26}`, {
+            firstname: firstname,
+            gender: gender,
+            birthday: birthday,
+            program: program,
+            yearlevel: yearlevel
+          })
+          navigate("/student-profile", {
+            state: {
+                username: response.data.username,
+                email: response.data.email,
+                password: response.data.password,
+                accountid: response.data.accountid,
+                firstname: student.data.firstname,
+                gender: student.data.gender,
+                birthday: student.data.birthday,
+                program: student.data.program,
+                yearlevel: student.data.yearlevel,
+            }
+          });
         } catch (error) {
           console.error(error); // catch any errors
         }
@@ -160,6 +185,8 @@ function ManageStudentProfilePage2() {
                             <TextField
                                 id="outlined-username"
                                 label="Username"
+                                value={username}
+                                onChange={changeUsername}
                                 sx={{backgroundColor: "white", borderRadius: 3, marginRight: 3, width: 500}}
                                 //onChange={handleFirstnameChange}
                             />                
@@ -173,6 +200,8 @@ function ManageStudentProfilePage2() {
                             <TextField
                                 id="outlined-email"
                                 label="Email"
+                                value={email}
+                                onChange={changeEmail}
                                 sx={{backgroundColor: "white", borderRadius: 3, marginRight: 3, width: 500}}
                                 //onChange={handleBirthdayChange}
                                 />
@@ -186,10 +215,18 @@ function ManageStudentProfilePage2() {
                             <TextField
                                 id="outlined-password"
                                 label="Password"
+                                value={password}
+                                onChange={changePassword}
                                 sx={{backgroundColor: "white", borderRadius: 3, marginRight: 3, width: 500}}
                                 //onChange={handleBirthdayChange}
                                 />
                         </div>
+
+                        <div className={styles['groupget3']}>
+                        <Button size="large" variant="contained"  onClick={getStudent}
+                        style={{backgroundColor: "transparent", width: 110, marginTop: 15, borderRadius: 40, fontWeight: "bold"}}>Display</Button>
+                        </div>
+
                         <div className={styles['groupback']}>
                         <Button size="large" variant="contained" onClick={handleBackClick}
                         style={{backgroundColor: "cyan", width: 110, marginTop: 15, borderRadius: 40, fontWeight: "bold"}}>Back</Button>

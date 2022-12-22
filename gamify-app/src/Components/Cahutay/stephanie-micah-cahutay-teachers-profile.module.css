@@ -1152,7 +1152,7 @@
 
   .text044 {
     top: 320px;
-    padding-left: 175px;
+    padding-left: 140px;
     color: rgba(255, 255, 255, 1);
     width: 140px;
     height: auto;
@@ -1563,7 +1563,7 @@
 
   .groupback {
     top: 470px;
-    left: 1000px;
+    left: 1050px;
     width: 380px;
     height: 70px;
     display: flex;
@@ -1635,6 +1635,24 @@
 
   .groupget2 {
     top: 500px;
+    left: 910px;
+    width: 380px;
+    height: 70px;
+    display: flex;
+    position: absolute;
+    align-self: auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    flex-shrink: 1;
+    border-color: transparent;
+    border-radius: 40px 40px 40px 40px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+
+  .groupget3 {
+    top: 470px;
     left: 910px;
     width: 380px;
     height: 70px;

@@ -27,8 +27,6 @@ function StudentProfile() {
         navigate("/student-deactivate-account");
     }
 
-    const [studentName, setStudentName] = React.useState("");  
-
     const [value, setValue] = React.useState(3);  
     const handleChange = (event,newValue) => {
         setValue(newValue);
@@ -57,7 +55,7 @@ function StudentProfile() {
                                             <MenuIcon style={{fontSize: 40, fontWeight: "bold", color: "black"}} />
                                         </IconButton>
                                         <Menu {...bindMenu(popupState)}>
-                                            <MenuItem disabled style={{fontWeight: "bold", color: "black"}}>@brent</MenuItem>
+                                            <MenuItem disabled style={{fontWeight: "bold", color: "black"}}>{"@"+state.username}</MenuItem>
                                             <Divider />
                                             <MenuItem onClick={popupState.close}>
                                             <ListItemIcon>
@@ -81,17 +79,14 @@ function StudentProfile() {
 
                                 <div className={styles['group822']}>
                                     <span className={styles['text']}>
-                                        <span>Brent</span>
-                                    </span>
-                                    <span className={styles['text02']}>
-                                        <span>BSCS 3</span>
+                                        <span>{state.firstname}</span>
                                     </span>
                                 </div>
 
                                 <div className={styles['group877']}>
                                     <span className={styles['text044']}>
                                         <span>
-                                            <span>@brent</span>
+                                            <span>{"@"+state.username}</span>
                                             <br></br>
                                             <span></span>
                                         </span>
