@@ -8,9 +8,39 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const LoginStudent = (props) => {
   const navigate = useNavigate();
+  const { state } = useLocation();
 
-  const handleLoginStudentClick = () => {
-    navigate("/student-homepage");
+  const [firstname, setFirstname] = React.useState("");
+  const [lastname, setLastname] = React.useState("");
+  const [gender, setGender] = React.useState("");
+  const [birthday, setBirthday] = React.useState("");
+  const [program, setProgram] = React.useState("");
+  const [yearlevel, setYearlevel] = React.useState("");
+
+  const handleLoginStudentClick  = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8080/student/getByStudentId?studentid=${state.studentid}`);
+          setFirstname(response.data.firstname);
+          setLastname(response.data.lastname);
+          setGender(response.data.gender);
+          setBirthday(response.data.birthday);
+          setProgram(response.data.program);
+          setYearlevel(response.data.yearlevel);
+      console.log(response);
+      navigate("/student-homepage", {
+        state: {
+            firstname: response.data.firstname,
+            gender: response.data.gender,
+            birthday: response.data.birthday,
+            program: response.data.program,
+            yearlevel: response.data.yearlevel,
+            email: response.data.account.email,
+            username: response.data.account.username
+        }
+      })
+    } catch (error) {
+      console.error(error); // catch any errors
+    }
   }
 
   return (

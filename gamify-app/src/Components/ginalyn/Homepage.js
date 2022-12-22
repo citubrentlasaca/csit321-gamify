@@ -60,25 +60,20 @@ const Search = styled('div')(({ theme }) => ({
 function Homepage() {
     const navigate = useNavigate();
     const {state} = useLocation();
-
-    const handleAssessmentClick = () => {
-        navigate("/subjects");
-    }
-
-    const [firstname, setFirstname] = React.useState("");
-    const [lastname, setLastname] = React.useState("");
-    const [gender, setGender] = React.useState("");
-    const [birthday, setBirthday] = React.useState("");
-    const [program, setProgram] = React.useState("");
-    const [yearlevel, setYearlevel] = React.useState("");
     
     const getStudentById = async () => {
         try {
-          const response = await axios.get(`http://localhost:8080/student/getByStudentId?studentid=${18}`);
+          const response = await axios.get(`http://localhost:8080/student/getByStudentId?studentid=${state.studentid}`);
           const data = response.data;
           navigate("/student-profile", {
             state: {
-                studentname: response.firstname
+                firstname: response.data.firstname,
+                gender: response.data.gender,
+                birthday: response.data.birthday,
+                program: response.data.program,
+                yearlevel: response.data.yearlevel,
+                email: response.data.account.email,
+                username: response.data.account.username
             }
           })
           console.log(data);
@@ -105,8 +100,8 @@ function Homepage() {
                         <Tabs value={value} onChange={handleChange} style={{marginTop: 15, marginLeft: 40}}>
                             <Tab label="Home" href="/student-homepage" icon={<HomeIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
                             <Tab label="Activity" href="/student-activity" icon={<HistoryIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
-                            <Tab label="Assessments" href="/assessments" to={handleAssessmentClick} icon={<ViewListIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
-                            <Tab label="Profile" href="/student-profile" to={getStudentById} icon={<PersonIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
+                            <Tab label="Assessments" href="/assessments" icon={<ViewListIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
+                            <Tab label="Profile" onClick={getStudentById} icon={<PersonIcon style={{fontSize: 34}}/>} iconPosition="start" style={{fontSize: 24, fontWeight: "bold", color: "black", marginRight: 10}}/>
                         </Tabs>
                         <PopupState variant="popover" popupId="demo-popup-menu">
                             {(popupState) => (
@@ -115,7 +110,7 @@ function Homepage() {
                                     <MenuIcon style={{fontSize: 40, fontWeight: "bold", color: "black"}} />
                                 </IconButton>
                                 <Menu {...bindMenu(popupState)}>
-                                    <MenuItem disabled style={{fontWeight: "bold", color: "black"}}>@brent</MenuItem>
+                                    <MenuItem disabled style={{fontWeight: "bold", color: "black"}}>{"@"+state.username}</MenuItem>
                                     <Divider />
                                     <MenuItem onClick={popupState.close}>
                                         <ListItemIcon>
@@ -131,7 +126,7 @@ function Homepage() {
                     <Divider sx={{ borderBottomWidth: 7, borderColor: "#609292" }}/>
                     <Stack direction="row" style={{marginTop: 20}}>
                         <Box style={{width: 720, backgroundColor: "white", height: 170, borderRadius: 20, marginRight: 30, marginLeft: 40}}>
-                            <h3 style={{paddingLeft: 30, marginBottom: 15, marginTop: 15, fontSize: 24}}>Welcome Brent!</h3>
+                            <h3 style={{paddingLeft: 30, marginBottom: 15, marginTop: 15, fontSize: 24}}>{"Welcome " + state.firstname + "!"}</h3>
                             <Stack direction="row">
                                 <Search>
                                     <SearchIconWrapper>

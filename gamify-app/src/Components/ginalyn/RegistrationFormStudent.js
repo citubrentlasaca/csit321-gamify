@@ -53,7 +53,14 @@ function RegistrationFormStudent() {
             console.log(response);
             navigate("/register-choose-student-avatar", {
                 state: {
-                    studentid: response.data.studentid
+                    studentid: response.data.studentid,
+                    firstname: response.data.firstname,
+                    lastname: response.data.lastname,
+                    gender: response.data.gender,
+                    birthday: response.data.birthday,
+                    program: response.data.program,
+                    yearlevel: response.data.yearlevel,
+                    accountid: response.data.account.accountid,
                 }
             });
           })
