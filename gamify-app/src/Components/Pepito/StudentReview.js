@@ -72,30 +72,30 @@ return (
             </Stack>
             
             <div className="Question">
-                <h2 style={{fontWeight: "normal", marginLeft: 20}}>1. In performing CRUD operation, what is the HTTP verb to use for inserting a record in the database?</h2>
+                <h2 style={{fontWeight: "normal", marginLeft: 20}}>{"1. Construct a regular expresion for L = { w is in {a,b} / w starts with bb}"}</h2>
             </div>
             <div className="Answer">
-                <h2 style={{fontWeight: "bold", marginLeft: 20, marginTop: 0}}>ANSWER: POST</h2>
+                <h2 style={{fontWeight: "bold", marginLeft: 20, marginTop: 0}}>ANSWER: bb(a+b)*</h2>
             </div>
             <div className="Correct">
                 <h2 style={{color: "#ffffff", fontWeight: "normal", marginLeft: 20, marginTop: 0}}>1/1 Correct</h2>
             </div>
 
             <div className="Question">
-                <h2 style={{fontWeight: "normal", marginLeft: 20}}>2. In performing CRUD operation, what is the HTTP verb to use for inserting and updating a record in the database?</h2>
+                <h2 style={{fontWeight: "normal", marginLeft: 20}}>{"2. Construct a regular expresion for L = { w is in {a,b} / w ends with aa}"} </h2>
             </div>
             <div className="Answer">
-                <h2 style={{fontWeight: "bold", marginLeft: 20, marginTop: 0}}>ANSWER: PUT</h2>
+                <h2 style={{fontWeight: "bold", marginLeft: 20, marginTop: 0}}>ANSWER: (a+b)*aa</h2>
             </div>
             <div className="Correct">
                 <h2 style={{color: "#ffffff", fontWeight: "normal", marginLeft: 20, marginTop: 0}}>1/1 Correct</h2>
             </div>
 
             <div className="Question">
-                <h2 style={{fontWeight: "normal", marginLeft: 20}}>3. In performing CRUD operation, what is the HTTP verb to use for removing a record in the database?</h2>
+                <h2 style={{fontWeight: "normal", marginLeft: 20}}>{"3. Construct a regular expresion for L = { w is in {a,b} / w contains bbaa as substring}"}</h2>
             </div>
             <div className="Answer">
-                <h2 style={{fontWeight: "bold", marginLeft: 20, marginTop: 0}}>ANSWER: REMOVE</h2>
+                <h2 style={{fontWeight: "bold", marginLeft: 20, marginTop: 0}}>ANSWER: (bbaa)*</h2>
             </div>
             <div className="Correct-Answer">
                 <h2 style={{color: "#ffffff", fontWeight: "normal", marginLeft: 20, marginTop: 0}}>CORRECT ANSWER: DELETE</h2>
